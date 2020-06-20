@@ -49,8 +49,8 @@ html{height:100%}
 .head_type1 #kakaoGnb .list_gnb > li .link_gnb{color:#fff}
 .head_type1 #kakaoGnb .list_gnb > li .link_talent .ico_arr{background-position:-175px 0}
 .head_type1 .list_lang li .link_lang{color:#aeaeae}
-.head_type1 .list_lang li.on .link_lang, .head_type1 .list_lang li .link_lang:hover, .head_type1 .list_lang li .link_lang:focus{color:#fff}
 .kakao_type #kakaoContent{padding-top:0}
+.head_type1 .list_lang li.on .link_lang, .head_type1 .list_lang li .link_lang:hover, .head_type1 .list_lang li .link_lang:focus{color:#fff}
 .kakao_type #mArticle{width:100%}
 .kakao_type2 #kakaoContent{padding-top:0} /* 정책 새창열기 */
 

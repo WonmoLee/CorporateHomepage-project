@@ -352,18 +352,11 @@
 						</ul>
 					</nav>
 
-					<strong class="screen_out">언어지원 메뉴</strong>
-
 					<ul class="list_lang">
-						<!-- 선택시 on클래스 및  aria-selected="false" true 값으로 변경필요 -->
-						<li class="on"><a href="#" class="link_lang"> <span
-								class="screen_out">선택됨</span> KOR <span class="screen_out">한국어로
-									보기</span>
-						</a></li>
-						<li><a href="?lang=en" class="link_lang"> ENG <span
-								class="screen_out">영어로 보기</span>
-						</a></li>
+						<li><a href="/corp/user?cmd=login"> 로그인 </a></li>
+						<li><a href="/corp/user?cmd=signup"> 회원가입 </a></li>
 					</ul>
+					
 				</div>
 			</div>
 		</header>
@@ -389,7 +382,7 @@
 									class="inp_txt"
 									value="일상에 필요한 모든 것들을 연결해주는  <br> 당신과 가장 가까운 인공지능을 만나보세요." />
 									<input type="hidden" name="bannerImage" class="inp_txt"
-									value="https://t1.kakaocdn.net/kakaocorp/admin/main-banner/1652" />
+									value="static/img/logoMain.png" />
 									<input type="hidden" name="bannerLink" class="inp_txt"
 									value="/kakao/ai" /> <input type="hidden" name="bannerType"
 									class="inp_txt" value="white" /> <input type="hidden"
