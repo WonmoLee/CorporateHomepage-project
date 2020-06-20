@@ -1,11 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html lang="ko" xml:lang="ko">
+<html lang="ko">
 <head>
 <meta charset="UTF-8">
-<meta charset="utf-8">
-<!-- meta -->
+<!-- meta데이터 시작 -->
 <meta name="Keywords" content="카카오, kakao" />
 <meta content="website" />
 <meta content='kakaocorp.com' />
@@ -20,10 +19,15 @@
 	property="og:image" />
 <meta name="naver-site-verification"
 	content="6171ab3d716f1b32969a13e4f5b9475b2f4dd42c" />
-<!-- //meta -->
+<!-- //meta데이터 끝 -->
 <title>KAKAO</title>
-<link rel="shortcut icon" href="static/img/titleIcon.png"
-	type="image/x-icon" />
+<link rel="shortcut icon" href="static/img/titleIcon.png"type="image/x-icon" />
+
+<link rel="stylesheet" type="text/css" href="css/main1.css">
+<link rel="stylesheet" type="text/css" href="css/main2.css">
+<link rel="stylesheet" type="text/css" href="css/main3.css">
+<link rel="stylesheet" type="text/css" href="css/main4.css">
+
 </head>
 <body class="kakao_type">
 	<div id="kakaoWrap">
@@ -34,7 +38,7 @@
 				<div class="box_gnb" style="display: block;">
 					<!--메뉴 에니메이션을 위해 class="box_gnb" 추가-->
 					<h1 class="tit_logo">
-						<a href="/" id="kakaoServiceLogo" class="link_kakao"> <span
+						<a href="/corp/home?cmd=main" id="kakaoServiceLogo" class="link_kakao"> <span
 							class="tit_service">kakao</span>
 						</a>
 					</h1>
@@ -468,10 +472,10 @@
 							<div class="service_info">
 								<a href="https://www.kakaocorp.com/service/KakaoTalk"
 									class="link_newsfeed"} >
-									<h3 class="tit_black">SERVICE</h3> <img
-									src="https://t1.kakaocdn.net/kakaocorp/admin/co/main-content/4518.jpg"
-									class="img_thumb" alt=""> <strong class="tit_newsfeed">언제
-										어디서나 무료로 간편하게! 사람과 세상, 그 이상을 연결하는 카카오톡</strong>
+									<h3 class="tit_black">커뮤니케이션</h3> <img
+									src="static/img/KakaoTalkMain.png" class="img_thumb" alt="" style="height: 22em;">
+									<strong class="tit_newsfeed">언제 어디서나 무료로 간편하게! 사람과 세상,
+										그 이상을 연결하는 카카오톡</strong>
 									<p class="desc_newsfeed">채팅은 물론 일정 관리, 송금, #검색 등 다양한 기능을
 										제공하는 카카오톡은 우리의 생활을 보다 편리하게 만들어 주고 있습니다. 카카오톡을 통해 세상의 정보와 즐길거리에
 										보다 가까이 ...</p>
@@ -480,10 +484,10 @@
 							<div class="service_info">
 								<a href="https://tech.kakao.com" class="link_newsfeed"
 									target="_blank"} >
-									<h3 class="tit_white">TECH</h3> <img
-									src="https://t1.kakaocdn.net/kakaocorp/admin/co/main-content/4540.jpg"
-									class="img_thumb" alt=""> <strong class="tit_newsfeed">새로워진
-										kakao Tech를 소개합니다.</strong>
+									<h3 class="tit_white">모빌리티&라이프</h3> <img
+									src="static/img/KakaoMapMain.png"
+									class="img_thumb" alt="" style="height: 22em;"> <strong class="tit_newsfeed">
+										새로워진 kakao Map을 소개합니다.</strong>
 									<p class="desc_newsfeed">기술 행사와 오픈소스, 후원, 채용 등 카카오의 기술 관련
 										종합적인 정보를 제공할 수 있도록 개편했습니다....</p>
 								</a>
@@ -491,8 +495,8 @@
 							<div class="service_info">
 								<a href="http://blog.kakaocorp.co.kr/679" class="link_newsfeed"
 									target="_blank"} >
-									<h3 class="tit_black">SOCIAL IMPACT</h3> <img
-									src="https://t1.kakaocdn.net/kakaocorp/operating/co/main-content/3254.png"
+									<h3 class="tit_black">카카오게임즈</h3> <img
+									src="static/img/KakaoGameMain.png"
 									class="img_thumb" alt=""> <strong class="tit_newsfeed">세계
 										행복의 날 기념, 같이가치 ‘안녕하세요’ 캠페인을 소개합니다!</strong>
 									<p class="desc_newsfeed">'세계 행복의 날'이라는 기념일을 들어보신 적 있나요?
