@@ -15,5 +15,4 @@ public class LoginAction implements Action{
 		RequestDispatcher dis = request.getRequestDispatcher("user/login.jsp");
 		dis.forward(request, response);
 	}
-	
 }

@@ -1,8 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 	
-<%@ include file="include/header.jsp" %>	
-	
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -24,7 +22,7 @@
 	content="6171ab3d716f1b32969a13e4f5b9475b2f4dd42c" />
 <!-- //meta데이터 끝 -->
 <title>KAKAO</title>
-<link rel="shortcut icon" href="static/img/titleIcon.png"type="image/x-icon" />
+<link rel="shortcut icon" href="static/img/titleIcon.png" type="image/x-icon" />
 
 <link rel="stylesheet" type="text/css" href="css/main1.css">
 <link rel="stylesheet" type="text/css" href="css/main2.css">
@@ -35,6 +33,7 @@
 <body class="kakao_type">
 	<div id="kakaoWrap">
 		
+<%@ include file="include/header.jsp" %>	
 
 		<!-- 섹션시작 -->
 		<hr class="hide">
