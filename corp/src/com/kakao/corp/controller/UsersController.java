@@ -1,6 +1,7 @@
 package com.kakao.corp.controller;
 
 import java.io.IOException;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -10,6 +11,8 @@ import javax.servlet.http.HttpServletResponse;
 import com.kakao.corp.action.Action;
 import com.kakao.corp.action.user.LoginAction;
 import com.kakao.corp.action.user.SignupAction;
+import com.kakao.corp.action.user.SignupProcAction;
+import com.kakao.corp.action.user.UsersUsernameCheck;
 
 
 @WebServlet("/user")
@@ -45,10 +48,15 @@ public class UsersController extends HttpServlet {
 	private Action router(String cmd) {
 		if (cmd.equals("login")) {
 			return new LoginAction();
-		} else if (cmd.equals("signup")) {
+		}else if (cmd.equals("signup")) {
 			return new SignupAction();
+		}else if (cmd.equals("signupProc")) {
+			return new SignupProcAction();
+		} else if (cmd.equals("usernameCheck")) {
+			return new UsersUsernameCheck();
 		} 
 		return null;
 		
 	}
 }
+

@@ -1,0 +1,185 @@
+@charset "utf-8";
+/* reset */
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,textarea,p,blockquote,th,td,input,select,textarea,button{margin:0;padding:0}
+fieldset,img{border:0 none}
+dl,ul,ol,menu,li{list-style:none}
+blockquote, q{quotes:none}
+blockquote:before, blockquote:after,q:before, q:after{content:'';content:none}
+input,select,textarea,button{vertical-align:middle}
+input::-ms-clear{display:none}
+input::-webkit-contacts-auto-fill-button {visibility:hidden;display:none !important;pointer-events:none;position:absolute;right:0}
+button{border:0 none;border-radius:0;background-color:transparent;cursor:pointer}
+body{background:#1e1e1e;word-wrap:break-word;word-break:keep-all}
+body,th,td,input,select,textarea,button{font-size:16px;line-height:1.5;font-family:'NotoSans Light','Malgun Gothic','맑은 고딕','Apple SD Gothic Neo','돋움',dotum, sans-serif;color:#666}
+a{color:#333;text-decoration:none}
+a:active, a:hover{text-decoration:underline}
+a:active{background-color:transparent}
+address,caption,cite,code,dfn,em,var{font-style:normal;font-weight:normal}
+
+/* global */
+.screen_out{overflow:hidden;position:absolute;width:0;height:0;line-height:0;text-indent:-9999px}
+.hide{display:none}
+
+/* 공통 */
+.ico_corp{display:inline-block;overflow:hidden;font-size:0;line-height:0;background:url(//t1.kakaocdn.net/kakaocorp/pw/ico_corp_181031.png) no-repeat;text-indent:-9999px;vertical-align:top} /* 2018-10-31 이미지 수정 */
+
+/* layout */
+html{height:100%}
+#kakaoWrap{position:relative;min-width:1320px;background-color:#fff}
+#kakaoContent{padding-top:122px}
+#kakaoHead{position:fixed;z-index:100;top:0;left:0;width:100%;min-width:1320px;border-bottom:1px solid #e5e5e5;background-color:#fff;-webkit-transition:-webkit-transform 300ms;-moz-transition:-moz-transform 300ms;-o-transition:-o-transform 300ms;transition:transform 300ms;-webkit-transform:matrix(1, 0, 0, 1, 0, 0);-moz-transform:matrix(1, 0, 0, 1, 0, 0);-ms-transform:matrix(1, 0, 0, 1, 0, 0);-o-transform:matrix(1, 0, 0, 1, 0, 0);transform:matrix(1, 0, 0, 1, 0, 0)}/* KAKAOCORP-418_v2 */
+#kakaoHead.hide-gnb{-webkit-transform:matrix(1, 0, 0, 1, 0, -61);-moz-transform:matrix(1, 0, 0, 1, 0, -61);-ms-transform:matrix(1, 0, 0, 1, 0, -61);-o-transform:matrix(1, 0, 0, 1, 0, -61);transform:matrix(1, 0, 0, 1, 0, -61)}/* KAKAOCORP-418_v2 추가 */
+#mArticle{position:relative;width:1160px;margin:0 auto;}
+
+/* 메인 */
+.kakao_type{background-color:#fff}
+#kakaoHead.head_type1, #kakaoHead.head_type3{border:0 none;background-color:transparent}
+.kakao_type .wrap_head{max-width:1760px;padding:0 80px}
+.wrap_head .tit_service{background-image:url(//t1.kakaocdn.net/kakaocorp/pw/logo_kakao_white.png)}
+#kakaoGnb .list_gnb > li .link_gnb{color:#fff}
+#kakaoGnb .list_gnb > li .link_talent .ico_arr{background-position:-175px 0}
+li{color: black;}
+li.on .head_type1 li .head_type1 li{color: black;}
+.kakao_type #kakaoContent{padding-top:0}
+.kakao_type #mArticle{width:100%}
+#kakaoContent{padding-top:0} /* 정책 새창열기 */
+
+/* header */
+.wrap_head{max-width:1160px;height:60px;margin:0 auto;text-align:center}
+.wrap_head .tit_logo{float:left}
+.wrap_head .link_kakao{display:block;overflow:hidden;width:66px;height:60px}
+.wrap_head .tit_service{display:block;overflow:hidden;height:20px;margin-top:20px;background:url(//t1.kakaocdn.net/kakaocorp/pw/logo_kakao.png) no-repeat 0 0;text-indent:-9999px}
+#kakaoGnb{display:inline-block;height:60px;vertical-align:top}
+#kakaoGnb .list_gnb{float:left;height:60px;margin-left:5px}
+#kakaoGnb .list_gnb > li{float:left;height:61px}
+#kakaoGnb .list_gnb > li .link_gnb{display:block;position:relative;height:60px;padding:0 14px 0 13px;font-size:16px;line-height:58px;color:#1e1e1e;font-family:'NotoSans Regular','Malgun Gothic','맑은 고딕','Apple SD Gothic Neo','돋움',dotum, sans-serif}
+#kakaoGnb .list_gnb > li.on .link_gnb, #kakaoGnb .list_gnb > li .link_gnb:hover{text-decoration:none}
+#kakaoGnb .list_gnb > li .link_gnb .line{display:none;position:absolute;left:9px;right:9px;bottom:-1px;height:2px;background-color:#1e1e1e}
+#kakaoGnb .list_gnb > li.current .link_gnb .line, #kakaoGnb .list_gnb > li .link_gnb:hover .line{display:block}
+#kakaoGnb .list_gnb > li .link_talent{padding-right:32px}
+#kakaoGnb .list_gnb > li .link_talent .ico_arr{position:absolute;top:23px;right:13px;width:14px;height:14px;background-position:-155px 0}
+.list_gnb .on .box_sub{display:block}
+.list_gnb .box_sub{display:none;position:absolute;z-index:5;top:61px;left:0;width:100%;border-bottom:1px solid #d4d4d4;background-color:#fff}
+.list_gnb .box_sub .list_sub{display:inline-block;width:1160px;height:100%;padding:57px 1px 60px 0;vertical-align:top;box-sizing:border-box}
+.list_gnb .box_sub .list_sub li{float:left;padding:0 13px;text-align:center;height:100%;box-sizing:border-box}
+.list_gnb .box_sub .list_sub .link_sub span .ico_arr{width:14px;height:14px;margin:3px 0 0 7px;border-bottom:0 none;background-position:-155px 0} /* 2018-09-17 추가 */
+.list_gnb .sub_type1 .list_sub{background:url(//t1.kakaocdn.net/kakaocorp/pw/gnb_line_type1.gif) repeat-y 0 0}
+.list_gnb .sub_type1 .list_sub li{width:16.66%}
+.list_gnb .sub_type2 .list_sub{background:url(//t1.kakaocdn.net/kakaocorp/pw/gnb_line_type2.gif) repeat-y 0 0}
+.list_gnb .sub_type2 .list_sub li{width:12.5%}
+.list_gnb .sub_type3 .list_sub{background:url(//t1.kakaocdn.net/kakaocorp/pw/gnb_line_type3.gif) repeat-y 0 0}
+.list_gnb .sub_type3 .list_sub li{width:12.5%}
+.list_gnb .sub_type4 .list_sub{background:url(//t1.kakaocdn.net/kakaocorp/pw/gnb_line_type4_180129.gif) repeat-y 0 0}/* 2018-01-29 */
+.list_gnb .sub_type4 .list_sub li{width:20%}/* 2018-01-29 */
+.list_gnb .box_sub .list_sub .link_sub{display:block;padding:6px 0;font-size:13px;line-height:18px;color:#666;font-family:'NotoSans Regular','Malgun Gothic','맑은 고딕','Apple SD Gothic Neo','돋움',dotum, sans-serif;text-decoration:none}
+.list_gnb .box_sub .list_sub .link_sub:hover span,
+.list_gnb .box_sub .list_sub .link_sub.on span,
+.list_gnb .box_sub .list_sub li .link_sub:focus span{border-bottom:1px solid #666;color:#1e1e1e}
+.list_gnb .box_sub .list_sub .ico_new{width:11px;height:11px;margin:4px 0 0 2px;background-position:-100px -50px}
+.list_gnb .box_sub .list_sub .link_sub.on .ico_new,
+.list_gnb .box_sub .list_sub .link_sub:hover .ico_new,
+.list_gnb .box_sub .list_sub .link_sub:focus .ico_new{border-bottom:0 none}
+.list_gnb .box_sub .list_sub .tit_sub{display:block;padding-bottom:18px}
+.list_gnb .box_sub .list_sub .tit_sub .link_sub{padding:0;font-size:14px;line-height:20px;color:#1e1e1e}
+.list_gnb .box_sub .list_sub .tit_sub .link_sub:hover span{border-color:#1e1e1e}
+.list_lang{float:right;margin-top:17px}
+.list_lang li{float:left;margin-left:15px}
+.link_login .link_signup{color: black;font-weight: bold;}
+
+/* footer */
+.foot_kakao{border-top:1px solid #d4d4d4; margin-bottom: 70px;}
+.foot_kakao .wrap_service{overflow:hidden;max-width:1160px;min-width:1024px;margin:53px auto 80px}
+.foot_kakao .inner_service{overflow:hidden}
+.foot_kakao .list_service{float:left;width:160px;margin-left:40px}
+.foot_kakao .list_fst{margin-left:0}
+.foot_kakao .list_service .tit_service{display:inline-block;height:24px;font-size:14px;line-height:24px;font-weight:normal;font-family:'NotoSans Regular','Malgun Gothic','맑은 고딕','Apple SD Gothic Neo','돋움',dotum, sans-serif}
+.foot_kakao .list_service .link_tit{display:block;color:#1e1e1e;line-height:24px;text-decoration:none}
+.foot_kakao .list_service .link_tit:hover{height:23px;border-bottom:1px solid #1e1e1e}
+.foot_kakao .list_service .link_txt{display:inline-block;height:20px;font-size:12px;color:#666;line-height:24px;vertical-align:top}
+.foot_kakao .list_service .link_txt:hover{display:inline-block;height:21px;border-bottom:1px solid #666;text-decoration:none}
+.foot_kakao .group_service{padding-top:10px}
+.foot_kakao .area_list{float:left;width:160px;margin-left:40px}
+.foot_kakao .area_list .list_service{width:100%;margin-left:0}
+.foot_kakao .area_list .list_service + .list_service{padding-top:23px}
+.foot_kakao .wrap_copyright{background-color:#1e1e1e}
+.foot_kakao .info_copyright{float:left}
+.info_svc{float:left;position:relative;margin-right:12px}
+.info_svc .dlnk_info{margin-right:8px;font-size:12px;color:#aeaeae;text-decoration:none}
+.info_svc .dlnk_info .ico_arr{width:7px;height:4px;margin:9px 0 0 6px;background-position:-275px -25px}
+.info_svc .dlnk_info .dlnk_txt{color:#fff}
+.info_svc .dlnk_info:hover{font-weight:bold;color:#fff}
+.info_svc .dlnk_info:hover .ico_arr{background-position:-285px -35px}
+.info_svc .ico_new{width:11px;height:11px;margin:6px 0 0 3px;background-position:-100px -50px}
+.info_svc .list_relation{display:none;position:absolute;bottom:29px;left:0;padding:11px 0;border:1px solid #d4d4d4;background-color:#fff}
+.info_svc .list_relation .link_relation{display:block;color:#666;padding:0 14px;font-size:12px;line-height:30px;white-space:nowrap}
+.info_svc .link_relation .ico_new{margin-top:8px}
+.info_svc .link_relation .ico_direct{width:13px;height:13px;margin:7px 0 0 6px;background-position:-155px 0}
+.foot_kakao .txt_copyright{display:block;padding-top:2px;font-size:12px;color:#aeaeae;clear:both;content:''}
+.foot_kakao .link_kakao{color:#aeaeae}
+.foot_kakao .link_kakao:hover{text-decoration:underline}
+
+/* 메인 */
+.kakao_type .foot_kakao .inner_copyright{max-width:1760px;padding:22px 80px 0}
+.kakao_type .foot_kakao .wrap_copyright{background-color:#fff}
+.kakao_type .foot_kakao .dlnk_info{color:#1e1e1e}
+.kakao_type .foot_kakao .txt_copyright{color:#1e1e1e}
+.kakao_type .foot_kakao .link_kakao{color:#1e1e1e}
+.kakao_type .foot_kakao .dlnk_info .dlnk_txt{color:#1e1e1e}
+.kakao_type .foot_kakao .dlnk_info:hover .ico_arr{background-position:-285px -25px}
+.kakao_type .info_open .dlnk_info .ico_arr{background-position:-285px -25px}
+.kakao_type{border-color:#1e1e1e;color:#1e1e1e}
+.kakao_type .ico_arr{width:9px;height:9px}
+.kakao_type .ico_arr{background-position:-143px -65px}
+.kakao_type .ico_arr{background-position:-172px -65px}
+
+/****************************** 메인 ******************************/
+
+/*뉴스피드 */
+.main_cont .tit_main{font-weight:normal;font-size:14px;font-family:'NotoSans Regular','Malgun Gothic','맑은 고딕','Apple SD Gothic Neo','돋움',dotum, sans-serif;color:#1e1e1e}
+.main_cont .link_newsfeed{display:block;position:relative}
+.main_cont .link_newsfeed:hover{text-decoration:none}
+.main_cont .link_newsfeed:hover .tit_newsfeed{text-decoration:underline}
+.main_cont .tit_newsfeed{display:block;padding-top:18px;font-size:20px;line-height:32px;color:#1e1e1e}
+.main_cont .desc_newsfeed{padding-top:8px;font-size:14px;line-height:22px;color:#666}
+.main_summary{overflow:hidden;max-width:1800px;margin:0 auto;padding:35px 60px 0}
+.summary_info{float:left;width:33.33%;padding:0 20px;box-sizing:border-box}
+.main_cont .main_summary .desc_newsfeed{display:-webkit-box;overflow:hidden;max-height:66px;-webkit-box-orient:vertical;-webkit-line-clamp:3}
+.main_stock{padding-top:33px;color:#1e1e1e}
+.main_stock .now_stock .num_stock{font-size:32px;font-weight:bold;color:#1e1e1e}
+.main_stock .now_stock .ico_corp{margin:22px 0 0 21px}
+.main_stock .desc_stock{margin:11px 0 0 9px}
+.main_stock .desc_stock .num_stock{display:inline-block;font-size:20px;vertical-align:top}
+.main_stock.stock_up .now_stock .ico_corp{margin:19px 0 0 18px}
+.main_stock.stock_down .now_stock .ico_corp{margin:19px 0 0 18px}
+.main_stock .txt_date{display:block;padding-top:28px;font-size:12px;clear:both}
+.main_service{overflow:hidden;max-width:1800px;margin:0 auto;padding:76px 60px 0}
+.service_info{float:left;width:33.33%;padding:0 20px;box-sizing:border-box}
+.service_info .img_thumb{width:100%;margin-bottom:14px}
+.service_info .tit_white{position:absolute;top:15px;left:20px;color:#fff;font-weight:normal;font-size:14px;font-family:'NotoSans Regular','Malgun Gothic','맑은 고딕','Apple SD Gothic Neo','돋움',dotum, sans-serif}
+.service_info .tit_black{position:absolute;top:15px;left:20px;color:#1e1e1e;font-weight:normal;font-size:14px;font-family:'NotoSans Regular','Malgun Gothic','맑은 고딕','Apple SD Gothic Neo','돋움',dotum, sans-serif}
+
+/* 컨텐츠 드래그 컬러효과 */
+::-moz-selection{background:rgba(255,238,51,0.99)}
+::selection{background:rgba(255,238,51,0.99)}
+img::selection{background:none}
+
+@media all and (max-width:1240px){
+    #kakaoWrap, #kakaoHead, .box_info{min-width:1240px}
+    .kakao_type .wrap_head{padding:0 40px}
+    .wrap_slide .inner_slide{padding-left:40px;padding-right:40px}
+    .main_slide .info_page{padding-left:40px;padding-right:40px}
+    .svc_slide .inner_slide{padding:0}
+    .main_summary{padding-left:20px;padding-right:20px}
+    .main_service{padding-left:20px;padding-right:20px}
+    .wrap_slide .txt_info{padding-left:40px}
+    .subtop_visual .desc_visual{left:42px}
+    .kakao_type .foot_kakao .inner_copyright{padding-left:40px;padding-right:40px}
+}
+
+@media
+only screen and (-webkit-min-device-pixel-ratio: 1.5),
+only screen and (min-device-pixel-ratio: 1.5){
+    .ico_corp{background-image:url(//t1.kakaocdn.net/kakaocorp/pw/rtn/ico_corp_181031.png);-webkit-background-size:350px 350px;background-size:350px 350px}/* 2018-10-31 이미지 수정 */
+    .wrap_head .tit_service{background-image:url(//t1.kakaocdn.net/kakaocorp/pw/rtn/logo_kakao.png);-webkit-background-size:66px 20px;background-size:66px 20px}
+    .head_type1 .wrap_head .tit_service{background-image:url(//t1.kakaocdn.net/kakaocorp/pw/rtn/logo_kakao_white.png);-webkit-background-size:66px 20px;background-size:66px 20px}
+}

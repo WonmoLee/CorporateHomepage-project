@@ -22,10 +22,7 @@
         <title>카카오</title>
             <link rel="shortcut icon" href="static/img/titleIcon.png" type="image/x-icon" />
         	
-        	<link rel="stylesheet" type="text/css" href="css/kakao1.css">
-            <link rel="stylesheet" type="text/css" href="css/kakao2.css">
-            <link rel="stylesheet" type="text/css" href="css/kakao3.css">
-            <link rel="stylesheet" type="text/css" href="css/kakao4.css">
+        	<link rel="stylesheet" type="text/css" href="css/kakao.css">
 			<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
   
   			<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -37,9 +34,9 @@
         <div id="kakaoWrap">
         
         	<!-- 헤더시작 -->
-            <header id="kakaoHead" class="head_type3" style="top: 0px;" aria-hidden="true"><!--head 동작 관련 클래스 추가 : head_type1(메인 black 타입), head_type3(메인 white 타입), head_type2(메인 제외 전부 기본)-->
+            <header id="kakaoHead" class="head_type3" style="top: 0px;" aria-hidden="true">
 			  <div class="wrap_head">
-			    <div class="box_gnb" style="display: block;"> <!--메뉴 에니메이션을 위해 class="box_gnb" 추가-->
+			    <div class="box_gnb" style="display: block;">
 			      <h1 class="tit_logo">
 			        <a href="/" id="kakaoServiceLogo" class="link_kakao"><span class="tit_service">kakao</span></a>
 			      </h1>
@@ -311,10 +308,10 @@
 			      <strong class="screen_out">로그인 및 회원가입</strong>
 			      <ul class="list_lang">
 			        <li>
-			          <a href="/corp/user?cmd=login" class="link_lang">로그인</a>
+			          <a href="/corp/user?cmd=login" class="link_login">로그인</a>
 			        </li>
 			        <li>
-			          <a href="/corp/user?cmd=signup" class="link_lang">회원가입</a>
+			          <a href="/corp/user?cmd=signup" class="link_signup">회원가입</a>
 			        </li>
 			      </ul>
 			    </div>
@@ -345,14 +342,14 @@
 						  
 						  <!-- The slideshow -->
 						  <div class="carousel-inner">
-						    <div class="carousel-item active slidebg">
-						      <img src="static/img/main1.png">
+						    <div class="carousel-item active">
+						      <img src="static/img/main1.png" width="1910" height="600">
 						    </div>
-						    <div class="carousel-item slidebg">
-						      <img src="static/img/main2.png">
+						    <div class="carousel-item">
+						      <img src="static/img/main2.png" width="1910" height="600">
 						    </div>
-						    <div class="carousel-item slidebg">
-						      <img src="static/img/main3.png">
+						    <div class="carousel-item">
+						      <img src="static/img/main3.png" width="1910" height="600">
 						    </div>
 						  </div>
 						  
@@ -492,21 +489,11 @@
 	                        </div>
 	                        <small class="txt_copyright">Copyright &copy; <a href="https://www.kakaocorp.com/main" class="link_kakao">Kakao Corp.</a> All rights reserved.</small>
 	                    </div>
-	                <div class="relation_svc">
-	                <strong class="tit_relation"><a href="#none" class="link_tit" aria-haspopup="true" aria-expanded="false">관련사이트<span class="ico_corp ico_arr"></span></a></strong>
-	                <ul class="list_relation">
-	                    <li><a href="https://kakao.ai/" target="_blank" class="link_relation">카카오 AI</a></li>
-	                    <li><a href="https://privacy.kakao.com/main?lang=ko" target="_blank" class="link_relation">카카오 프라이버시</a></li>
-	                        <li><a href="https://developers.kakao.com/" target="_blank" class="link_relation">카카오 디벨로퍼스</a></li>
-	                    <li><a href="https://www.daum.net/" target="_blank" class="link_relation">다음 포털 사이트</a></li>
-	                    <li><a href="https://winwin.kakao.com/index" target="_blank" class="link_relation">동반성장 사이트</a></li><li><a href="https://jeju.kakao.com/" target="_blank" class="link_relation">제주 with kakao</a></li>
-	                </ul>
-	        </div>
-	    </div>
-	</footer>
+		    	</div>
+		</footer>
 	<!-- 푸터끝 -->
 	
-                         </div>   
+                      </div>   
                 </div>
             </div>
             <!--// mArticle -->
@@ -516,18 +503,8 @@
     <!-- // kakaoContent -->
     <hr class="hide">
     <!-- // main meta-->
-    <span itemscope="" itemtype="http://schema.org/Organization">
-    <link itemprop="url" href="http://www.kakaocorp.com">
-        <a itemprop="sameAs" href="https://brunch.co.kr/@andkakao"></a>
-        <a itemprop="sameAs" href="http://tv.kakao.com/channel/2743187/playlist"></a>
-    </span>
-    
-	
-<a href="#" class="link_top hide"><span class="ico_corp ico_top">맨위로</span></a>
-</div>
-</div>
+  </div>
 </body>
-
 
 <script type="text/javascript" src="/resources/common/pc/common.js?t=202006231413"></script>
 
