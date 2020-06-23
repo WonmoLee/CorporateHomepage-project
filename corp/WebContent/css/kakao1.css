@@ -1,4 +1,4 @@
-@charset "UTF-8";
+@charset "utf-8";
 /* reset */
 body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,textarea,p,blockquote,th,td,input,select,textarea,button{margin:0;padding:0}
 fieldset,img{border:0 none}
@@ -40,7 +40,7 @@ html{height:100%}
 #kakaoContent{padding-top:122px}
 #kakaoHead{position:fixed;z-index:100;top:0;left:0;width:100%;min-width:1320px;border-bottom:1px solid #e5e5e5;background-color:#fff;-webkit-transition:-webkit-transform 300ms;-moz-transition:-moz-transform 300ms;-o-transition:-o-transform 300ms;transition:transform 300ms;-webkit-transform:matrix(1, 0, 0, 1, 0, 0);-moz-transform:matrix(1, 0, 0, 1, 0, 0);-ms-transform:matrix(1, 0, 0, 1, 0, 0);-o-transform:matrix(1, 0, 0, 1, 0, 0);transform:matrix(1, 0, 0, 1, 0, 0)}/* KAKAOCORP-418_v2 */
 #kakaoHead.hide-gnb{-webkit-transform:matrix(1, 0, 0, 1, 0, -61);-moz-transform:matrix(1, 0, 0, 1, 0, -61);-ms-transform:matrix(1, 0, 0, 1, 0, -61);-o-transform:matrix(1, 0, 0, 1, 0, -61);transform:matrix(1, 0, 0, 1, 0, -61)}/* KAKAOCORP-418_v2 추가 */
-#mArticle{position:relative;width:1160px;margin:0 auto;padding-bottom:180px}
+#mArticle{position:relative;width:1160px;margin:0 auto;}
 /* 메인 */
 .kakao_type{background-color:#fff}
 #kakaoHead.head_type1, #kakaoHead.head_type3{border:0 none;background-color:transparent}
@@ -49,8 +49,8 @@ html{height:100%}
 .head_type1 #kakaoGnb .list_gnb > li .link_gnb{color:#fff}
 .head_type1 #kakaoGnb .list_gnb > li .link_talent .ico_arr{background-position:-175px 0}
 .head_type1 .list_lang li .link_lang{color:#aeaeae}
-.kakao_type #kakaoContent{padding-top:0}
 .head_type1 .list_lang li.on .link_lang, .head_type1 .list_lang li .link_lang:hover, .head_type1 .list_lang li .link_lang:focus{color:#fff}
+.kakao_type #kakaoContent{padding-top:0}
 .kakao_type #mArticle{width:100%}
 .kakao_type2 #kakaoContent{padding-top:0} /* 정책 새창열기 */
 
@@ -133,7 +133,7 @@ html:lang(en) .list_gnb .sub_type2 .list_sub li{width:12.5%}/*2020-02-18 sean: g
 .info_util .layer_on .down_layer{display:block}
 
 /* footer */
-.foot_kakao{border-top:1px solid #d4d4d4}
+.foot_kakao{border-top:1px solid #d4d4d4; margin-bottom: 70px;}
 .foot_kakao .wrap_service{overflow:hidden;max-width:1160px;min-width:1024px;margin:53px auto 80px}
 .foot_kakao .inner_service{overflow:hidden}
 .foot_kakao .list_service{float:left;width:160px;margin-left:40px}
@@ -148,7 +148,7 @@ html:lang(en) .list_gnb .sub_type2 .list_sub li{width:12.5%}/*2020-02-18 sean: g
 .foot_kakao .area_list .list_service{width:100%;margin-left:0}
 .foot_kakao .area_list .list_service + .list_service{padding-top:23px}
 .foot_kakao .wrap_copyright{background-color:#1e1e1e}
-.foot_kakao .inner_copyright{position:relative;max-width:1160px;height:78px;margin:0 auto;padding-top:22px}
+/* .foot_kakao .inner_copyright{position:relative;max-width:1160px;height:78px;margin:0 auto;padding-top:22px} */
 .foot_kakao .info_copyright{float:left}
 .info_svc{float:left;position:relative;margin-right:12px}
 .info_svc .dlnk_info{margin-right:8px;font-size:12px;color:#aeaeae;text-decoration:none}
@@ -654,6 +654,7 @@ html:lang(en) .wrap_tab .list_tab .link_tab{letter-spacing:-0.5px}/* 2020-02-18 
 .service_info .img_thumb{width:100%;margin-bottom:14px}
 .service_info .tit_white{position:absolute;top:15px;left:20px;color:#fff;font-weight:normal;font-size:14px;font-family:'NotoSans Regular','Malgun Gothic','맑은 고딕','Apple SD Gothic Neo','돋움',dotum, sans-serif}
 .service_info .tit_black{position:absolute;top:15px;left:20px;color:#1e1e1e;font-weight:normal;font-size:14px;font-family:'NotoSans Regular','Malgun Gothic','맑은 고딕','Apple SD Gothic Neo','돋움',dotum, sans-serif}
+.slidebg{background-size: 100%;background-repeat: no-repeat;background-position: center;}
 
 /****************************** 카카오 ******************************/
 

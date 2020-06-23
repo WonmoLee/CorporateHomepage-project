@@ -1,15 +1,13 @@
-@charset "UTF-8";
-
 .wrap_slide .list_wrap {
     overflow: hidden;
     width: 100%;
     height: 100%;
 }
-
 .wrap_slide .list_slide img {
     display: block;
+    /* margin: 0 auto; */
+    /*width: 100%;*/
 }
-
 .wrap_slide .list_slide .thumb_slide {
     position: absolute;
     width: 100%;
@@ -22,11 +20,14 @@
     z-index: 30;
 }
 
+/*.main_slide .list_slide,*/
+/*.svctop_slide .list_slide,*/
 .kSlide .list_slide
 {
     padding-top:0;
 }
 
+/* slide */
 .slide .list_slide {
     width: 300%;
     height: 100%;
@@ -41,6 +42,7 @@
     position: relative;
 }
 
+/* fade */
 .fade .list_slide {
     position: relative;
     width: 100%;
@@ -63,16 +65,19 @@
     z-index: 20;
 }
 
+/* fade */
 .svcFade .list_slide {
     position: relative;
     width: 100%;
     overflow: hidden;
 }
 
+/*.fade .list_slide{padding-top:56.25%}!* 2017-07-03 *!*/
 
 .has_disabled {
     pointer-events: none;
     cursor: default;
 }
 
+/* 異뷀썑�섏젙 */
 .cont_social .wrap_slide .list_slide .thumb_slide{width:100%}
