@@ -314,7 +314,7 @@
 						</c:when>
 						<c:otherwise>
 						<ul class="list_lang">
-							<li><a href="/corp/user?cmd="> 글쓰기 </a></li>
+							<li><a href="/corp/intro?cmd=intro"> 글쓰기 </a></li>
 							<li><a href="/corp/user?cmd=update"> 회원정보 수정 </a></li>
 							<li><a href="/corp/user?cmd=logout"> 로그아웃 </a></li>
 						</ul>

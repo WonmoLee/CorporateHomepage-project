@@ -3,8 +3,12 @@ package com.kakao.corp.repository;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.util.ArrayList;
+import java.util.List;
 
 import com.kakao.corp.db.DBConn;
+import com.kakao.corp.model.Board;
+import com.kakao.corp.model.Corpintro;
 import com.kakao.corp.model.Users;
 
 public class UsersRepository {
@@ -20,6 +24,7 @@ public class UsersRepository {
 	private PreparedStatement pstmt = null;
 	private ResultSet rs = null;
 	
+
 	
 	//유저 업데이트 
 		public int update(Users user) {
