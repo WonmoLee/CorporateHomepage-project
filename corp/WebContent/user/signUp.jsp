@@ -27,8 +27,7 @@
 </head>
 
 <body>
-
-	<h1 class="title sw">kakao</h1>
+	<h1 class="title sw" style = "margin-top: 30px">kakao</h1>
 	<!-- 테두리  -->
 	<div class = "join">
 	
