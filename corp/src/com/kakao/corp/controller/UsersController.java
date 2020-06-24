@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.kakao.corp.action.Action;
 import com.kakao.corp.action.user.LoginAction;
+import com.kakao.corp.action.user.LoginProcAction;
 import com.kakao.corp.action.user.LogoutAction;
 import com.kakao.corp.action.user.SignupAction;
 import com.kakao.corp.action.user.SignupProcAction;
@@ -51,6 +52,8 @@ public class UsersController extends HttpServlet {
 	private Action router(String cmd) {
 		if (cmd.equals("login")) {
 			return new LoginAction();
+		}else if(cmd.equals("loginProc")) {
+			return new LoginProcAction();
 		}else if (cmd.equals("signup")) {
 			return new SignupAction();
 		}else if (cmd.equals("signupProc")) {

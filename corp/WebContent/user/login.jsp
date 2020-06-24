@@ -15,7 +15,7 @@
 <div class="container">
 	<h1 class="title">Login</h1>
 	
-	<form action="/corp/user?cmd=loginProc" method="post">
+	<form action="user?cmd=loginProc" method="post">
 		<div class="namepw input-group mb-3 mx-auto mt-5">
   			<input type="text" class="form-control rounded-pill" placeholder="아이디를 입력해주세요." id="usr" name="username">
 		</div>

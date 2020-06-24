@@ -24,7 +24,7 @@ public class UserUpdateAction implements Action{
 		
 		
 		RequestDispatcher dis = 
-				request.getRequestDispatcher("user/update.jsp");
+				request.getRequestDispatcher("user/userUpdate.jsp");
 		dis.forward(request, response);
 		
 
