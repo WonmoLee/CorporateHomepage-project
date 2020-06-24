@@ -21,6 +21,68 @@ public class UsersRepository {
 	private ResultSet rs = null;
 	
 	
+	//유저 업데이트 
+		public int update(Users user) {
+			final String SQL = "UPDATE users SET password = ?, email = ?, userBirth = ?, address = ? WHERE id = ? ";
+
+			try {
+				conn = DBConn.getConnection();
+				pstmt = conn.prepareStatement(SQL);
+				
+				//물음표
+				pstmt.setString(1, user.getPassword());
+				pstmt.setString(2, user.getEmail());
+				pstmt.setString(3, user.getUserBirth());
+				pstmt.setString(4, user.getAddress());
+				pstmt.setInt(5, user.getId());
+				
+				return pstmt.executeUpdate();
+			} catch (Exception e) {
+				e.printStackTrace();
+				System.out.println(TAG +"update" + e.getMessage());
+			}finally {
+				DBConn.close(conn, pstmt, rs);
+			}
+			return -1;
+		}
+		
+
+		//로그인 
+		public Users login(String username, String password) {
+			final String SQL = "SELECT id, username, email, address, userProfile, userRole, userBirth, createDate"
+					+ " FROM users WHERE username = ? AND password = ?";
+			Users user = null;
+			
+			try {
+				conn = DBConn.getConnection();
+				pstmt = conn.prepareStatement(SQL);
+				//물음표
+				pstmt.setString(1, username);		
+				pstmt.setString(2, password);
+				
+				rs = pstmt.executeQuery();
+				
+				if (rs.next()) {
+					user = new Users();
+					user.setId(rs.getInt("id"));
+					user.setUsername(rs.getString("username"));
+					user.setEmail(rs.getString("email"));
+					user.setAddress(rs.getString("userProfile"));
+					user.setUserProfile("userProfile");
+					user.setUserRole(rs.getString("userRole"));
+					user.setUserBirth(rs.getString("userBirth"));
+					user.setCreateDate(rs.getTimestamp("createDate"));
+				}
+				
+			} catch (Exception e) {
+				e.printStackTrace();
+				System.out.println(TAG + "login" + e.getMessage());
+			}finally {
+				DBConn.close(conn, pstmt, rs);
+			}
+			return user;
+		}
+	
 	//아이디 중복체크 
 	public int findUsername(String username) {
 		final String SQL = "SELECT count(*) FROM users WHERE username = ?";

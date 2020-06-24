@@ -10,8 +10,11 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.kakao.corp.action.Action;
 import com.kakao.corp.action.user.LoginAction;
+import com.kakao.corp.action.user.LogoutAction;
 import com.kakao.corp.action.user.SignupAction;
 import com.kakao.corp.action.user.SignupProcAction;
+import com.kakao.corp.action.user.UserUpdateAction;
+import com.kakao.corp.action.user.UserUpdateProcAction;
 import com.kakao.corp.action.user.UsersUsernameCheck;
 
 
@@ -54,7 +57,13 @@ public class UsersController extends HttpServlet {
 			return new SignupProcAction();
 		} else if (cmd.equals("usernameCheck")) {
 			return new UsersUsernameCheck();
-		} 
+		} else if (cmd.equals("logout")){
+			return new LogoutAction();
+		} else if (cmd.equals("update")){
+			return new UserUpdateAction();
+		} else if (cmd.equals("updateProc")){
+			return new UserUpdateProcAction();
+		}
 		return null;
 		
 	}

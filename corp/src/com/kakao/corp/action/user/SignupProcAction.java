@@ -10,6 +10,7 @@ import com.kakao.corp.action.Action;
 import com.kakao.corp.model.RoleType;
 import com.kakao.corp.model.Users;
 import com.kakao.corp.repository.UsersRepository;
+import com.kakao.corp.util.SHA256;
 import com.kakao.corp.util.Script;
 
 public class SignupProcAction implements Action{
@@ -35,8 +36,8 @@ public class SignupProcAction implements Action{
 		
 		//파라메터 받기
 		String username = request.getParameter("username");
-		String password = request.getParameter("password");
-//		String password = SHA256;
+		String rawpassword = request.getParameter("password");
+		String password = SHA256.encodeSha256(rawpassword);
 		String email = request.getParameter("email");
 		String address = request.getParameter("address");
 		String userBirth = request.getParameter("userBirth");
