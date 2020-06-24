@@ -95,3 +95,17 @@ background:url(../static/img/fleticon.png) no-repeat;color:transparent;}
 .visual .con > div{height:640px;}
 .visual .con .slide1{background:url(../static/img/slide1.png) no-repeat center;color:#fff;font-size:32px;line-height:46px;}
 .visual .con .slide1 .txt{position:absolute;left:7%;top:50px;}
+
+
+/* 푸터 */
+footer{margin-bottom:35px;margin-top:300px;}
+footer hr{border:1px solid; color:#808080;}
+footer .top{background:#ffffff; border-top:1px solid #808080;}
+footer .top ul{float:left;margin-left: 50px;}
+footer .top ul li{float:left;position:relative;padding:0 19px 0 0;}
+footer .top ul li:after{content:"";position:absolute;right:9px;top:50%;margin-top:-4px;width:1px;height:8px;background:#ffffff;}
+footer .top ul li a{color:#808080;font-size:13px;line-height:45px;}
+footer .top ul li:last:child:after{display:none;}
+footer .top > div{width:1670px;margin:0 auto;padding:9px 0;text-align:right;}
+footer .top > div select{width:200px;height:30px;padding:0 0 0 21px;color:#191919;font-size:12px;}
+footer .btm{float:left;background: #ffffff;text-align:center;left:10%;margin-left:50px;}
