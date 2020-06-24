@@ -61,7 +61,7 @@ public class SignupProcAction implements Action{
 		
 		//4.index.jsp로이동 (성공시)
 		if (result == 1) {
-			Script.href("회원가입 성공", "/corp/user?cmd=login", response);
+			Script.href("회원가입 성공", "/corp/home?cmd=main", response);
 		}else {
 			Script.back("회원가입에 실패하였습니다.", response);
 		}

@@ -6,32 +6,16 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
- <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-<style>
-
-	#id{
-		width : 100px;
-		padding : 50;
-	}	
- 
-<
-</style>
-
-
-
 <meta charset="UTF-8">
 <title>Kakao signup</title>
-<link rel="stylesheet" href="css/login.css">
-
+<link rel="stylesheet" href="css/LoginSignup.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
 </head>
-
 <body>
-
-	<h1 class="title sw">kakao</h1>
+	<h1 class="title sw" style="margin-top: 50px;">kakao</h1>
 	<!-- 테두리  -->
 	<div class = "join">
-	
 	<form action="user?cmd=signupProc" method="post" onsubmit="return validate()">
 		<!--아이디 -->
 		<div class="sw inFor" style ="float: none; margin: 0 auto">

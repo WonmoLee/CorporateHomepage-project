@@ -22,7 +22,7 @@
 
 <meta charset="UTF-8">
 <title>Kakao signup</title>
-<link rel="stylesheet" href="css/login.css">
+<link rel="stylesheet" href="css/LoginSignup.css">
 
 </head>
 

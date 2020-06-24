@@ -12,7 +12,7 @@ import com.kakao.corp.action.Action;
 public class HomeMainAction implements Action{
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		RequestDispatcher dis = request.getRequestDispatcher("main.jsp");
+		RequestDispatcher dis = request.getRequestDispatcher("home.jsp");
 		dis.forward(request, response);
 	}
 }

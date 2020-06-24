@@ -2,7 +2,6 @@ package com.kakao.corp.action.user;
 
 import java.io.IOException;
 
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -69,7 +68,7 @@ public void execute(HttpServletRequest request, HttpServletResponse response) th
 		int result = usersRepository.update(user);
 		
 		if (result == 1 ) {
-			Script.href("수정에 성공하였습니다.", "/corp/user/login.jsp", response);
+			Script.href("수정에 성공하였습니다.", "index.jsp", response);
 		}else {
 			Script.back("수정에 실패하였습니다.", response);
 		}

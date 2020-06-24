@@ -6,10 +6,10 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-<meta charset="UTF-8">
 <title>Kakao</title>
+<meta charset="UTF-8">
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-<link rel="stylesheet" href="css/login.css">
+<link rel="stylesheet" href="css/LoginSignup.css">
 </head>
 <body class="loginbg">
 <div class="container">
@@ -19,7 +19,6 @@
 		<div class="namepw input-group mb-3 mx-auto mt-5">
   			<input type="text" class="form-control rounded-pill" placeholder="아이디를 입력해주세요." id="usr" name="username">
 		</div>
-		
 		<div class="namepw input-group mb-3 mx-auto">
   			<input type="password" class="form-control rounded-pill" placeholder="패스워드를 입력해주세요." id="pwd" name="password">
 		</div>
@@ -29,6 +28,5 @@
 	</form>
 	
 </div>
-	
 </body>
 </html>

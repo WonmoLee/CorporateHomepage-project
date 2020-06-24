@@ -86,7 +86,6 @@ public class UsersRepository {
 	//아이디 중복체크 
 	public int findUsername(String username) {
 		final String SQL = "SELECT count(*) FROM users WHERE username = ?";
-		Users user = null;
 		
 		try {
 			conn = DBConn.getConnection();
