@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-    
+<%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>    
+
 
 <!DOCTYPE html>
 <html lang="ko" xml:lang="ko">
@@ -304,19 +305,23 @@
 			        </ul>
 			      </nav>
 			
-				  <!-- 로그인 및 회원가입 -->
-			      <strong class="screen_out">로그인 및 회원가입</strong>
-			      <ul class="list_lang">
-			        <li>
-			          <a href="/corp/user?cmd=login" class="link_login">로그인</a>
-			        </li>
-			        <li>
-			          <a href="/corp/user?cmd=signup" class="link_signup">회원가입</a>
-			        </li>
-			      </ul>
+					<c:choose>
+						<c:when test="${empty sessionScope.principal }">
+						<ul class="list_lang">
+							<li><a href="/corp/user?cmd=login"> 로그인 </a></li>
+							<li><a href="/corp/user?cmd=signup"> 회원가입 </a></li>
+						</ul>
+						</c:when>
+						<c:otherwise>
+						<ul class="list_lang">
+							<li><a href="/corp/user?cmd="> 글쓰기 </a></li>
+							<li><a href="/corp/user?cmd=update"> 회원정보 수정 </a></li>
+							<li><a href="/corp/user?cmd=logout"> 로그아웃 </a></li>
+						</ul>
+						</c:otherwise>
+					</c:choose>
 			    </div>
 			  </div>
-		  <input type="hidden" id="behindStoryFg" name="behindStoryFg" value=""/>
 		</header>
 	<!-- 헤더끝 -->	
 	
