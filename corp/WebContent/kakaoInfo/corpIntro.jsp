@@ -24,7 +24,7 @@
 				<b>${corpintro.content}</b>
 			</div>
 			<div class="update">
-			<a href="/corp/intro?cmd=introUpdate">수정</a><br/>
+			<a href="/corp/menu?cmd=introUpdate">수정</a><br/>
 			</div>
 	</section>	
 	<footer>

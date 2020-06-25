@@ -21,7 +21,6 @@
 
 </head>
 <body>
-	<div>
 		<a href="#contents" class="skip">본문바로가기</a>
 		<%@ include file="include/header.jsp" %>
 		
@@ -48,6 +47,5 @@
 			</div>
 		</section>
 		<%@ include file="include/footer.jsp" %>
-	</div>
 </body>
 </html>

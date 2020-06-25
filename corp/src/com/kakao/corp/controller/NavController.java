@@ -13,7 +13,7 @@ import com.kakao.corp.action.nav.kakaoInfo.CorpIntroAction;
 import com.kakao.corp.action.nav.kakaoInfo.CorpIntroUpdateAction;
 import com.kakao.corp.action.nav.kakaoInfo.CorpIntroUpdateProcAction;
 
-@WebServlet("/intro")
+@WebServlet("/menu")
 public class NavController extends HttpServlet {
 	private static final String TAG = "CorpIntroController : ";
 	private static final long serialVersionUID = 1L;
