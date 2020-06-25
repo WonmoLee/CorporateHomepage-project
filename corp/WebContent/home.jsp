@@ -16,13 +16,13 @@
 <meta content="//t1.kakaocdn.net/kakaocorp/corp_thumbnail/Kakao.png" property="og:image"/>
 <meta name="naver-site-verification" content="6171ab3d716f1b32969a13e4f5b9475b2f4dd42c"/>
 
-<link rel="shortcut icon" href="static/img/titleIcon.png" type="image/x-icon" />
-<link rel="stylesheet" type="text/css" href="css/kakao.css">
+<link rel="shortcut icon" href="/corp/static/img/titleIcon.png" type="image/x-icon" />
+<link rel="stylesheet" type="text/css" href="/corp/css/kakao.css">
 
 </head>
 <body>
 		<a href="#contents" class="skip">본문바로가기</a>
-		<%@ include file="include/header.jsp" %>
+		<%@ include file="/include/header.jsp" %>
 		
 		<section class="visual">
 			<h2 class="hide">캐러셀 영역</h2>
@@ -46,6 +46,6 @@
 				</div>
 			</div>
 		</section>
-		<%@ include file="include/footer.jsp" %>
+		<%@ include file="/include/footer.jsp" %>
 </body>
 </html>

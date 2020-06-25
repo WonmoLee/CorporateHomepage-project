@@ -7,12 +7,12 @@
 
 <meta charset="UTF-8">
 
-<link rel="shortcut icon" href="static/img/titleIcon.png" type="image/x-icon" />
-<link rel="stylesheet" type="text/css" href="css/kakao.css">
+<link rel="shortcut icon" href="/corp/static/img/titleIcon.png" type="image/x-icon" />
+<link rel="stylesheet" type="text/css" href="/corp/css/kakao.css">
 
 </head>
 <body>
-<%@ include file="../include/header.jsp" %>
+<%@ include file="/include/header.jsp" %>
 	<section class="introMain">
 			<div class="introTitle">
 				${corpintro.title}
@@ -27,6 +27,6 @@
 			<a href="/corp/menu?cmd=introUpdate">수정</a><br/>
 			</div>
 	</section>	
-	<%@ include file="../include/footer.jsp" %>
+	<%@ include file="/include/footer.jsp" %>
 </body>
 </html>

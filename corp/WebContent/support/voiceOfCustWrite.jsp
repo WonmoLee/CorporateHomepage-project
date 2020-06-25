@@ -3,12 +3,15 @@
 <!DOCTYPE html>
 <html>
 <head>
+<title>KAKAO</title>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<link rel="shortcut icon" href="/corp/static/img/titleIcon.png" type="image/x-icon" />
+<link rel="stylesheet" type="text/css" href="/corp/css/kakao.css">
 </head>
 <body>
-	<%@include file="../include/header.jsp"%>
-	<form action="menu?cmd=voiceOfCustWriteProc" method="post">
+	<%@ include file="/include/header.jsp"%>
+	<section>
+	<form action="/corp/menu?cmd=voiceOfCustWriteProc" method="post">
 
 		title<br/>
 		<input type="text" value="" id = "title" name = "title"/><br>
@@ -19,6 +22,7 @@
 		<button type="submit">글쓰기</button>
 
 	</form>
-	<%@include file="../include/footer.jsp"%>
+	</section>
+	<%@ include file="/include/footer.jsp"%>
 </body>
 </html> 
