@@ -62,8 +62,6 @@ public class NavController extends HttpServlet {
 				return new VoiceOfCustUserUpdateAction();
 			}else if (cmd.equals("voiceOfCustUpdateProc")) {
 				return new VoiceOfCustUserUpdateProcAction();
-			}else if (cmd.equals("boardDetail")) {
-				return new VoiceOfCustUserUpdateProcAction();
 			}
 			return null;
 
