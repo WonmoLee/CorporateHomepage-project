@@ -121,20 +121,20 @@ public class UsersRepository {
 					user.setId(rs.getInt("id"));
 					user.setUsername(rs.getString("username"));
 					user.setEmail(rs.getString("email"));
-					user.setAddress(rs.getString("userProfile"));
-					user.setUserProfile("userProfile");
+					user.setAddress(rs.getString("address"));
+					user.setUserProfile(rs.getString("userProfile"));
 					user.setUserRole(rs.getString("userRole"));
 					user.setUserBirth(rs.getString("userBirth"));
 					user.setCreateDate(rs.getTimestamp("createDate"));
 				}
-				
+				return user;
 			} catch (Exception e) {
 				e.printStackTrace();
 				System.out.println(TAG + "login" + e.getMessage());
 			}finally {
 				DBConn.close(conn, pstmt, rs);
 			}
-			return user;
+			return null;
 		}
 	
 	//아이디 중복체크 

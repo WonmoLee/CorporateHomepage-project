@@ -27,8 +27,6 @@
 			<a href="/corp/menu?cmd=introUpdate">수정</a><br/>
 			</div>
 	</section>	
-	<footer>
 	<%@ include file="../include/footer.jsp" %>
-	</footer>
 </body>
 </html>

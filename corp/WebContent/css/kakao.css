@@ -61,7 +61,7 @@ textarea[disabled]{padding:11px;font-size:16px;color:#666 !important; font-weigh
 
 
 /* header */
-header{height:81px;text-align:center;border-bottom:1px solid;}
+header{height:81px;text-align:center;border-bottom:1px solid;border-color:#c0c0c0;}
 header h1{position:absolute;left:50px;top:0;padding:14px 0 0;}
 header h1 a{display:block;width:110px;height:80px;color:transparent;}
 header .lnb li{display:inline-block;}
@@ -79,14 +79,13 @@ header .unb li:last-child a{padding-right:0;}
 
 
 /* 섹션 */
-/* 캐러셀 */
+/* 홈메인-캐러셀 */
 .visual{position:relative;}
 .visual .prev, .visual .next{display:block;position:absolute;top:50%;width:25px;height:47px;transform:translateY(-50%);
 background:url(../static/img/fleticon.png) no-repeat;color:transparent;}
 .visual .prev{left:82px;background-position:-128px -60px;}
 .visual .next{right:82px;background-position:-158px -60px;}
 .visual .control{position:absolute;left:0;bottom:55px;width:100%;text-align:center;}
-
 .visual .control > div{display:inline-block;position:relative;padding:0 45px 0 0;}
 .visual .control ul{display:inline-block;position:relative;top:-7px;font-size:0;}
 .visual .control li{display:inline-block;padding:0 3px;}
@@ -97,11 +96,22 @@ background:url(../static/img/fleticon.png) no-repeat;color:transparent;}
 .visual .con .slide1{background:url(../static/img/slide1.png) no-repeat center;color:#fff;font-size:32px;line-height:46px;}
 .visual .con .slide1 .txt{position:absolute;left:7%;top:50px;}
 
+/* 카카오-카카오소개 */
+.introMain{overflow-x:hidden}
+.introTitle{position:relative;left:400px;padding:100px 400px 100px 0;font-size:30px;font-weight:bold;color:#000000}
+.introImg{position:absolute;left:400px;}
+.introContent{position:relative;left:400px;padding:100px 740px 100px 0;margin-top:500px;font-size:20px;font-weight:border;}
+.update a{position:absolute;left:400px;color:#000000}
+
+/* 고객지원-고객의소리 */
+.kakaoSupport{position:relative;border-bottom:1px solid;}
+.kakaoSupport ul{}
+.kakaoSupport ul li a{ color:#000000;}
+
 
 /* 푸터 */
-footer{margin-bottom:35px;margin-top:200px;}
-footer hr{border:1px solid; color:#808080;}
-footer .top{background:#ffffff; border-top:1px solid #808080;}
+footer{margin-bottom:35px;margin-top:200px;border-top:1px solid;border-color:#c0c0c0}
+footer .top{background:#ffffff;}
 footer .top ul{float:left;margin-left: 50px;}
 footer .top ul li{float:left;position:relative;padding:0 19px 0 0;}
 footer .top ul li:after{content:"";position:absolute;right:9px;top:50%;margin-top:-4px;width:1px;height:8px;background:#ffffff;}
@@ -110,14 +120,3 @@ footer .top ul li:last:child:after{display:none;}
 footer .top > div{width:1670px;margin:0 auto;padding:9px 0;text-align:right;}
 footer .top > div select{width:200px;height:30px;padding:0 0 0 21px;color:#191919;font-size:12px;}
 footer .btm{float:left;background: #ffffff;text-align:center;left:10%;margin-left:50px;}
-
-
-/* 섹션 */
-/* 홈메인 */
-
-/* 카카오소개 */
-.introMain{overflow-x:hidden}
-.introTitle{position:relative;left:400px;padding:100px 400px 100px 0;font-size:30px;font-weight:bold;color:#000000}
-.introImg{position:absolute;left:400px;}
-.introContent{position:relative;left:400px;padding:100px 740px 100px 0;margin-top:500px;font-size:20px;font-weight:border;}
-.update a{position:absolute;left:400px;color:#000000}

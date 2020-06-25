@@ -2,7 +2,6 @@
     pageEncoding="UTF-8"%>
     
     <footer>
-	<hr/>
 	<div class="top">
 		<ul>
 		<li><a href="">이용약관</a></li>

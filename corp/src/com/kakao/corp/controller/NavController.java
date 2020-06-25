@@ -13,6 +13,10 @@ import com.kakao.corp.action.nav.kakaoInfo.CorpIntroAction;
 import com.kakao.corp.action.nav.kakaoInfo.CorpIntroUpdateAction;
 import com.kakao.corp.action.nav.kakaoInfo.CorpIntroUpdateProcAction;
 import com.kakao.corp.action.nav.support.VoiceOfCustAction;
+import com.kakao.corp.action.nav.support.VoiceOfCustUserUpdateAction;
+import com.kakao.corp.action.nav.support.VoiceOfCustUserUpdateProcAction;
+import com.kakao.corp.action.nav.support.VoiceOfCustUserWriteAction;
+import com.kakao.corp.action.nav.support.VoiceOfCustUserWriteProcAction;
 
 @WebServlet("/menu")
 public class NavController extends HttpServlet {
@@ -50,6 +54,16 @@ public class NavController extends HttpServlet {
 				return new CorpIntroUpdateProcAction();
 			}else if (cmd.equals("voiceOfCust")) {
 				return new VoiceOfCustAction();
+			}else if (cmd.equals("voiceOfCustWrite")) {
+				return new VoiceOfCustUserWriteAction();
+			}else if (cmd.equals("voiceOfCustWriteProc")) {
+				return new VoiceOfCustUserWriteProcAction();
+			}else if (cmd.equals("voiceOfCustUpdate")) {
+				return new VoiceOfCustUserUpdateAction();
+			}else if (cmd.equals("voiceOfCustUpdateProc")) {
+				return new VoiceOfCustUserUpdateProcAction();
+			}else if (cmd.equals("boardDetail")) {
+				return new VoiceOfCustUserUpdateProcAction();
 			}
 			return null;
 
