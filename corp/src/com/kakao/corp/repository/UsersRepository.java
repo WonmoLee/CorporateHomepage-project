@@ -20,6 +20,60 @@ public class UsersRepository {
 	private PreparedStatement pstmt = null;
 	private ResultSet rs = null;
 	
+	//유저 프로필 업데이트
+		public int profileUpdate(int id, String userProfile) {
+			final String SQL = "UPDATE users SET userProfile =? WHERE id = ?";
+
+			try {
+				conn = DBConn.getConnection();
+				pstmt = conn.prepareStatement(SQL);
+
+				pstmt.setString(1, userProfile);
+				pstmt.setInt(2, id);
+
+				return pstmt.executeUpdate();
+			} catch (Exception e) {
+				e.printStackTrace();
+				System.out.println(TAG + "profileUpdate" + e.getMessage());
+			}finally {
+				DBConn.close(conn, pstmt, rs);
+			}
+			return -1;
+		}
+		//아이디값
+		public Users findById(int id) {
+			final String SQL = "select * from users where id = ?";
+			Users user = new Users();
+			try {
+				conn = DBConn.getConnection();
+				pstmt = conn.prepareStatement(SQL);
+				// 물음표 완성하기
+				pstmt.setInt(1, id);
+
+				rs = pstmt.executeQuery();
+
+				// if 돌려서 rs -> java오브젝트에 집어넣기
+				if (rs.next()) {
+					user = Users.builder()
+							.id(rs.getInt("id"))
+							.username(rs.getString("username"))
+							.email(rs.getString("email"))
+							.userBirth("userBirth")
+							.userProfile(rs.getString("userProfile"))
+							.createDate(rs.getTimestamp("createDate"))
+							.build();
+				}
+				return user;
+			} catch (Exception e) {
+				e.printStackTrace();
+				System.out.println(TAG+"findById : "+e.getMessage());
+			} finally {
+				DBConn.close(conn, pstmt, rs);
+			}
+
+			return null;
+		}
+	
 	
 	//유저 업데이트 
 		public int update(Users user) {

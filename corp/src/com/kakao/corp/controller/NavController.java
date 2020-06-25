@@ -12,6 +12,7 @@ import com.kakao.corp.action.Action;
 import com.kakao.corp.action.nav.kakaoInfo.CorpIntroAction;
 import com.kakao.corp.action.nav.kakaoInfo.CorpIntroUpdateAction;
 import com.kakao.corp.action.nav.kakaoInfo.CorpIntroUpdateProcAction;
+import com.kakao.corp.action.nav.support.VoiceOfCustAction;
 
 @WebServlet("/menu")
 public class NavController extends HttpServlet {
@@ -47,6 +48,8 @@ public class NavController extends HttpServlet {
 				return new CorpIntroUpdateAction();
 			}else if (cmd.equals("introUpdateProc")) {
 				return new CorpIntroUpdateProcAction();
+			}else if (cmd.equals("voiceOfCust")) {
+				return new VoiceOfCustAction();
 			}
 			return null;
 

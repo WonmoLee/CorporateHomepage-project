@@ -28,6 +28,10 @@
 					<ul class="list_lang">
 					<li><a href="/corp/user?cmd=update"> 회원정보수정 </a></li>
 					<li><a href="/corp/user?cmd=logout"> 로그아웃 </a></li>
+					<li class="profileImg"><a href="/corp/user?cmd=profileUpload">
+							<img onerror="this.src='/corp/static/img/userProfile.png'" src = "${sessionScope.principal.userProfile}"/>
+						</a>
+					</li>
 					</ul>
 				</c:otherwise>
 			</c:choose>

@@ -75,8 +75,7 @@ header .unb li:after{content:"";position:absolute;left:0;top:50%;width:3px;heigh
 header .unb li:first-child:after{display:none;}
 header .unb li a{display:block;height:81px;padding:0 10px;line-height:81px;padding:0 10px;font-size:17px;color:#333;line-height:81px;}
 header .unb li:last-child a{padding-right:0;}
-
-
+.profileImg a img{border-radius:20px;margin-bottom:8px;width:40px;height:40px;}
 
 
 /* 섹션 */

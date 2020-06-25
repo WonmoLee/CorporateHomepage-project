@@ -14,6 +14,8 @@ import com.kakao.corp.action.user.LoginProcAction;
 import com.kakao.corp.action.user.LogoutAction;
 import com.kakao.corp.action.user.SignupAction;
 import com.kakao.corp.action.user.SignupProcAction;
+import com.kakao.corp.action.user.UserProfileUploadAction;
+import com.kakao.corp.action.user.UserProfileUploadProcAction;
 import com.kakao.corp.action.user.UserUpdateAction;
 import com.kakao.corp.action.user.UserUpdateProcAction;
 import com.kakao.corp.action.user.UsersUsernameCheck;
@@ -66,6 +68,10 @@ public class UsersController extends HttpServlet {
 			return new UserUpdateAction();
 		} else if (cmd.equals("updateProc")){
 			return new UserUpdateProcAction();
+		} else if (cmd.equals("profileUpload")){
+			return new UserProfileUploadAction();
+		} else if (cmd.equals("profileUploadProc")){
+			return new UserProfileUploadProcAction();
 		}
 		return null;
 		
