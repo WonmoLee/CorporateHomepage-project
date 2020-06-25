@@ -11,15 +11,15 @@
 
 
 	<header>
-		<h1><a href="/corp/home?cmd=main"><img alt = "kakao" src = "static/img/logo.png">Kakao</a></h1>
+		<h1><a href="/corp/home?cmd=main"><img src = "static/img/logo.png">Kakao</a></h1>
 		<h2 class="hide">대메뉴</h2>
 		<nav class="lnb">
 			<ul>
-			<li><a href="/corp/intro?cmd=intro"><span>카카오</span></a></li>
+			<li><a href="/corp/menu?cmd=intro"><span>카카오</span></a></li>
 			<li><a href="#a"><span>투자정보</span></a></li>
 			<li><a href="#a"><span>서비스</span></a></li>
 			<li><a href="#a"><span>소셜임팩트</span></a></li>
-			<li><a href="#a"><span>고객지원</span></a></li>
+			<li><a href="/corp/menu?cmd=voiceOfCust"><span>고객지원</span></a></li>
 			<li><a href="#a"><span>인재영입</span></a></li>
 			</ul>
 		</nav>

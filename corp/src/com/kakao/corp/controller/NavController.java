@@ -12,8 +12,13 @@ import com.kakao.corp.action.Action;
 import com.kakao.corp.action.nav.kakao.CorpIntroAction;
 import com.kakao.corp.action.nav.kakao.CorpIntroUpdateAction;
 import com.kakao.corp.action.nav.kakao.CorpIntroUpdateProcAction;
+import com.kakao.corp.action.nav.kakao.VoiceOfCustAction;
+import com.kakao.corp.action.nav.kakao.VoiceOfCustUpdateAction;
+import com.kakao.corp.action.nav.kakao.VoiceOfCustUpdateProcAction;
+import com.kakao.corp.action.nav.kakao.VoiceOfCustWriteAction;
+import com.kakao.corp.action.nav.kakao.VoiceOfCustWriteProcAction;
 
-@WebServlet("/intro")
+@WebServlet("/menu")
 public class NavController extends HttpServlet {
 	private static final String TAG = "CorpIntroController : ";
 	private static final long serialVersionUID = 1L;
@@ -47,6 +52,18 @@ public class NavController extends HttpServlet {
 				return new CorpIntroUpdateAction();
 			}else if (cmd.equals("introUpdateProc")) {
 				return new CorpIntroUpdateProcAction();
+			//고객의소리 이동 
+			}else if (cmd.equals("voiceOfCust")) {
+				return new VoiceOfCustAction();
+			//고객의소리 글쓰기 이동
+			}else if (cmd.equals("voiceOfCustWrite")) {
+				return new VoiceOfCustWriteAction();
+			}else if (cmd.equals("voiceOfCustWriteProc")) {
+				return new VoiceOfCustWriteProcAction();
+			}else if (cmd.equals("voiceOfCustUpdate")) {
+				return new VoiceOfCustUpdateAction();
+			}else if (cmd.equals("voiceOfCustUpdateProc")) {
+				return new VoiceOfCustUpdateProcAction();
 			}
 			return null;
 

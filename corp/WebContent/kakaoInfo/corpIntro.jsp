@@ -7,7 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-<a href = "intro?cmd=introUpdate">수정</a><br/>
+<a href = "corp/menu?cmd=introUpdate">수정</a><br/>
 <i>${corpintro.title}</i><br/>
 <b>${corpintro.content}</b>
 </body>
