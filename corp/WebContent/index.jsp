@@ -2,4 +2,4 @@
     pageEncoding="UTF-8"%>
 <%
 	response.sendRedirect("/corp/home?cmd=main");
-%>
+%> 

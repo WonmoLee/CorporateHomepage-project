@@ -22,7 +22,7 @@ public class CorpIntroAction implements Action {
 			request.setAttribute("corpintro", corpintro);
 
 			RequestDispatcher dis = 
-					request.getRequestDispatcher("/intro/corpIntro.jsp");
+					request.getRequestDispatcher("/kakaoInfo/corpIntro.jsp");
 			dis.forward(request, response);
 
 	}
