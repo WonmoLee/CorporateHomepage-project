@@ -13,9 +13,22 @@
 </head>
 <body>
 <%@ include file="../include/header.jsp" %>
-<a href="/corp/intro?cmd=introUpdate">수정</a><br/>
-<i>${corpintro.title}</i><br/>
-<b>${corpintro.content}</b>
-<%@ include file="../include/footer.jsp" %>
+	<section class="introMain">
+			<div class="introTitle">
+				${corpintro.title}
+			</div>
+			<div class="introImg">
+				<img src="static/img/intro.jpg" alt="" >
+			</div>
+			<div class="introContent">
+				<b>${corpintro.content}</b>
+			</div>
+			<div class="update">
+			<a href="/corp/intro?cmd=introUpdate">수정</a><br/>
+			</div>
+	</section>	
+	<footer>
+	<%@ include file="../include/footer.jsp" %>
+	</footer>
 </body>
-</html> 
+</html>

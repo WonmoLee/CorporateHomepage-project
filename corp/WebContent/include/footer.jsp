@@ -1,9 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
     
-<link rel="stylesheet" type="text/css" href="css/kakao.css"> 
-
-<footer>
+    <footer>
 	<hr/>
 	<div class="top">
 		<ul>
@@ -25,4 +23,4 @@
 	<div class="btm">
 		<p>Copyright © Kakao Corp. All rights reserved.</p>
 	</div>
-</footer>
+	</footer>

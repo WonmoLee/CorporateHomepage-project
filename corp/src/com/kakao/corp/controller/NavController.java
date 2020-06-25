@@ -9,9 +9,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.kakao.corp.action.Action;
-import com.kakao.corp.action.nav.kakao.CorpIntroAction;
-import com.kakao.corp.action.nav.kakao.CorpIntroUpdateAction;
-import com.kakao.corp.action.nav.kakao.CorpIntroUpdateProcAction;
+import com.kakao.corp.action.nav.kakaoInfo.CorpIntroAction;
+import com.kakao.corp.action.nav.kakaoInfo.CorpIntroUpdateAction;
+import com.kakao.corp.action.nav.kakaoInfo.CorpIntroUpdateProcAction;
 
 @WebServlet("/intro")
 public class NavController extends HttpServlet {

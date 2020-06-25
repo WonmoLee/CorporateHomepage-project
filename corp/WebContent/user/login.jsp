@@ -1,17 +1,17 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
     
-<%-- <%@ include file="/include/header.jsp" %> --%>
-    
 <!DOCTYPE html>
 <html lang="ko">
 <head>
 <title>Kakao</title>
 <meta charset="UTF-8">
+<link rel="shortcut icon" href="static/img/titleIcon.png" type="image/x-icon" />
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
 <link rel="stylesheet" href="css/LoginSignup.css">
 </head>
 <body class="loginbg">
+<section>
 <div class="container">
 	<h1 class="title">Login</h1>
 	
@@ -26,7 +26,7 @@
 		<button type="submit" class="btn btn-warning" style="margin-left: 305px;">로그인</button>
 		<a href=""><img height="38px" src="/corp/static/img/kakao_login_medium_narrow.png"></img></a>
 	</form>
-	
 </div>
+</section>
 </body>
 </html>

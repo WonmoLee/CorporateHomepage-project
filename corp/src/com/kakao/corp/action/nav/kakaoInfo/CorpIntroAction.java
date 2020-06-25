@@ -1,4 +1,4 @@
-package com.kakao.corp.action.nav.kakao;
+package com.kakao.corp.action.nav.kakaoInfo;
 
 import java.io.IOException;
 

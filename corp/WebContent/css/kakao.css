@@ -61,7 +61,7 @@ textarea[disabled]{padding:11px;font-size:16px;color:#666 !important; font-weigh
 
 
 /* header */
-header{height:81px;text-align:center;}
+header{height:81px;text-align:center;border-bottom:1px solid;}
 header h1{position:absolute;left:50px;top:0;padding:14px 0 0;}
 header h1 a{display:block;width:110px;height:80px;color:transparent;}
 header .lnb li{display:inline-block;}
@@ -75,6 +75,8 @@ header .unb li:after{content:"";position:absolute;left:0;top:50%;width:3px;heigh
 header .unb li:first-child:after{display:none;}
 header .unb li a{display:block;height:81px;padding:0 10px;line-height:81px;padding:0 10px;font-size:17px;color:#333;line-height:81px;}
 header .unb li:last-child a{padding-right:0;}
+
+
 
 
 /* 섹션 */
@@ -98,7 +100,7 @@ background:url(../static/img/fleticon.png) no-repeat;color:transparent;}
 
 
 /* 푸터 */
-footer{margin-bottom:35px;margin-top:300px;}
+footer{margin-bottom:35px;margin-top:200px;}
 footer hr{border:1px solid; color:#808080;}
 footer .top{background:#ffffff; border-top:1px solid #808080;}
 footer .top ul{float:left;margin-left: 50px;}
@@ -109,3 +111,14 @@ footer .top ul li:last:child:after{display:none;}
 footer .top > div{width:1670px;margin:0 auto;padding:9px 0;text-align:right;}
 footer .top > div select{width:200px;height:30px;padding:0 0 0 21px;color:#191919;font-size:12px;}
 footer .btm{float:left;background: #ffffff;text-align:center;left:10%;margin-left:50px;}
+
+
+/* 섹션 */
+/* 홈메인 */
+
+/* 카카오소개 */
+.introMain{overflow-x:hidden}
+.introTitle{position:relative;left:400px;padding:100px 400px 100px 0;font-size:30px;font-weight:bold;color:#000000}
+.introImg{position:absolute;left:400px;}
+.introContent{position:relative;left:400px;padding:100px 740px 100px 0;margin-top:500px;font-size:20px;font-weight:border;}
+.update a{position:absolute;left:400px;color:#000000}
