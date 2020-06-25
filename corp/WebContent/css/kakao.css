@@ -104,8 +104,8 @@ background:url(../static/img/fleticon.png) no-repeat;color:transparent;}
 .update a{position:absolute;left:400px;color:#000000}
 
 /* 고객지원-고객의소리 */
-.kakaoSupport{position:relative;border-bottom:1px solid;}
-.kakaoSupport ul{}
+.kakaoSupport{position:relative;text-align:center;border-bottom:1px solid;}
+.kakaoSupport ul{display:flex;margin:150px 0 0 400px;}
 .kakaoSupport ul li a{color:#000000;}
 .ks_list ul li a{color:#000000;}
 
