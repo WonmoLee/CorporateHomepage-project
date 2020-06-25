@@ -54,7 +54,7 @@ public class VoiceOfCustUserWriteProcAction implements Action {
 				// 5. result == 1이면 성공로직(index.jsp로 이동)
 				if(result == 1) {
 					
-					Script.href("게시글이 등록되었습니다.", "/corp/support/question.jsp", response);
+					Script.href("게시글이 등록되었습니다.", "/corp/menu?cmd=voiceOfCust", response);
 					
 				} else {
 					

@@ -4,6 +4,8 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 import com.kakao.corp.db.DBConn;
 import com.kakao.corp.model.VoiceOfCustBoard;
@@ -42,5 +44,60 @@ public class BoardRepository {
 			
 			return -1;
 			
+		}
+		
+		public List<VoiceOfCustBoard> findAll() {
+			final String SQL = "SELECT * FROM VOCBOARD ORDER BY ID DESC";
+			List<VoiceOfCustBoard> vocBoards = new ArrayList<>();
+			
+			try {
+				conn = DBConn.getConnection();
+				pstmt = conn.prepareStatement(SQL);
+				
+				//while 돌려서 rs -> java오브젝트에 집어넣기
+				rs = pstmt.executeQuery();
+				while(rs.next()) {
+					VoiceOfCustBoard vocBoard = new VoiceOfCustBoard(
+							rs.getInt("id"),
+							rs.getInt("userid"),
+							rs.getString("title"),
+							rs.getString("content"),
+							rs.getInt("readCount"),
+							rs.getTimestamp("createDate")
+					);
+					vocBoards.add(vocBoard);
+				}
+				return vocBoards;
+				
+			} catch (SQLException e) {
+				e.printStackTrace();
+				System.out.println(TAG + "findAll : " + e.getMessage());
+			} finally {
+				DBConn.close(conn, pstmt, rs);
+			}
+			
+			
+			return null;
+		}
+		
+		public int count() {
+			final String SQL = "SELECT COUNT(*) FROM VOCBOARD";
+			
+			try {
+				conn = DBConn.getConnection();
+				pstmt = conn.prepareStatement(SQL);
+				rs = pstmt.executeQuery();
+				if(rs.next()) {
+					return rs.getInt(1);
+				}
+				
+			} catch (Exception e) {
+				e.printStackTrace();
+				System.out.println(TAG+"count : "+e.getMessage());
+			} finally {
+				DBConn.close(conn, pstmt, rs);
+			}
+
+			return -1;
 		}
 }

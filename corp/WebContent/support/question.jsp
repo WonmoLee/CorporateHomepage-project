@@ -27,10 +27,10 @@
 			</ul>
 		</div>
 		<div>
-			<c:forEach var="board" items="${boards}">
-			<div>
+			<c:forEach var="vocBoard" items="${vocBoards}">
+			<div class="vocBoard_list">
 			<ul>
-	   		<li><a href="/corp/menu?cmd=vocDetail&id=${board.id}"></a></li>
+	   		<li><a href="/corp/menu?cmd=vocDetail&id=${vocBoard.id}">${vocBoard.title}</a></li>
 	   		</ul>
 	  		</div>
 			</c:forEach>
