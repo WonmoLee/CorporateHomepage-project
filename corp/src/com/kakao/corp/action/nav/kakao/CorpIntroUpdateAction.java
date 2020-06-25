@@ -24,7 +24,7 @@ public class CorpIntroUpdateAction implements Action {
 		request.setAttribute("corpintro", corpintro);
 
 		RequestDispatcher dis = 
-				request.getRequestDispatcher("/intro/corpIntroUpdate.jsp");
+				request.getRequestDispatcher("/kakaoInfo/corpIntroUpdate.jsp");
 		dis.forward(request, response);
 
 	}

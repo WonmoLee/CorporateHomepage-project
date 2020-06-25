@@ -5,17 +5,16 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Insert title here</title>
 <meta charset="UTF-8">
 <link rel="stylesheet" href="css/kakao.css">
 </head>
 <body>
 	<header>
-		<h1><a href="/corp/home?cmd=main">Kakao</a></h1>
+		<h1><a href="/corp/home?cmd=main"><img alt="kakao" src="static/img/logo.png">Kakao</a></h1>
 		<h2 class="hide">대메뉴</h2>
 		<nav class="lnb">
 			<ul>
-			<li><a href="#a"><span>카카오</span></a></li>
+			<li><a href="/corp/intro?cmd=intro"><span>카카오</span></a></li>
 			<li><a href="#a"><span>투자정보</span></a></li>
 			<li><a href="#a"><span>서비스</span></a></li>
 			<li><a href="#a"><span>소셜임팩트</span></a></li>
@@ -34,7 +33,7 @@
 				</c:when>
 				<c:otherwise>
 					<ul class="list_lang">
-					<li><a href="/corp/intro?cmd=intro"> 글쓰기 </a></li>
+					<li><a href="#a"> 글쓰기 </a></li>
 					<li><a href="/corp/user?cmd=update"> 회원정보 수정 </a></li>
 					<li><a href="/corp/user?cmd=logout"> 로그아웃 </a></li>
 					</ul>

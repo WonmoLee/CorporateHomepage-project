@@ -20,8 +20,8 @@
 <link rel="stylesheet" type="text/css" href="css/kakao.css">
 
 </head>
-<body class="kakao_type">
-	<div id="kakaoWrap">
+<body>
+	<div>
 		<a href="#contents" class="skip">본문바로가기</a>
 		<%@ include file="include/header.jsp" %>
 		

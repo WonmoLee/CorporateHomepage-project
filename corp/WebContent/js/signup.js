@@ -37,7 +37,7 @@ function validate(){
 }
 //주소
 function goPopup(){
-	var pop = window.open("/corp/jusoPopup.jsp","pop","width=570,height=420, scrollbars=yes, resizable=yes"); 
+	var pop = window.open("/corp/juso/jusoPopup.jsp","pop","width=570,height=420, scrollbars=yes, resizable=yes"); 
 }
 
 function jusoCallBack(roadFullAddr){

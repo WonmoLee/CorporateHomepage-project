@@ -22,7 +22,7 @@ public class CorpIntroRepository {
 
 	//title, content 가져오기
 	public CorpIntro intro() {
-		final String SQL = "SELECT * FROM test ";
+		final String SQL = "SELECT * FROM CORPINTRO ";
 		 CorpIntro corpintroTest = null;
 
 		try {
@@ -48,7 +48,7 @@ public class CorpIntroRepository {
 
 	//회사소개 수정하기
 	public int introUpdate(CorpIntro corpintro) {
-		final String SQL = "UPDATE test SET title = ?, content = ?";
+		final String SQL = "UPDATE CORPINTRO SET title = ?, content = ?";
 
 		try {
 			conn = DBConn.getConnection();

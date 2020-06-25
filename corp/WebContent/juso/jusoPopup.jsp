@@ -32,7 +32,7 @@ function init(){
 	}
 }
 </script>
-<body onload="init()"> <!-- onload => body가 다 그려지면 함수를 실행 -->
+<body onload="init()">
 	<form id="form" name="form" method="post">
 		<!-- hidden  -->
 		<input type="hidden" id="confmKey" name="confmKey" value=""/>
