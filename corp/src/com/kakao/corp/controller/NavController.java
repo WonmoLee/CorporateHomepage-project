@@ -48,6 +48,7 @@ public class NavController extends HttpServlet {
 	}
 
 		private Action router(String cmd) {
+			System.out.println("분기테스트" + cmd);
 			if (cmd.equals("intro")) {
 				return new CorpIntroAction();
 			}else if (cmd.equals("introUpdate")) {

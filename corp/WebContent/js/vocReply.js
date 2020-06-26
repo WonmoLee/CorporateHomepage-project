@@ -1,16 +1,16 @@
-function replyDelete (replyId){
+function vocReplyDelete (replyId){
 	console.log(replyId);
 	$.ajax({
 		type: "post",
-		url: "/corp/menu?cmd=vocReplyDeleteProc",
+		url: "/corp/reply?cmd=vocReplyDeleteProc",
 		data: "replyId="+replyId,
 		contentType: "application/x-www-form-urlencoded; charset=utf-8",
 		dataType: "text"
 	}).done(function(result){
 		if(result == 1){
 			alert("댓글 삭제 성공");
-			var replyItem = $("#reply-"+replyId);
-			replyItem.remove();
+			var vocReplyItem = $("#reply-"+replyId);
+			vocReplyItem.remove();
 		}else{
 			alert("댓글 삭제 실패")
 		}
@@ -20,22 +20,21 @@ function replyDelete (replyId){
 	});
 }
 
-function replyWrite(boardId, userId){
-	console.log(userId)
+function vocReplyWrite(boardId, userId){
 	if(userId === undefined) {
 		alert("로그인이 필요합니다.");
 		return;
 	}
 	
 	var data = {
-		boardid: boardId,
-		userid: userId,
+		boardId: boardId,
+		userId: userId,
 		content: $("#reply__write__form").val()
 	};
 	
 	$.ajax({
 		type: "post",
-		url: "/blog/reply?cmd=writeProc",
+		url: "/corp/reply?cmd=vocReplyWriteProc",
 		data: JSON.stringify(data),
 		contentType: "application/json; charset=utf-8",
 		dataType: "json"
@@ -48,7 +47,7 @@ function replyWrite(boardId, userId){
 			$("#reply__list").empty();
 			console.log(result);
 			// 2. ajax 재호출 findAll()
-			renderReplyList(result, userId);
+			vocRenderReplyList(result, userId);
 			// 3.reply__list를 찾아서 내부에 채워주기
 			$("#reply__write__form").val("");
 		}
@@ -57,31 +56,31 @@ function replyWrite(boardId, userId){
 	});
 }
 
-function renderReplyList(replyDtos, userid){
-	for(var replyDto of replyDtos){
-		$("#reply__list").append(makeReplyItem(replyDto, userid));
+function vocRenderReplyList(vocReplyDtos, userId){
+	for(var vocReplyDto of vocReplyDtos){
+		$("#reply__list").append(vocMakeReplyItem(vocReplyDto, userId));
 	}
 }
 
-function makeReplyItem(replyDto, userId){
-	var replyItem = `<li id="reply-${replyDto.reply.id}" class="media">`;
-	if(replyDto.userProfile == null){
-		replyItem += `<img src="/blog/img/userProfile.png" class="img-circle">`;	
+function vocMakeReplyItem(vocReplyDto, userId){
+	var vocReplyItem = `<li id="reply-${vocReplyDto.vocReply.id}" class="media">`;
+	if(vocReplyDto.userProfile == null){
+		vocReplyItem += `<img src="/corp/static/img/userProfile.png" class="img-circle">`;	
 	}else{
-		replyItem += `<img src="${replyDto.userProfile}" class="img-circle">`;
+		vocReplyItem += `<img src="${vocReplyDto.userProfile}" class="img-circle">`;
 	}
 	
-	replyItem += `<div class="media-body">`;
-	replyItem += `<strong class="text-primary">${replyDto.username}</strong>`;
-	replyItem += `<p>${replyDto.reply.content}</p>`;
-	replyItem += `</div>`;
+	vocReplyItem += `<div class="media-body">`;
+	vocReplyItem += `<strong class="text-primary">${vocReplyDto.username}</strong>`;
+	vocReplyItem += `<p>${vocReplyDto.vocReply.content}</p>`;
+	vocReplyItem += `</div>`;
 	//휴지통 추가 시작
-	replyItem += `<div class="m-2">`;
-	if(replyDto.reply.userid == userId){
-			replyItem += `<i onclick="replyDelete(${replyDto.reply.id})" class="material-icons i__btn">delete</i>`;
+	vocReplyItem += `<div class="m-2">`;
+	if(vocReplyDto.vocReply.userId == userId){
+		vocReplyItem += `<i onclick="vocReplyDelete(${vocReplyDto.vocReply.id})" class="material-icons i__btn">delete</i>`;
 	}
-	replyItem += `</div>`;
+	vocReplyItem += `</div>`;
 	//휴지통 추가 끝
-	replyItem += `</li>`;
-	return replyItem;
+	vocReplyItem += `</li>`;
+	return vocReplyItem;
 }

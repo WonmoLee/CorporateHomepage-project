@@ -3,6 +3,7 @@ package com.kakao.corp.repository;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -64,5 +65,46 @@ public class ReplyRepository {
 		}
 
 		return null;
+	}
+	
+	public int vocSave(VoiceOfCustReply vocReply) {
+		final String SQL = "INSERT INTO VOCREPLY(ID, USERID, BOARDID, CONTENT, CREATEDATE) VALUES(VOCREPLY_SEQ.NEXTVAL, ?, ?, ?, SYSDATE)";
+		System.out.println(vocReply.getUserId() + " : " + vocReply.getBoardId());
+		try {
+			conn = DBConn.getConnection();
+			pstmt = conn.prepareStatement(SQL);
+			//물음표 완성하기
+			pstmt.setInt(1, vocReply.getUserId());
+			pstmt.setInt(2, vocReply.getBoardId());
+			pstmt.setString(3, vocReply.getContent());
+			return pstmt.executeUpdate();
+		} catch (SQLException e) {
+			e.printStackTrace();
+			System.out.println(TAG + "vocSave : " + e.getMessage());
+		} finally {
+			DBConn.close(conn, pstmt);
+		}
+		
+		
+		return -1;
+	}
+	
+	public int vocDeleteById(int id) {
+		final String SQL = "DELETE FROM VOCREPLY WHERE ID = ?";
+		
+		try {
+			conn = DBConn.getConnection();
+			pstmt = conn.prepareStatement(SQL);
+			//물음표 완성하기
+			pstmt.setInt(1, id);
+			return pstmt.executeUpdate();
+		} catch (SQLException e) {
+			e.printStackTrace();
+			System.out.println(TAG + "vocDeleteById : " + e.getMessage());
+		} finally {
+			DBConn.close(conn, pstmt);
+		}
+		
+		return -1;
 	}
 }

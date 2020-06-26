@@ -49,7 +49,7 @@
 					<div class="panel-body">
 						<textarea id="reply__write__form" class="form-control" placeholder="write a comment..." rows="3"></textarea>
 						<br>
-						<button onclick="replyWrite(${vocDetailDto.vocBoardDto.vocBoard.id}, ${sessionScope.principal.id})" class="btn btn-primary pull-right">댓글쓰기</button>
+						<button onclick="vocReplyWrite(${vocDetailDto.vocBoardDto.vocBoard.id}, ${sessionScope.principal.id})" class="btn btn-primary pull-right">댓글쓰기</button>
 						<div class="clearfix"></div>
 						<hr />
 						<!-- 댓글 리스트 시작 -->	
@@ -68,7 +68,7 @@
 									<div class="m-2">
 										<c:if test="${vocReplyDto.vocReply.userId eq sessionScope.principal.id}">
 										<i onclick="replyUpdate(${vocReplyDto.vocReply.id})" class="material-icons i__btn">edit</i>&nbsp;&nbsp;&nbsp;
-										<i onclick="replyDelete(${vocReplyDto.vocReply.id})" class="material-icons i__btn">delete</i>
+										<i onclick="vocReplyDelete(${vocReplyDto.vocReply.id})" class="material-icons i__btn">delete</i>
 										</c:if>
 									</div> 
 								</li> 
