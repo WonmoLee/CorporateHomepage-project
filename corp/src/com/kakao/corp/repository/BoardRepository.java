@@ -180,4 +180,26 @@ public class BoardRepository {
 			
 			return -1;
 		}
+		
+		public int vocPostUpdate(VoiceOfCustBoard vocBoard) {
+			final String SQL = "UPDATE VOCBOARD SET TITLE = ?, CONTENT = ? WHERE ID = ?";
+			
+			try {
+				conn = DBConn.getConnection();
+				pstmt = conn.prepareStatement(SQL);
+				
+				pstmt.setString(1, vocBoard.getTitle());
+				pstmt.setString(2, vocBoard.getContent());
+				pstmt.setInt(3, vocBoard.getId());
+				return pstmt.executeUpdate();
+			} catch (SQLException e) {
+				e.printStackTrace();
+				System.out.println(TAG + "vocPostUpdate : " + e.getMessage());
+			} finally {
+				DBConn.close(conn, pstmt);
+			}
+			
+			
+			return -1;
+		}
 }

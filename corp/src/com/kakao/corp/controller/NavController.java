@@ -15,8 +15,8 @@ import com.kakao.corp.action.nav.kakaoInfo.CorpIntroUpdateProcAction;
 import com.kakao.corp.action.nav.support.VoiceOfCustAction;
 import com.kakao.corp.action.nav.support.VoiceOfCustDeleteProcAction;
 import com.kakao.corp.action.nav.support.VoiceOfCustDetailAction;
-import com.kakao.corp.action.nav.support.VoiceOfCustUserUpdateAction;
-import com.kakao.corp.action.nav.support.VoiceOfCustUserUpdateProcAction;
+import com.kakao.corp.action.nav.support.VoiceOfCustPostUserUpdateAction;
+import com.kakao.corp.action.nav.support.VoiceOfCustPostUserUpdateProcAction;
 import com.kakao.corp.action.nav.support.VoiceOfCustUserWriteAction;
 import com.kakao.corp.action.nav.support.VoiceOfCustUserWriteProcAction;
 
@@ -60,10 +60,10 @@ public class NavController extends HttpServlet {
 				return new VoiceOfCustUserWriteAction();
 			}else if (cmd.equals("voiceOfCustWriteProc")) {
 				return new VoiceOfCustUserWriteProcAction();
-			}else if (cmd.equals("voiceOfCustUpdate")) {
-				return new VoiceOfCustUserUpdateAction();
-			}else if (cmd.equals("voiceOfCustUpdateProc")) {
-				return new VoiceOfCustUserUpdateProcAction();
+			}else if (cmd.equals("vocPostUpdate")) {
+				return new VoiceOfCustPostUserUpdateAction();
+			}else if (cmd.equals("vocPostUpdateProc")) {
+				return new VoiceOfCustPostUserUpdateProcAction();
 			}else if (cmd.equals("vocDetail")) {
 				return new VoiceOfCustDetailAction();
 			}else if (cmd.equals("vocDeleteProc")) {
