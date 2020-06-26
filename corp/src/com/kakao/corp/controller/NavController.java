@@ -9,16 +9,17 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.kakao.corp.action.Action;
-import com.kakao.corp.action.nav.kakaoInfo.CorpIntroAction;
-import com.kakao.corp.action.nav.kakaoInfo.CorpIntroUpdateAction;
-import com.kakao.corp.action.nav.kakaoInfo.CorpIntroUpdateProcAction;
-import com.kakao.corp.action.nav.support.VoiceOfCustAction;
-import com.kakao.corp.action.nav.support.VoiceOfCustDeleteProcAction;
-import com.kakao.corp.action.nav.support.VoiceOfCustDetailAction;
-import com.kakao.corp.action.nav.support.VoiceOfCustPostUserUpdateAction;
-import com.kakao.corp.action.nav.support.VoiceOfCustPostUserUpdateProcAction;
-import com.kakao.corp.action.nav.support.VoiceOfCustUserWriteAction;
-import com.kakao.corp.action.nav.support.VoiceOfCustUserWriteProcAction;
+import com.kakao.corp.action.nav.kakaoIntro.CorpIntroAction;
+import com.kakao.corp.action.nav.kakaoIntro.CorpIntroUpdateAction;
+import com.kakao.corp.action.nav.kakaoIntro.CorpIntroUpdateProcAction;
+import com.kakao.corp.action.nav.kakaoService.CorpServiceAction;
+import com.kakao.corp.action.nav.kakaoSupport.VoiceOfCustAction;
+import com.kakao.corp.action.nav.kakaoSupport.VoiceOfCustDeleteProcAction;
+import com.kakao.corp.action.nav.kakaoSupport.VoiceOfCustDetailAction;
+import com.kakao.corp.action.nav.kakaoSupport.VoiceOfCustPostUserUpdateAction;
+import com.kakao.corp.action.nav.kakaoSupport.VoiceOfCustPostUserUpdateProcAction;
+import com.kakao.corp.action.nav.kakaoSupport.VoiceOfCustUserWriteAction;
+import com.kakao.corp.action.nav.kakaoSupport.VoiceOfCustUserWriteProcAction;
 
 @WebServlet("/menu")
 public class NavController extends HttpServlet {
@@ -51,6 +52,8 @@ public class NavController extends HttpServlet {
 			System.out.println("분기테스트" + cmd);
 			if (cmd.equals("intro")) {
 				return new CorpIntroAction();
+			}else if(cmd.equals("service")) {
+				return new CorpServiceAction();
 			}else if (cmd.equals("introUpdate")) {
 				return new CorpIntroUpdateAction();
 			}else if (cmd.equals("introUpdateProc")) {

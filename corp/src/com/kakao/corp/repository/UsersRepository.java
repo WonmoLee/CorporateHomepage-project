@@ -164,8 +164,8 @@ public class UsersRepository {
 	
 	//회원가입
 	public int save(Users user) {
-		final String SQL = "INSERT INTO USERS(id, username, password, email, address, userRole, userBirth, createDate)"
-						+"VALUES(users_seq.nextval,?,?,?,?,?,?,sysdate)";
+		final String SQL = "INSERT INTO USERS(ID, USERNAME, PASSWORD, EMAIL, ADDRESS, USERROLE, USERBIRTH, CREATEDATE)"
+						+"VALUES(USERS_SEQ.NEXTVAL,?,?,?,?,?,?,SYSDATE)";
 		
 		try {
 			conn = DBConn.getConnection();

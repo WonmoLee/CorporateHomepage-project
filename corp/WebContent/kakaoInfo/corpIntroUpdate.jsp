@@ -7,7 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-<form action ="/corp/intro?cmd=introUpdateProc" method = "post">
+<form action ="/corp/menu?cmd=introUpdateProc" method = "post">
 
 <input type = "text" value = "${corpintro.title}" id = "title" name = "title">
 <input type = "text" value = "${corpintro.content}" id = "content" name = "content">
