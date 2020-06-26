@@ -43,7 +43,7 @@ public class KakaoServiceController extends HttpServlet {
 		private Action router(String cmd) {
 			if (cmd.equals("serviceMain")) {
 				return new CorpServiceAction();
-			}else if (cmd.equals("serviceCategory")) {
+			}else if (cmd.equals("serviceMainCategory")) {
 				return new CorpServiceMainCategoryAction();
 			}
 			

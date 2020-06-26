@@ -2,7 +2,7 @@ function category(value){
 		$.ajax({
 
 			type : "get",
-			url : "/corp/menu?cmd=serviceCategory&value="+value,
+			url : "/corp/service?cmd=serviceMainCategory&value="+value,
 			dataType : "JSON"
 
 		}).done(function(result){

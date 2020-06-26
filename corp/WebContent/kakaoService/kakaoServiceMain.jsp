@@ -21,7 +21,6 @@
  세상을 향해 열린 문을 ‘톡’하고 두드려 보세요</p>
  <hr>
 </div>
-
 <div class = "category__select">
 <select name="category" onchange= "category(this.value)" >
     <option value="전체">전체</option>
@@ -35,20 +34,17 @@
     <option value="소셜임팩트">소셜임팩트</option>
 </select>
 </div>
-
 <div>
 <ul class = "category__list">
-<c:forEach var = "service" items="${services}">
+<c:forEach var = "corpService" items="${corpServices}">
 	<br/>
-	<li><img src ="${service.img}" width="30px" height="30px">
-	<h4>${service.name}</h4> 
-	<p>${service.text}</p>
+	<li><img src="${corpService.img}" width="30px" height="30px">
+	<h4>${corpService.name}</h4>
+	<p>${corpService.text}</p>
 	<br/>
 	</li>
 </c:forEach>
-
 </ul>
-
 </div>
 </section>
 <%@ include file="/include/footer.jsp" %>

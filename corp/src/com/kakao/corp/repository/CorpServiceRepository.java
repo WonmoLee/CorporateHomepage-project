@@ -32,7 +32,7 @@ public class CorpServiceRepository {
 			pstmt = conn.prepareStatement(SQL);
 			rs = pstmt.executeQuery();
 
-			List<CorpService> services = new ArrayList<>();
+			List<CorpService> corpServices = new ArrayList<>();
 
 			while (rs.next()) {
 				CorpService service = CorpService.builder()
@@ -40,9 +40,9 @@ public class CorpServiceRepository {
 						.text(rs.getString(2))
 						.img(rs.getString(4))
 						.build();
-				services.add(service);
+				corpServices.add(service);
 			}
-			return services;
+			return corpServices;
 		} catch (Exception e) {
 			e.printStackTrace();
 			System.out.println(TAG + "CorpServiceFindByAll :" + e.getMessage());
