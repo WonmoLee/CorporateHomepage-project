@@ -9,18 +9,20 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.kakao.corp.action.Action;
-import com.kakao.corp.action.nav.kakao.CorpIntroAction;
-import com.kakao.corp.action.nav.kakao.CorpIntroUpdateAction;
-import com.kakao.corp.action.nav.kakao.CorpIntroUpdateProcAction;
-import com.kakao.corp.action.nav.kakao.VoiceOfCustAction;
-import com.kakao.corp.action.nav.kakao.VoiceOfCustUpdateAction;
-import com.kakao.corp.action.nav.kakao.VoiceOfCustUpdateProcAction;
-import com.kakao.corp.action.nav.kakao.VoiceOfCustWriteAction;
-import com.kakao.corp.action.nav.kakao.VoiceOfCustWriteProcAction;
+import com.kakao.corp.action.nav.CorpIntroAction;
+import com.kakao.corp.action.nav.CorpIntroUpdateAction;
+import com.kakao.corp.action.nav.CorpIntroUpdateProcAction;
+import com.kakao.corp.action.nav.ServiceAction;
+import com.kakao.corp.action.nav.ServiceCategoryAction;
+import com.kakao.corp.action.nav.VoiceOfCustAction;
+import com.kakao.corp.action.nav.VoiceOfCustUpdateAction;
+import com.kakao.corp.action.nav.VoiceOfCustUpdateProcAction;
+import com.kakao.corp.action.nav.VoiceOfCustWriteAction;
+import com.kakao.corp.action.nav.VoiceOfCustWriteProcAction;
 
 @WebServlet("/menu")
 public class NavController extends HttpServlet {
-	private static final String TAG = "CorpIntroController : ";
+	private static final String TAG = "NavController : ";
 	private static final long serialVersionUID = 1L;
 
     public NavController() {
@@ -64,6 +66,11 @@ public class NavController extends HttpServlet {
 				return new VoiceOfCustUpdateAction();
 			}else if (cmd.equals("voiceOfCustUpdateProc")) {
 				return new VoiceOfCustUpdateProcAction();
+			//서비스 카테고리별 보기
+			}else if (cmd.equals("service")) {
+				return new ServiceAction();
+			}else if (cmd.equals("serviceCategory")) {
+				return new ServiceCategoryAction();
 			}
 			return null;
 

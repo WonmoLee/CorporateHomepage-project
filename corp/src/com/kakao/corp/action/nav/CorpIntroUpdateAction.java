@@ -1,4 +1,4 @@
-package com.kakao.corp.action.nav.kakao;
+package com.kakao.corp.action.nav;
 
 import java.io.IOException;
 
@@ -11,19 +11,21 @@ import com.kakao.corp.action.Action;
 import com.kakao.corp.model.CorpIntro;
 import com.kakao.corp.repository.CorpIntroRepository;
 
-public class CorpIntroAction implements Action {
+public class CorpIntroUpdateAction implements Action {
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		//유효성 검사
+		//이동
 
 		CorpIntroRepository corpintroRepository = CorpIntroRepository.getInstance();
 
-			CorpIntro corpintro = corpintroRepository.intro();
+		CorpIntro corpintro = corpintroRepository.intro();
 
-			request.setAttribute("corpintro", corpintro);
+		request.setAttribute("corpintro", corpintro);
 
-			RequestDispatcher dis = 
-					request.getRequestDispatcher("/kakaoInfo/corpIntro.jsp");
-			dis.forward(request, response);
+		RequestDispatcher dis = 
+				request.getRequestDispatcher("/kakaoInfo/corpIntroUpdate.jsp");
+		dis.forward(request, response);
 
 	}
 }

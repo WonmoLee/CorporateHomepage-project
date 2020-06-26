@@ -1,3 +1,4 @@
+
 package com.kakao.corp.repository;
 
 import java.sql.Connection;
@@ -41,6 +42,7 @@ public class UsersRepository {
 		}
 		return -1;
 	}
+	
 	//아이디값
 	public Users findById(int id) {
 		final String SQL = "select * from users where id = ?";
@@ -121,20 +123,22 @@ public class UsersRepository {
 					user.setId(rs.getInt("id"));
 					user.setUsername(rs.getString("username"));
 					user.setEmail(rs.getString("email"));
-					user.setAddress(rs.getString("userProfile"));
-					user.setUserProfile("userProfile");
+					user.setAddress(rs.getString("address"));
+					user.setUserProfile(rs.getString("userProfile"));
 					user.setUserRole(rs.getString("userRole"));
 					user.setUserBirth(rs.getString("userBirth"));
 					user.setCreateDate(rs.getTimestamp("createDate"));
 				}
-				
+				return user;
 			} catch (Exception e) {
+				
 				e.printStackTrace();
-				System.out.println(TAG + "login" + e.getMessage());
+				System.out.println(TAG + "login : " + e.getMessage());
+				
 			}finally {
 				DBConn.close(conn, pstmt, rs);
 			}
-			return user;
+			return null;
 		}
 	
 	//아이디 중복체크 

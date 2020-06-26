@@ -48,9 +48,10 @@ public class LoginProcAction implements Action{
 				Cookie cookie = new Cookie("remember", user.getUsername());
 				response.addCookie(cookie);
 			}
+						
 			else {
 				Cookie cookie = new Cookie("remember", "");
-				cookie.setMaxAge(0);  //쿠키 삭제
+				cookie.setMaxAge(0); //쿠키 삭제
 				response.addCookie(cookie);
 			}
 			Script.href("로그인 성공", "/corp/index.jsp", response);
