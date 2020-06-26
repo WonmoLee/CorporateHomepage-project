@@ -1,4 +1,4 @@
-function deleteById(boardId){
+function vocDeleteById(boardId){
 	$.ajax({
 		type: "POST",
 		url: "/corp/menu?cmd=vocDeleteProc&id="+boardId,

@@ -161,4 +161,23 @@ public class BoardRepository {
 			
 			return null;
 		}
+		
+		public int vocDeleteById(int id) {
+			final String SQL = "DELETE FROM VOCBOARD WHERE ID = ?";
+			
+			try {
+				conn = DBConn.getConnection();
+				pstmt = conn.prepareStatement(SQL);
+				//물음표 완성하기
+				pstmt.setInt(1, id);
+				return pstmt.executeUpdate();
+			} catch (SQLException e) {
+				e.printStackTrace();
+				System.out.println(TAG + "vocDelete : " + e.getMessage());
+			} finally {
+				DBConn.close(conn, pstmt);
+			}
+			
+			return -1;
+		}
 }

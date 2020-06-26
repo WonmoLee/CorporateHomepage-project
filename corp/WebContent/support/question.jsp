@@ -26,14 +26,12 @@
 			<li><a href="">1:1 상담</a></li>
 			</ul>
 		</div>
-		<div>
-			<c:forEach var="vocBoard" items="${vocBoards}">
-			<div class="vocBoard_list">
+		<div class="vocBoard_list">
 			<ul>
+			<c:forEach var="vocBoard" items="${vocBoards}">
 	   		<li><a href="/corp/menu?cmd=vocDetail&id=${vocBoard.id}">${vocBoard.title}</a></li>
+	   		</c:forEach>
 	   		</ul>
-	  		</div>
-			</c:forEach>
 			<button type="button" value="글쓰기" onclick="location.href='support/voiceOfCustWrite.jsp'">글쓰기</button>
 		</div>
 	</section>

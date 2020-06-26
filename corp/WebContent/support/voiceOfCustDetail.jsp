@@ -3,8 +3,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Insert title here</title>
 <meta charset="UTF-8">
+<title>KAKAO</title>
 <link rel="shortcut icon" href="/corp/static/img/titleIcon.png" type="image/x-icon" />
 <link rel="stylesheet" type="text/css" href="/corp/css/kakao.css">
 
@@ -19,7 +19,7 @@
  	
  	<c:if test="${sessionScope.principal.id == vocDetailDto.vocBoardDto.vocBoard.userId}">
  		<a href="/corp/menu?cmd=voiceOfCustUpdate&id=${vocDetailDto.vocBoardDto.vocBoard.id}" class="btn btn-warning">수정</a>
- 		<button class="btn btn-danger" onclick="deleteById(${vocDetailDto.vocBoardDto.vocBoard.id})">삭제</button>
+ 		<button class="btn btn-danger" onclick="vocDeleteById(${vocDetailDto.vocBoardDto.vocBoard.id})">삭제</button>
  	</c:if>
  	
  	<br/>
