@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.kakao.corp.db.DBConn;
+import com.kakao.corp.dto.VocBoardResponseDto;
 import com.kakao.corp.model.VoiceOfCustBoard;
 
 public class BoardRepository {
@@ -23,21 +24,21 @@ public class BoardRepository {
 		private PreparedStatement pstmt = null;
 		private ResultSet rs = null;
 		
-		public int vocSave(VoiceOfCustBoard board) {
-			final String SQL = "INSERT INTO VOCBOARD(ID, USERID, TITLE, CONTENT, READCOUNT, CREATEDATE) VALUES(BOARD_SEQ.NEXTVAL, ?, ?, ?, ?, SYSDATE)";
+		public int vocSave(VoiceOfCustBoard vocBoard) {
+			final String SQL = "INSERT INTO VOCBOARD(ID, USERID, TITLE, CONTENT, READCOUNT, CREATEDATE) VALUES(VOCBOARD_SEQ.NEXTVAL, ?, ?, ?, ?, SYSDATE)";
 	
 			try {
 				conn = DBConn.getConnection();
 				pstmt = conn.prepareStatement(SQL);
 				//물음표 완성하기
-				pstmt.setInt(1, board.getUserId());
-				pstmt.setString(2, board.getTitle());
-				pstmt.setString(3, board.getContent());
-				pstmt.setInt(4, board.getReadCount());
+				pstmt.setInt(1, vocBoard.getUserId());
+				pstmt.setString(2, vocBoard.getTitle());
+				pstmt.setString(3, vocBoard.getContent());
+				pstmt.setInt(4, vocBoard.getReadCount());
 				return pstmt.executeUpdate();
 			} catch (SQLException e) {
 				e.printStackTrace();
-				System.out.println(TAG + "save : " + e.getMessage());
+				System.out.println(TAG + "vocSave : " + e.getMessage());
 			} finally {
 				DBConn.close(conn, pstmt);
 			}
@@ -46,7 +47,7 @@ public class BoardRepository {
 			
 		}
 		
-		public List<VoiceOfCustBoard> findAll() {
+		public List<VoiceOfCustBoard> vocFindAll() {
 			final String SQL = "SELECT * FROM VOCBOARD ORDER BY ID DESC";
 			List<VoiceOfCustBoard> vocBoards = new ArrayList<>();
 			
@@ -71,7 +72,7 @@ public class BoardRepository {
 				
 			} catch (SQLException e) {
 				e.printStackTrace();
-				System.out.println(TAG + "findAll : " + e.getMessage());
+				System.out.println(TAG + "vocFindAll : " + e.getMessage());
 			} finally {
 				DBConn.close(conn, pstmt, rs);
 			}
@@ -99,5 +100,65 @@ public class BoardRepository {
 			}
 
 			return -1;
+		}
+		
+		public int updateReadCount(int id) {
+			final String SQL = "UPDATE VOCBOARD SET READCOUNT = READCOUNT + 1 WHERE ID = ?";
+
+			try {
+				conn = DBConn.getConnection();
+				pstmt = conn.prepareStatement(SQL);
+				// 물음표 완성하기
+
+				pstmt.setInt(1, id);
+				return pstmt.executeUpdate();
+			} catch (Exception e) {
+				e.printStackTrace();
+				System.out.println(TAG+"updateReadCount : "+e.getMessage());
+			} finally {
+				DBConn.close(conn, pstmt);
+			}
+
+			return -1;
+		}
+		
+		public VocBoardResponseDto vocFindById(int id) {
+			StringBuilder sb = new StringBuilder();
+			sb.append("SELECT B.ID, B.USERID, B.TITLE, B.CONTENT, B.READCOUNT, B.CREATEDATE, U.USERNAME ");
+			sb.append("FROM VOCBOARD B INNER JOIN USERS U ");
+			sb.append("ON B.USERID = U.ID ");
+			sb.append("WHERE B.ID = ?");
+			final String SQL = sb.toString();
+			VocBoardResponseDto vocBoardDto = null;
+			
+			try {
+				conn = DBConn.getConnection();
+				pstmt = conn.prepareStatement(SQL);
+				//물음표 완성하기
+				pstmt.setInt(1, id);
+				rs = pstmt.executeQuery();
+				//if 돌려서 rs -> java오브젝트에 집어넣기
+				if(rs.next()) {
+					vocBoardDto = new VocBoardResponseDto();
+					VoiceOfCustBoard vocBoard = VoiceOfCustBoard.builder()
+							.id(rs.getInt(1))
+							.userId(rs.getInt(2))
+							.title(rs.getString(3))
+							.content(rs.getString(4))
+							.readCount(rs.getInt(5))
+							.createDate(rs.getTimestamp(6))
+							.build();
+					vocBoardDto.setVocBoard(vocBoard);
+					vocBoardDto.setUsername(rs.getString(7));
+				}
+				return vocBoardDto;
+			} catch (SQLException e) {
+				e.printStackTrace();
+				System.out.println(TAG + "vocFindById : " + e.getMessage());
+			} finally {
+				DBConn.close(conn, pstmt, rs);
+			}
+			
+			return null;
 		}
 }

@@ -11,7 +11,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-public class Reply {
+public class VoiceOfCustReply {
 	
 	private int id;
 	private int userId;

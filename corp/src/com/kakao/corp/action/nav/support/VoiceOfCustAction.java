@@ -19,7 +19,7 @@ public class VoiceOfCustAction implements Action{
 		
 		BoardRepository boardRepository = BoardRepository.getInstance();
 		
-		List<VoiceOfCustBoard> vocBoards = boardRepository.findAll();
+		List<VoiceOfCustBoard> vocBoards = boardRepository.vocFindAll();
 
 		for (VoiceOfCustBoard vocBoard : vocBoards) {
 			String preview = HtmlParser.getContentPreview(vocBoard.getContent());

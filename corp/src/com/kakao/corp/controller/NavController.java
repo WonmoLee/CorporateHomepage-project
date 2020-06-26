@@ -13,6 +13,8 @@ import com.kakao.corp.action.nav.kakaoInfo.CorpIntroAction;
 import com.kakao.corp.action.nav.kakaoInfo.CorpIntroUpdateAction;
 import com.kakao.corp.action.nav.kakaoInfo.CorpIntroUpdateProcAction;
 import com.kakao.corp.action.nav.support.VoiceOfCustAction;
+import com.kakao.corp.action.nav.support.VoiceOfCustDeleteProcAction;
+import com.kakao.corp.action.nav.support.VoiceOfCustDetailAction;
 import com.kakao.corp.action.nav.support.VoiceOfCustUserUpdateAction;
 import com.kakao.corp.action.nav.support.VoiceOfCustUserUpdateProcAction;
 import com.kakao.corp.action.nav.support.VoiceOfCustUserWriteAction;
@@ -62,6 +64,12 @@ public class NavController extends HttpServlet {
 				return new VoiceOfCustUserUpdateAction();
 			}else if (cmd.equals("voiceOfCustUpdateProc")) {
 				return new VoiceOfCustUserUpdateProcAction();
+			}else if (cmd.equals("vocDetail")) {
+				return new VoiceOfCustDetailAction();
+			}else if (cmd.equals("vocDeleteProc")) {
+				return new VoiceOfCustDeleteProcAction();
+			}else if (cmd.equals("vocReplyDeleteProc")) {
+				return new VoiceOfCustDeleteProcAction();
 			}
 			return null;
 

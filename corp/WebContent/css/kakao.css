@@ -106,7 +106,6 @@ background:url(../static/img/fleticon.png) no-repeat;color:transparent;}
 /* 고객지원-고객의소리 */
 .kakaoSupport{position:relative;text-align:center;border-bottom:1px solid;border-color:#c0c0c0;}
 .kakaoSupport ul{display:flex;margin:150px 0 0 400px;font-size:20px;padding-bottom:5px;}
-.kakaoSupport ul li a{color:#000000;}
 
 /* 푸터 */
 footer{margin-bottom:35px;margin-top:200px;border-top:1px solid;border-color:#c0c0c0}
