@@ -5,7 +5,7 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     
 	<header>
-		<h1><a href="/corp/home?cmd=main"><img src="/corp/static/img/logo.png"></a></h1>
+		<h1><a href="/corp/home?cmd=main"><img src="/corp/static/img/logo.png">kakao</a></h1>
 		<h2 class="hide">대메뉴</h2>
 		<nav class="lnb">
 			<ul>
