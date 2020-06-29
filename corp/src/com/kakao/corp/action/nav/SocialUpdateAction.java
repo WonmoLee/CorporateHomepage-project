@@ -1,7 +1,6 @@
 package com.kakao.corp.action.nav;
 
 import java.io.IOException;
-import java.util.List;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -9,23 +8,26 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.kakao.corp.action.Action;
-import com.kakao.corp.model.Service;
-import com.kakao.corp.repository.ServiceRepository;
+import com.kakao.corp.model.CorpIntro;
+import com.kakao.corp.repository.SocailRepository;
 
-public class ServiceAction implements Action{
+public class SocialUpdateAction implements Action{
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		ServiceRepository serviceRepository =
-				ServiceRepository.getInstance();
 		
-		List<Service> services = serviceRepository.findByAll();
+		SocailRepository socailRepository = 
+				SocailRepository.getInstance();
 		
-		request.setAttribute("services", services);
+		CorpIntro social1 = socailRepository.social();
+		CorpIntro social2 = socailRepository.social2();
+		
+		request.setAttribute("social1", social1) ;
+		request.setAttribute("social2", social2) ;
 		
 		
 		RequestDispatcher dis =
-				request.getRequestDispatcher("service/service.jsp");
+				request.getRequestDispatcher("/social/socialUpdate.jsp");
 		dis.forward(request, response);
-		
 	}
+
 }

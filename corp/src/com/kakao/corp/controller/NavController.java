@@ -14,6 +14,8 @@ import com.kakao.corp.action.nav.CorpIntroUpdateAction;
 import com.kakao.corp.action.nav.CorpIntroUpdateProcAction;
 import com.kakao.corp.action.nav.ServiceAction;
 import com.kakao.corp.action.nav.ServiceCategoryAction;
+import com.kakao.corp.action.nav.SocialAction;
+import com.kakao.corp.action.nav.SocialUpdateAction;
 import com.kakao.corp.action.nav.VoiceOfCustAction;
 import com.kakao.corp.action.nav.VoiceOfCustUpdateAction;
 import com.kakao.corp.action.nav.VoiceOfCustUpdateProcAction;
@@ -71,9 +73,14 @@ public class NavController extends HttpServlet {
 				return new ServiceAction();
 			}else if (cmd.equals("serviceCategory")) {
 				return new ServiceCategoryAction();
+			//소셜 
+			}else if (cmd.equals("social")) {
+				return new SocialAction();
+			}else if (cmd.equals("socialUpdate")) {
+				return new SocialUpdateAction();
 			}
 			return null;
-
+			
 		}
 
 } 

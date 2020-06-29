@@ -31,7 +31,7 @@ public class ServiceCategoryAction implements Action{
 			PrintWriter pw = response.getWriter();
 			pw.println(servicesJson);
 			
-		}else {
+		}else { 
 			List<Service> services = serviceRepository.findByCategory(request.getParameter("value"));		
 			
 			String  servicesJson = gson.toJson(services);
