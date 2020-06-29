@@ -97,7 +97,6 @@ header .unb li:last-child a{padding-right:0;}
 .ks_list
 
 /* 푸터 */
-footer{margin-bottom:35px;margin-top:200px;border-top:1px solid;border-color:#c0c0c0}
 footer .top{background:#ffffff;}
 footer .top ul{float:left;margin-left: 50px;}
 footer .top ul li{float:left;position:relative;padding:0 19px 0 0;}
@@ -107,3 +106,4 @@ footer .top ul li:last:child:after{display:none;}
 footer .top > div{width:1670px;margin:0 auto;padding:9px 0;text-align:right;}
 footer .top > div select{width:200px;height:30px;padding:0 0 0 21px;color:#191919;font-size:12px;}
 footer .btm{float:left;background: #ffffff;text-align:center;left:10%;margin-left:50px;}
+.selectBx{moz-appearance:none;-webkit-appearance:none;appearance:none;background:url('/corp/static/img/arrowIcon.png') no-repeat;background-position:right;}

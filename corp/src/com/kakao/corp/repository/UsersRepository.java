@@ -104,7 +104,7 @@ public class UsersRepository {
 		//로그인 
 		public Users login(String username, String password) {
 			final String SQL = "SELECT id, username, email, address, userProfile, userRole, userBirth, createDate"
-					+ " FROM users WHERE username = ? AND password = ?";
+					+ " FROM USERS WHERE USERNAME = ? AND PASSWORD = ?";
 			Users user = null;
 			
 			try {
@@ -164,8 +164,8 @@ public class UsersRepository {
 	
 	//회원가입
 	public int save(Users user) {
-		final String SQL = "INSERT INTO USERS(ID, USERNAME, PASSWORD, EMAIL, ADDRESS, USERROLE, USERBIRTH, CREATEDATE)"
-						+"VALUES(USERS_SEQ.NEXTVAL,?,?,?,?,?,?,SYSDATE)";
+		final String SQL = "INSERT INTO USERS(ID, USERNAME, PASSWORD, CARRIER, PHONENUMBER, EMAIL, ADDRESS, USERROLE, USERBIRTH, CREATEDATE)"
+						+"VALUES(USERS_SEQ.NEXTVAL,?,?,?,?,?,?,?,?,SYSDATE)";
 		
 		try {
 			conn = DBConn.getConnection();
@@ -173,10 +173,12 @@ public class UsersRepository {
 			//물음표 완성
 			pstmt.setString(1, user.getUsername());
 			pstmt.setString(2, user.getPassword());
-			pstmt.setString(3, user.getEmail());
-			pstmt.setString(4, user.getAddress());
-			pstmt.setString(5, user.getUserRole());
-			pstmt.setString(6, user.getUserBirth());
+			pstmt.setString(3, user.getCarrier());
+			pstmt.setString(4, user.getPhoneNumber());
+			pstmt.setString(5, user.getEmail());
+			pstmt.setString(6, user.getAddress());
+			pstmt.setString(7, user.getUserRole());
+			pstmt.setString(8, user.getUserBirth());
 			
 			return pstmt.executeUpdate();
 		} catch (Exception e) {
