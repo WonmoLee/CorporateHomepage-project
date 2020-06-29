@@ -36,14 +36,11 @@ public class UserProfileUploadProcAction implements Action{
 					);
 			fileName = multi.getFilesystemName("userProfile");
 
-			System.out.println("fileName :" + fileName);
-
 			id = Integer.parseInt(multi.getParameter("id"));
 
 			userProfile = contextPath + "/static/img/" + fileName;
 
-			UsersRepository usersRepository = 
-					UsersRepository.getInstance();
+			UsersRepository usersRepository = UsersRepository.getInstance();
 			int result = usersRepository.profileUpdate(id, userProfile);
 
 			if (result == 1) {

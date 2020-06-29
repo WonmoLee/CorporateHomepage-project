@@ -91,6 +91,7 @@ header .unb li:last-child a{padding-right:0;}
 .introContent{position:relative;left:400px;padding:100px 740px 100px 0;margin-top:500px;font-size:20px;font-weight:border;}
 .update a{position:absolute;left:400px;color:#000000}
 
+
 /* 고객지원-메인 */
 .kakaoSupport{position:relative;text-align:center;border-bottom:1px solid;border-color:#c0c0c0;}
 .kakaoSupport ul{display:flex;margin:150px 0 0 400px;font-size:20px;padding-bottom:5px;}
@@ -107,3 +108,7 @@ footer .top > div{width:1670px;margin:0 auto;padding:9px 0;text-align:right;}
 footer .top > div select{width:200px;height:30px;padding:0 0 0 21px;color:#191919;font-size:12px;}
 footer .btm{float:left;background: #ffffff;text-align:center;left:10%;margin-left:50px;}
 .selectBx{moz-appearance:none;-webkit-appearance:none;appearance:none;background:url('/corp/static/img/arrowIcon.png') no-repeat;background-position:right;}
+
+
+/* 관리자 페이지 */
+.adminPage{text-align:center;font-size:50px;}

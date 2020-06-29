@@ -12,6 +12,7 @@ import lombok.NoArgsConstructor;
 public class CorpIntro {
 
  private String title;
+ private String img;
  private String content;
 
 }

@@ -21,7 +21,7 @@
 			<c:choose>
 				<c:when test="${sessionScope.principal.userRole eq 'ADMIN'}">
 					<ul class="list_lang">
-					<li><a href="/corp/user?cmd=update"> 관리자 페이지 </a></li>
+					<li><a href="/corp/user?cmd=adminPage"> 관리자 페이지 </a></li>
 					<li><a href="/corp/user?cmd=update"> 회원정보수정 </a></li>
 					<li><a href="/corp/user?cmd=logout"> 로그아웃 </a></li>
 					<li class="profileImg"><a href="/corp/user?cmd=profileUpload">

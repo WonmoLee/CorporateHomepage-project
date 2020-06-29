@@ -18,13 +18,10 @@
 				${corpintro.title}
 			</div>
 			<div class="introImg">
-				<img src="static/img/intro.jpg" alt="" >
+				<img class="img" src="${corpintro.img}" alt="${corpintro.title}" style="width:1160px;height:494px;">
 			</div>
 			<div class="introContent">
 				<b>${corpintro.content}</b>
-			</div>
-			<div class="update">
-			<a href="/corp/menu?cmd=introUpdate">수정</a><br/>
 			</div>
 	</section>	
 	<%@ include file="/include/footer.jsp" %>
