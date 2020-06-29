@@ -14,8 +14,10 @@
 		<div class="adminPage">
 			<h1>관리자 페이지</h1>
 			<div class="introUpdate">
-			<a href="/corp/admin?cmd=introUpdate">기업소개 수정</a><br/>
-			<a href="/corp/admin?cmd=serviceUpdate">기업서비스 수정</a><br/>
+			<a href="/corp/admin?cmd=introUpdate">nav : 카카오 수정</a><br/>
+			<a href="/corp/admin?cmd=serviceUpdate">nav : 서비스 수정</a><br/>
+			<a href="/corp/admin?cmd=socialImpactUpdate">nav : 소셜임팩트 수정</a><br/>
+			<a href="/corp/admin?cmd=supportUpdate">nav : 고객지원 수정</a><br/>
 			</div>
 		</div>
 	</section>
