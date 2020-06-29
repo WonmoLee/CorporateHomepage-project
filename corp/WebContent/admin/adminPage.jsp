@@ -12,21 +12,13 @@
 	<%@ include file="/include/header.jsp" %>
 	<section>
 		<div class="adminPage">
-			<h1 >관리자 페이지</h1>
+			<h1>관리자 페이지</h1>
 			<div class="introUpdate">
-			<a href="/corp/menu?cmd=introUpdate">기업소개 수정</a><br/>
+			<a href="/corp/admin?cmd=introUpdate">기업소개 수정</a><br/>
+			<a href="/corp/admin?cmd=serviceUpdate">기업서비스 수정</a><br/>
 			</div>
 		</div>
 	</section>
-	<%@ include file="/include/footer.jsp" %>
+	<%@ include file="/include/footer.jsp"%>
 </body>
 </html>
-
-
-
-<div>
-	<div>홈>ㅇㅁㅇ</div>
-	<div>메인 이미지</div>
-	<div>부가 이미지</div>
-	<div>부가이미지</div>
-</div>

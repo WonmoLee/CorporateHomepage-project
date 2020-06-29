@@ -1,4 +1,4 @@
-package com.kakao.corp.action.user;
+package com.kakao.corp.action.admin;
 
 import java.io.IOException;
 
@@ -12,7 +12,7 @@ import com.kakao.corp.action.Action;
 public class AdminPageAction implements Action{
 		@Override
 		public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-			RequestDispatcher dis = request.getRequestDispatcher("user/adminPage.jsp");
+			RequestDispatcher dis = request.getRequestDispatcher("admin/adminPage.jsp");
 			dis.forward(request, response);
 		}
 }

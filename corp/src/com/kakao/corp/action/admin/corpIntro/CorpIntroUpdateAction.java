@@ -1,4 +1,4 @@
-package com.kakao.corp.action.nav.kakaoIntro;
+package com.kakao.corp.action.admin.corpIntro;
 
 import java.io.IOException;
 
@@ -23,9 +23,7 @@ public class CorpIntroUpdateAction implements Action {
 
 		request.setAttribute("corpintro", corpintro);
 
-		RequestDispatcher dis = 
-				request.getRequestDispatcher("/kakaoInfo/corpIntroUpdate.jsp");
+		RequestDispatcher dis = request.getRequestDispatcher("/admin/corpIntro/corpIntroUpdate.jsp");
 		dis.forward(request, response);
-
 	}
 }

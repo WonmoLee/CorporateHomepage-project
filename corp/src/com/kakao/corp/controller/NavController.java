@@ -9,9 +9,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.kakao.corp.action.Action;
+import com.kakao.corp.action.admin.corpIntro.CorpIntroUpdateAction;
+import com.kakao.corp.action.admin.corpIntro.CorpIntroUpdateProcAction;
 import com.kakao.corp.action.nav.kakaoIntro.CorpIntroAction;
-import com.kakao.corp.action.nav.kakaoIntro.CorpIntroUpdateAction;
-import com.kakao.corp.action.nav.kakaoIntro.CorpIntroUpdateProcAction;
 import com.kakao.corp.action.nav.kakaoService.CorpServiceAction;
 import com.kakao.corp.action.nav.kakaoSupport.VoiceOfCustAction;
 import com.kakao.corp.action.nav.kakaoSupport.VoiceOfCustDeleteProcAction;

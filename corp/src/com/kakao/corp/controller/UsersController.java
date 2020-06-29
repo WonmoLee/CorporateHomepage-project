@@ -9,7 +9,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.kakao.corp.action.Action;
-import com.kakao.corp.action.user.AdminPageAction;
 import com.kakao.corp.action.user.LoginAction;
 import com.kakao.corp.action.user.LoginProcAction;
 import com.kakao.corp.action.user.LogoutAction;
@@ -73,9 +72,7 @@ public class UsersController extends HttpServlet {
 			return new UserProfileUploadAction();
 		} else if (cmd.equals("profileUploadProc")){
 			return new UserProfileUploadProcAction();
-		} else if (cmd.equals("adminPage")){
-			return new AdminPageAction();
-		}
+		} 
 		return null;
 		
 	}
