@@ -11,6 +11,7 @@
 <body>
 	<%@ include file="/include/header.jsp" %>
 	<section>
+		<h2 class="supportTitle">Kakao Support</h2>
 		<div class="kakaoSupport">
 			<ul>
 			<li><a href="/corp/home?cmd=main">홈</a></li>
@@ -18,21 +19,35 @@
 			<li><a href="/corp/menu?cmd=voiceOfCust">고객지원</a></li>
 			</ul>
 		</div>
-		<div class="ks_list">
-			<h2>고객지원</h2>
-			<ul>
-			<li><a href="">FAQ</a></li>
-			<li><a href="">고객의 소리</a></li>
-			<li><a href="">1:1 상담</a></li>
-			</ul>
-		</div>
-		<div class="vocBoard_list">
-			<ul>
-			<c:forEach var="vocBoard" items="${vocBoards}">
-	   		<li><a href="/corp/menu?cmd=vocDetail&id=${vocBoard.id}">${vocBoard.title}</a></li>
-	   		</c:forEach>
-	   		</ul>
-			<button type="button" value="글쓰기" onclick="location.href='support/voiceOfCustWrite.jsp'">글쓰기</button>
+		<div class="supportMainAjax">
+			<div class="ks_list">
+				<h2>고객지원</h2>
+				<ul>
+				<li><a href="">FAQ</a></li>
+				<li><a href="">고객의 소리</a></li>
+				<li><a href="">1:1 상담</a></li>
+				<li><a href="">Null</a></li>
+				<li><a href="">Null</a></li>
+				<li><a href="">Null</a></li>
+				<li><a href="">Null</a></li>
+				<li><a href="">Null</a></li>
+				<li><a href="">Null</a></li>
+				</ul>
+			</div>
+			<div class="vocBoard_list">
+				<div>
+				<h2>고객의 소리</h2>
+				</div>
+				<div>
+				<ul>
+				<c:forEach var="vocBoard" items="${vocBoards}">
+		   		<li><a href="/corp/menu?cmd=vocDetail&id=${vocBoard.id}">${vocBoard.title}</a></li>
+		   		</c:forEach>
+		   		</ul>
+		   		<br>
+				<button type="button" value="글쓰기" onclick="location.href='page/kakaoSupport/voiceOfCustWrite.jsp'">글쓰기</button>
+				</div>
+			</div>
 		</div>
 	</section>
 	<%@ include file="/include/footer.jsp" %>

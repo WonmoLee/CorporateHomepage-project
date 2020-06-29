@@ -23,7 +23,7 @@ public class CorpIntroUpdateAction implements Action {
 
 		request.setAttribute("corpintro", corpintro);
 
-		RequestDispatcher dis = request.getRequestDispatcher("/admin/corpIntro/corpIntroUpdate.jsp");
+		RequestDispatcher dis = request.getRequestDispatcher("/page/admin/corpIntro/corpIntroUpdate.jsp");
 		dis.forward(request, response);
 	}
 }

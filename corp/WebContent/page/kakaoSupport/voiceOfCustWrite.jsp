@@ -11,7 +11,7 @@
 <body>
 	<%@ include file="/include/header.jsp"%>
 	<section>
-	<form action="/corp/menu?cmd=voiceOfCustWriteProc" method="post">
+	<form action="/corp/support?cmd=voiceOfCustWriteProc" method="post">
 
 		title<br/>
 		<input type="text" value="" id = "title" name = "title"/><br>

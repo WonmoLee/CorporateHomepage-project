@@ -49,7 +49,7 @@ public class CorpIntroUpdateProcAction implements Action {
 			int result = corpintroRepository.introUpdate(corpintro);
 			if(result == 1) {
 
-				Script.href("수정에 성공하셨습니다.","/corp/menu?cmd=intro" , response);
+				Script.href("수정에 성공하셨습니다.","/corp/intro?cmd=intro" , response);
 			}else if(result == -1) {
 				Script.back("수정에 실패하였습니다.", response);
 			}
