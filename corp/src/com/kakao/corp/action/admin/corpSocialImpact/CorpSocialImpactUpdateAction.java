@@ -12,7 +12,7 @@ import com.kakao.corp.action.Action;
 public class CorpSocialImpactUpdateAction implements Action{
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		RequestDispatcher dis = request.getRequestDispatcher("/admin/corpSocialImpact/corpSocialImpactUpdate.jsp");
+		RequestDispatcher dis = request.getRequestDispatcher("/page/admin/corpSocialImpact/corpSocialImpactUpdate.jsp");
 		dis.forward(request, response);
 	}
 }

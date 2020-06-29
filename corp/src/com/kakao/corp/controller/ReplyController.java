@@ -1,6 +1,7 @@
 package com.kakao.corp.controller;
 
 import java.io.IOException;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -8,8 +9,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.kakao.corp.action.Action;
-import com.kakao.corp.action.nav.kakaoSupport.reply.VoiceOfCustReplyDeleteProcAction;
-import com.kakao.corp.action.nav.kakaoSupport.reply.VoiceOfCustReplyWriteProcAction;
+import com.kakao.corp.action.home.kakaoSupport.reply.VoiceOfCustReplyDeleteProcAction;
+import com.kakao.corp.action.home.kakaoSupport.reply.VoiceOfCustReplyWriteProcAction;
 
 @WebServlet("/reply")
 public class ReplyController extends HttpServlet {
@@ -40,7 +41,6 @@ public class ReplyController extends HttpServlet {
 	}
 
 		private Action router(String cmd) {
-			System.out.println("분기테스트" + cmd);
 			if (cmd.equals("vocReplyWriteProc")) {
 				return new VoiceOfCustReplyWriteProcAction();
 			} else if (cmd.equals("vocReplyDeleteProc")) {

@@ -9,10 +9,10 @@
 		<h2 class="hide">대메뉴</h2>
 		<nav class="lnb">
 			<ul>
-			<li><a href="/corp/menu?cmd=intro"><span>카카오</span></a></li>
+			<li><a href="/corp/intro?cmd=intro"><span>카카오</span></a></li>
 			<li><a href="/corp/service?cmd=serviceMain"><span>서비스</span></a></li>
 			<li><a href="#a"><span>소셜임팩트</span></a></li>
-			<li><a href="/corp/menu?cmd=voiceOfCust"><span>고객지원</span></a></li>
+			<li><a href="/corp/support?cmd=voiceOfCust"><span>고객지원</span></a></li>
 			<li><a href="https://careers.kakao.com/index" target="_blank"><span>인재영입</span></a></li>
 			</ul>
 		</nav>

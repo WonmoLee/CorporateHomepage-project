@@ -12,7 +12,7 @@ import com.kakao.corp.action.Action;
 public class CorpServiceUpdateAction implements Action{
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		RequestDispatcher dis = request.getRequestDispatcher("/admin/corpService/corpServiceUpdate.jsp");
+		RequestDispatcher dis = request.getRequestDispatcher("/page/admin/corpService/corpServiceUpdate.jsp");
 		dis.forward(request, response);
 	}
 }

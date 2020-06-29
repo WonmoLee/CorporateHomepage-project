@@ -8,8 +8,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.kakao.corp.action.Action;
-import com.kakao.corp.action.nav.kakaoService.CorpServiceAction;
-import com.kakao.corp.action.nav.kakaoService.CorpServiceMainCategoryAction;
+import com.kakao.corp.action.home.kakaoService.CorpServiceMainAction;
+import com.kakao.corp.action.home.kakaoService.CorpServiceMainCategoryAction;
 
 
 @WebServlet("/service")
@@ -42,7 +42,7 @@ public class KakaoServiceController extends HttpServlet {
 	}
 		private Action router(String cmd) {
 			if (cmd.equals("serviceMain")) {
-				return new CorpServiceAction();
+				return new CorpServiceMainAction();
 			}else if (cmd.equals("serviceMainCategory")) {
 				return new CorpServiceMainCategoryAction();
 			}

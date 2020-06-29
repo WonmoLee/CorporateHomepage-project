@@ -47,7 +47,6 @@ public class CorpIntroUpdateProcAction implements Action {
 
 			CorpIntroRepository corpintroRepository = CorpIntroRepository.getInstance();
 			int result = corpintroRepository.introUpdate(corpintro);
-			System.out.println("이미지 가져왓냐? : " + result);
 			if(result == 1) {
 
 				Script.href("수정에 성공하셨습니다.","/corp/menu?cmd=intro" , response);

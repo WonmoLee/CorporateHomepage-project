@@ -20,7 +20,7 @@ public class UserUpdateAction implements Action{
 			Script.getMessage("잘못된 접근입니다", response);
 			return;
 		}
-		RequestDispatcher dis = request.getRequestDispatcher("user/userUpdate.jsp");
+		RequestDispatcher dis = request.getRequestDispatcher("/page/user/userUpdate.jsp");
 		dis.forward(request, response);
 	}
 }

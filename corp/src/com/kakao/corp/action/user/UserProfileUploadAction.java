@@ -23,7 +23,7 @@ public class UserProfileUploadAction implements Action {
 		}
 
 		RequestDispatcher dis =
-				request.getRequestDispatcher("user/profileUpload.jsp");
+				request.getRequestDispatcher("/page/user/profileUpload.jsp");
 		dis.forward(request, response);;
 	}
 }
