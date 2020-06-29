@@ -18,7 +18,7 @@
  	<button class="btn btn-secondary" onclick="back()">글목록</button>
  	
  	<c:if test="${sessionScope.principal.id == vocDetailDto.vocBoardDto.vocBoard.userId}">
- 		<a href="/corp/menu?cmd=vocPostUpdate&id=${vocDetailDto.vocBoardDto.vocBoard.id}" class="btn btn-warning">수정</a>
+ 		<a href="/corp/support?cmd=vocPostUpdate&id=${vocDetailDto.vocBoardDto.vocBoard.id}" class="btn btn-warning">수정</a>
  		<button class="btn btn-danger" onclick="vocDeleteById(${vocDetailDto.vocBoardDto.vocBoard.id})">삭제</button>
  	</c:if>
  	

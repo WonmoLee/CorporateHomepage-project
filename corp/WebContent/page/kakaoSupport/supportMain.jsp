@@ -16,7 +16,7 @@
 			<ul>
 			<li><a href="/corp/home?cmd=main">홈</a></li>
 			<li>&nbsp>&nbsp</li>
-			<li><a href="/corp/menu?cmd=voiceOfCust">고객지원</a></li>
+			<li><a href="/corp/support?cmd=voiceOfCust">고객지원</a></li>
 			</ul>
 		</div>
 		<div class="supportMainAjax">
@@ -41,7 +41,7 @@
 				<div>
 				<ul>
 				<c:forEach var="vocBoard" items="${vocBoards}">
-		   		<li><a href="/corp/menu?cmd=vocDetail&id=${vocBoard.id}">${vocBoard.title}</a></li>
+		   		<li><a href="/corp/support?cmd=vocDetail&id=${vocBoard.id}">${vocBoard.title}</a></li>
 		   		</c:forEach>
 		   		</ul>
 		   		<br>
