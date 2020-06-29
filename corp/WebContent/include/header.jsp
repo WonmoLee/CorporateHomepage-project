@@ -10,7 +10,6 @@
 		<nav class="lnb">
 			<ul>
 			<li><a href="/corp/menu?cmd=intro"><span>카카오</span></a></li>
-			<li><a href="#a"><span>투자정보</span></a></li>
 			<li><a href="/corp/service?cmd=serviceMain"><span>서비스</span></a></li>
 			<li><a href="#a"><span>소셜임팩트</span></a></li>
 			<li><a href="/corp/menu?cmd=voiceOfCust"><span>고객지원</span></a></li>
@@ -20,13 +19,18 @@
 		<h2 class="hide"></h2>
 		<nav class="unb">
 			<c:choose>
-				<c:when test="${empty sessionScope.principal}">
+				<c:when test="${sessionScope.principal.userRole eq 'ADMIN'}">
 					<ul class="list_lang">
-					<li><a href="/corp/user?cmd=login"> 로그인 </a></li>
-					<li><a href="/corp/user?cmd=signup"> 회원가입 </a></li>
+					<li><a href="/corp/user?cmd=update"> 관리자 페이지 </a></li>
+					<li><a href="/corp/user?cmd=update"> 회원정보수정 </a></li>
+					<li><a href="/corp/user?cmd=logout"> 로그아웃 </a></li>
+					<li class="profileImg"><a href="/corp/user?cmd=profileUpload">
+							<img onerror="this.src='/corp/static/img/userProfile.png'" src = "${sessionScope.principal.userProfile}"/>
+						</a>
+					</li>
 					</ul>
 				</c:when>
-				<c:when test="${sessionScope.principal.userRole}">
+				<c:when test="${sessionScope.principal.userRole eq 'USER'}">
 					<ul class="list_lang">
 					<li><a href="/corp/user?cmd=update"> 회원정보수정 </a></li>
 					<li><a href="/corp/user?cmd=logout"> 로그아웃 </a></li>
@@ -37,14 +41,9 @@
 					</ul>
 				</c:when>
 				<c:otherwise>
-				<ul class="list_lang">
-					<li><a href="/corp/user?cmd=update"> 관리자 페이지 </a></li>
-					<li><a href="/corp/user?cmd=update"> 회원정보수정 </a></li>
-					<li><a href="/corp/user?cmd=logout"> 로그아웃 </a></li>
-					<li class="profileImg"><a href="/corp/user?cmd=profileUpload">
-							<img onerror="this.src='/corp/static/img/userProfile.png'" src = "${sessionScope.principal.userProfile}"/>
-						</a>
-					</li>
+					<ul class="list_lang">
+					<li><a href="/corp/user?cmd=login"> 로그인 </a></li>
+					<li><a href="/corp/user?cmd=signup"> 회원가입 </a></li>
 					</ul>
 				</c:otherwise>
 			</c:choose>

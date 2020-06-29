@@ -42,7 +42,7 @@ public class UsersRepository {
 		}
 		//아이디값
 		public Users findById(int id) {
-			final String SQL = "select * from users where id = ?";
+			final String SQL = "SELECT * FROM USERS WHERE ID = ?";
 			Users user = new Users();
 			try {
 				conn = DBConn.getConnection();
@@ -60,6 +60,7 @@ public class UsersRepository {
 							.email(rs.getString("email"))
 							.userBirth("userBirth")
 							.userProfile(rs.getString("userProfile"))
+							.userRole(rs.getString("userRole"))
 							.createDate(rs.getTimestamp("createDate"))
 							.build();
 				}
