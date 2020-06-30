@@ -30,6 +30,8 @@ public class CorpServiceUpdateProcAction implements Action{
 		String text = "";
 		int id;
 		
+		CorpServiceRepository corpServiceRepository = CorpServiceRepository.getInstance();
+		
 		try {
 			MultipartRequest multi = new MultipartRequest(
 					request,
@@ -38,7 +40,7 @@ public class CorpServiceUpdateProcAction implements Action{
 					"UTF-8",
 					new DefaultFileRenamePolicy()
 					);
-			
+			if(multi.getFilesystemName("titleImg") != null) {
 			fileName1 = multi.getFilesystemName("titleImg");
 			titleImg = contextPath + "/static/img/" + fileName1;
 			mainTitle = multi.getParameter("mainTitle");
@@ -50,13 +52,16 @@ public class CorpServiceUpdateProcAction implements Action{
 					.content(mainContent)
 					.build();			
 
-			CorpServiceRepository corpServiceRepository = CorpServiceRepository.getInstance();
-			int result1 = corpServiceRepository.serviceUpdate1(corpServiceTitle);
 			
+			int result1 = corpServiceRepository.serviceUpdate1(corpServiceTitle);
 			
 			if (result1 != 1) {
 				Script.back("수정에 실패하였습니다.", response);
 			}
+			
+			}
+			
+			
 			
 			for (int i=1;i<=35;i++) {
 				
@@ -69,7 +74,6 @@ public class CorpServiceUpdateProcAction implements Action{
 				category = multi.getParameter("category"+i);
 				name = multi.getParameter("name"+i);
 				text = multi.getParameter("text"+i);
-//				String test = realPath+ "//" +fileName2;
 
 				CorpServiceContent corpServiceContent = CorpServiceContent.builder()
 						.id(id)

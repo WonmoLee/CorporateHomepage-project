@@ -99,7 +99,7 @@ header .unb li:last-child a{padding-right:0;}
 .svcMT{font-size:20px;color:#000000;width:280px;text-align:left;}
 .svcMC{font-size:15px;text-align:left;padding-left:50px;}
 .sv_category{display:flex;padding: 50px 300px 50px 300px;}
-.category__list{padding-left:150px;}
+.category__list{display:flex;padding-left:150px;}
 .category__list h4{font-size:18px;}
 .category__list p{display:flex;font-size:14px;}
 
