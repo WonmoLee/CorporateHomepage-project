@@ -14,7 +14,7 @@
 <%@ include file="/include/header.jsp" %>
 <section>
 	<div class="serviceMainImg">
-		<img class="img" src="${corpServiceTitles.img}" alt="${corpServiceTitles.title}">
+		<img class="img" src="${corpServiceTitles.img}" style="width:1920px;height:480px;" alt="${corpServiceTitles.title}">
 	</div>
 	<div class="serviceMainTitle">
 		<p class="svcMT">${corpServiceTitles.title}</p>

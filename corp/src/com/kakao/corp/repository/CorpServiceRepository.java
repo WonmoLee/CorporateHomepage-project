@@ -130,7 +130,7 @@ public class CorpServiceRepository {
 				e.printStackTrace();
 				System.out.println(TAG + "serviceUpdate" + e.getMessage());
 			} finally {
-				DBConn.close(conn, pstmt, rs);
+				DBConn.close(conn, pstmt);
 			}
 			return -1;
 	}
@@ -152,6 +152,8 @@ public class CorpServiceRepository {
 			} catch (Exception e) {
 				e.printStackTrace();
 				System.out.println(TAG + "serviceUpdate" + e.getMessage());
+			} finally {
+				DBConn.close(conn, pstmt);
 			}
 			return -1;
 		}

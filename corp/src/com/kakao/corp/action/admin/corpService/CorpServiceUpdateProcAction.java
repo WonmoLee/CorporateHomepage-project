@@ -38,43 +38,54 @@ public class CorpServiceUpdateProcAction implements Action{
 					"UTF-8",
 					new DefaultFileRenamePolicy()
 					);
-			mainTitle = multi.getParameter("mainTitle");
+			
 			fileName1 = multi.getFilesystemName("titleImg");
-			mainContent = multi.getParameter("mainContent");
-			id = Integer.parseInt(multi.getParameter("id"));
-			fileName2 = multi.getFilesystemName("contentImg");
-			category = multi.getParameter("category");
-			name = multi.getParameter("name");
-			text = multi.getParameter("text");
 			titleImg = contextPath + "/static/img/" + fileName1;
-			contentImg = contextPath + "/static/img/" + fileName2;
+			mainTitle = multi.getParameter("mainTitle");
+			mainContent = multi.getParameter("mainContent");
 			
 			CorpServiceTitle corpServiceTitle = CorpServiceTitle.builder()
 					.img(titleImg)
 					.title(mainTitle)
 					.content(mainContent)
-					.build();
-			
-			CorpServiceContent corpServiceContent = CorpServiceContent.builder()
-					.id(id)
-					.img(contentImg)
-					.category(category)
-					.name(name)
-					.text(text)
-					.build();
-			
+					.build();			
+
 			CorpServiceRepository corpServiceRepository = CorpServiceRepository.getInstance();
 			int result1 = corpServiceRepository.serviceUpdate1(corpServiceTitle);
-			int result2 = corpServiceRepository.serviceUpdate2(corpServiceContent);
-			System.out.println("resul1 : " + result1);
-			System.out.println("resul2 : " + result2);
-			if (result1 == 1 || result2 == 1) {
-				
-				Script.href("수정에 성공하셨습니다.","/corp/service?cmd=serviceMain" , response);
-			}
-				Script.back("수정에 실패하였습니다.", response);
-		} catch (Exception e) {
 			
-		}
+			
+			if (result1 != 1) {
+				Script.back("수정에 실패하였습니다.", response);
+			}
+			
+			for (int i=1;i<=35;i++) {
+				id = Integer.parseInt(multi.getParameter("id"+i));
+				fileName2 = multi.getFilesystemName("contentImg"+i);
+				contentImg = contextPath + "/static/img/" + fileName2;
+				category = multi.getParameter("category"+i);
+				name = multi.getParameter("name"+i);
+				text = multi.getParameter("text"+i);
+
+				CorpServiceContent corpServiceContent = CorpServiceContent.builder()
+						.id(id)
+						.img(contentImg)
+						.category(category)
+						.name(name)
+						.text(text)
+						.build();
+				
+				
+				int result2 = corpServiceRepository.serviceUpdate2(corpServiceContent);
+				
+				if (result2 != 1) {
+					Script.back("수정에 실패하였습니다.", response);
+				}
+			}
+			
+			Script.href("수정에 성공하셨습니다.","/corp/service?cmd=serviceMain" , response);
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		} 
 	}
 }
