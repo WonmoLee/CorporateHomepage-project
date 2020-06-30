@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.google.gson.Gson;
 import com.kakao.corp.action.Action;
-import com.kakao.corp.model.CorpService;
+import com.kakao.corp.model.CorpServiceContent;
 import com.kakao.corp.repository.CorpServiceRepository;
 
 public class CorpServiceMainCategoryAction implements Action{
@@ -21,7 +21,7 @@ public class CorpServiceMainCategoryAction implements Action{
 		CorpServiceRepository corpServiceRepository = CorpServiceRepository.getInstance();
 
 		if (request.getParameter("value").equals("전체")) {
-			List<CorpService> corpServices = corpServiceRepository.CorpServiceFindByAll();
+			List<CorpServiceContent> corpServices = corpServiceRepository.CorpServiceFindByAll();
 
 			String corpServicesJson = gson.toJson(corpServices);
 
@@ -31,7 +31,7 @@ public class CorpServiceMainCategoryAction implements Action{
 			pw.println(corpServicesJson);
 
 		}else {
-			List<CorpService> corpServices = corpServiceRepository.findByCategory(request.getParameter("value"));		
+			List<CorpServiceContent> corpServices = corpServiceRepository.findByCategory(request.getParameter("value"));		
 
 			String corpServicesJson = gson.toJson(corpServices);
 

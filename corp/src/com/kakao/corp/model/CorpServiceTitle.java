@@ -6,13 +6,11 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Data
-@AllArgsConstructor
 @NoArgsConstructor
+@AllArgsConstructor
 @Builder
-public class CorpService {
-	private String name;
-	private String text;
-	private String category;
+public class CorpServiceTitle {
 	private String img;
+	private String title;
+	private String content;
 }
-

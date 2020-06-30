@@ -17,8 +17,6 @@ public class CorpIntroUpdateProcAction implements Action {
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		
-		
 		String title = "";
 		String realPath = request.getServletContext().getRealPath("/static/img");
 		String fileName = "";
@@ -44,7 +42,7 @@ public class CorpIntroUpdateProcAction implements Action {
 					.img(infoImg)
 					.content(content)
 					.build();
-
+			
 			CorpIntroRepository corpintroRepository = CorpIntroRepository.getInstance();
 			int result = corpintroRepository.introUpdate(corpintro);
 			if(result == 1) {
