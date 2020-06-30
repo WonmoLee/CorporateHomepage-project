@@ -28,6 +28,7 @@ public class CorpServiceUpdateProcAction implements Action{
 		String category = "";
 		String name = "";
 		String text = "";
+		int id;
 		
 		try {
 			MultipartRequest multi = new MultipartRequest(
@@ -40,6 +41,7 @@ public class CorpServiceUpdateProcAction implements Action{
 			mainTitle = multi.getParameter("mainTitle");
 			fileName1 = multi.getFilesystemName("titleImg");
 			mainContent = multi.getParameter("mainContent");
+			id = Integer.parseInt(multi.getParameter("id"));
 			fileName2 = multi.getFilesystemName("contentImg");
 			category = multi.getParameter("category");
 			name = multi.getParameter("name");
@@ -54,6 +56,7 @@ public class CorpServiceUpdateProcAction implements Action{
 					.build();
 			
 			CorpServiceContent corpServiceContent = CorpServiceContent.builder()
+					.id(id)
 					.img(contentImg)
 					.category(category)
 					.name(name)
@@ -65,7 +68,7 @@ public class CorpServiceUpdateProcAction implements Action{
 			int result2 = corpServiceRepository.serviceUpdate2(corpServiceContent);
 			System.out.println("resul1 : " + result1);
 			System.out.println("resul2 : " + result2);
-			if (result1 == 1 && result2 == 1) {
+			if (result1 == 1 || result2 == 1) {
 				
 				Script.href("수정에 성공하셨습니다.","/corp/service?cmd=serviceMain" , response);
 			}

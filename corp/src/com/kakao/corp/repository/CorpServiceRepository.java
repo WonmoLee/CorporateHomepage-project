@@ -52,7 +52,7 @@ public class CorpServiceRepository {
 	
 	//전체 뿌리기
 	public List<CorpServiceContent> CorpServiceFindByAll() {
-		final String SQL = "SELECT NAME, TEXT, CATEGORY, IMG FROM CORPSERVICECONTENT ORDER BY CATEGORY";
+		final String SQL = "SELECT ID, NAME, TEXT, CATEGORY, IMG FROM CORPSERVICECONTENT ORDER BY CATEGORY";
 
 		try {
 			conn = DBConn.getConnection();
@@ -63,10 +63,11 @@ public class CorpServiceRepository {
 
 			while (rs.next()) {
 				CorpServiceContent service = CorpServiceContent.builder()
-						.name(rs.getString(1))
-						.text(rs.getString(2))
-						.category(rs.getString(3))
-						.img(rs.getString(4))
+						.id(rs.getInt(1))
+						.name(rs.getString(2))
+						.text(rs.getString(3))
+						.category(rs.getString(4))
+						.img(rs.getString(5))
 						.build();
 				corpServices.add(service);
 			}
