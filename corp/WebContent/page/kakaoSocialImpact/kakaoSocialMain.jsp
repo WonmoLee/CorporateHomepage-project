@@ -18,22 +18,24 @@
 <img src = "static/img/social.png">
  <br/>
 </div>
-<div style="float:left; margin-left: 200px;">
-<h4>${socail.title}</h4>
-<p>${socail.content}</p>
-<img src = "//t1.kakaocdn.net/kakaocorp/pw/socialimpact/subtop_together.jpg" 
-width="" height=""></img>
+
+<div class="con_wrap" style="display: flex; max-width: 1080px;
+							 margin : 0 auto; justify-content : center;
+							 margin-bottom: 50px " >
+	<div style = "margin-right: 50px">
+	<h4>${social1.title}</h4>
+	<p>${social1.content}</p>
+	<img src = "${social1.img}"	width="500" height="280"></img>
+	</div>
+	
+	
+	
+	<div>
+	<h4>${social2.title}</h4>
+	<p>${social2.content}</p>
+	<img src = "${social2.img}" width ="500" height = "280"></img>
+	</div>
 </div>
-
-
-
-<div style="float:right; margin-right: 200px">
-<h4>${socail2.title}</h4>
-<p>${socail2.content}</p>
-<img src = "//t1.kakaocdn.net/kakaocorp/pw/socialimpact/subtop_makers.jpg"></img>
-</div>
-<!-- <a href="/corp/menu?cmd=socialUpdate">수정</a><br/> -->
-
 
 <%@ include file="/include/footer.jsp" %>
 </body>

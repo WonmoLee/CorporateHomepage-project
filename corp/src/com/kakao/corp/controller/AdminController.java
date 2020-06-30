@@ -12,6 +12,7 @@ import com.kakao.corp.action.admin.AdminPageAction;
 import com.kakao.corp.action.admin.corpIntro.CorpIntroUpdateAction;
 import com.kakao.corp.action.admin.corpIntro.CorpIntroUpdateProcAction;
 import com.kakao.corp.action.admin.corpService.CorpServiceUpdateAction;
+import com.kakao.corp.action.admin.corpSocialImpact.CorpSocialImpactUdateProcAction;
 import com.kakao.corp.action.admin.corpSocialImpact.CorpSocialImpactUpdateAction;
 import com.kakao.corp.action.admin.corpSupport.CorpSupportUpdateAction;
 
@@ -52,6 +53,8 @@ public class AdminController extends HttpServlet {
 			return new CorpServiceUpdateAction();
 		} else if (cmd.equals("socialImpactUpdate")){
 			return new CorpSocialImpactUpdateAction();
+		} else if (cmd.equals("socialImpactUpdateProc")){
+			return new CorpSocialImpactUdateProcAction();
 		} else if (cmd.equals("supportUpdate")){
 			return new CorpSupportUpdateAction();
 		}

@@ -34,9 +34,11 @@ public class CorpIntroUpdateProcAction implements Action {
 					"UTF-8",
 					new DefaultFileRenamePolicy()
 					);
+			
 			title = multi.getParameter("title");
 			fileName = multi.getFilesystemName("infoImg");
 			content = multi.getParameter("content");
+			
 			infoImg = contextPath + "/static/img/" + fileName;
 			
 			CorpIntro corpintro = CorpIntro.builder()
@@ -47,6 +49,7 @@ public class CorpIntroUpdateProcAction implements Action {
 
 			CorpIntroRepository corpintroRepository = CorpIntroRepository.getInstance();
 			int result = corpintroRepository.introUpdate(corpintro);
+			
 			if(result == 1) {
 
 				Script.href("수정에 성공하셨습니다.","/corp/intro?cmd=intro" , response);

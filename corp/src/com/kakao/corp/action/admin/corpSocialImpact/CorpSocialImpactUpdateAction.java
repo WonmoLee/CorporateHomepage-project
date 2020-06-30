@@ -25,5 +25,9 @@ public class CorpSocialImpactUpdateAction implements Action{
 		
 		RequestDispatcher dis = request.getRequestDispatcher("/page/admin/corpSocialImpact/corpSocialImpactUpdate.jsp");
 		dis.forward(request, response);
+		
+		System.out.println("social : "+ social1);
+		System.out.println("social : "+ social2);
+		
 	}
 }

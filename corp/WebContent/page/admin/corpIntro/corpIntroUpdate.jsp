@@ -8,7 +8,7 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 <body>
-<form action ="/corp/menu?cmd=introUpdateProc" method = "post" enctype="multipart/form-data">
+<form action ="/corp/admin?cmd=introUpdateProc" method = "post" enctype="multipart/form-data">
 	  <div>
 	  	 <input type = "text" value = "${corpintro.title}" id = "title" name = "title">
 	  </div>
