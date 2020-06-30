@@ -16,14 +16,13 @@ public class CorpSocialMainAction implements Action{
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		CorpSocialRepository corpSocialRepository = CorpSocialRepository.getInstance();
 
-		CorpSocial socail = corpSocialRepository.social();
-		CorpSocial socail2 = corpSocialRepository.social2();
+		CorpSocial social1 = corpSocialRepository.social();
+		CorpSocial social2 = corpSocialRepository.social2();
 
-		request.setAttribute("socail", socail);
-		request.setAttribute("socail2", socail2);
+		request.setAttribute("social1", social1);
+		request.setAttribute("social2", social2);
 
-		System.out.println(socail);
-		System.out.println(socail2);
+		
 		
 		RequestDispatcher dis = request.getRequestDispatcher("/page/kakaoSocialImpact/kakaoSocialMain.jsp");
 		dis.forward(request, response);

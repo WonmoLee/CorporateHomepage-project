@@ -13,5 +13,6 @@ public class CorpSocial {
 
  private String title;
  private String content;
-
+ private String img;
+ private String type;
 }
