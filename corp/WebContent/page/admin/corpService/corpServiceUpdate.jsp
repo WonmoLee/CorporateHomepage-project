@@ -33,7 +33,7 @@
 		  	 <input class="hide" type="text" value="${corpService.id}" id="id" name="id${status.count}">
 		  	 <input type = "text" value = "${corpService.category}" id = "category" name = "category${status.count}">
 		  	 	<img id = "img__wrap" onerror="this.src='/corp/static/img/emptyImg.png'" src="${corpService.img}" width="100px" height="100px"/>
-	         <input type="file" id="contentImg" name="contentImg${status.count}" id="img__preview"/>
+	         <input type="file" id="contentImg" name="contentImg${status.count}" id="img__preview" value="${corpService.img}" />
 	         <input type = "text" value = "${corpService.name}" id = "name" name = "name${status.count}">
 	         <input type = "text" value = "${corpService.text}" id = "text" name = "text${status.count}">
 		  </div>

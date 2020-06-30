@@ -59,12 +59,17 @@ public class CorpServiceUpdateProcAction implements Action{
 			}
 			
 			for (int i=1;i<=35;i++) {
+				
+				int result2 = -1;
+				
+				if(multi.getFilesystemName("contentImg"+i) != null) {
 				id = Integer.parseInt(multi.getParameter("id"+i));
 				fileName2 = multi.getFilesystemName("contentImg"+i);
 				contentImg = contextPath + "/static/img/" + fileName2;
 				category = multi.getParameter("category"+i);
 				name = multi.getParameter("name"+i);
 				text = multi.getParameter("text"+i);
+//				String test = realPath+ "//" +fileName2;
 
 				CorpServiceContent corpServiceContent = CorpServiceContent.builder()
 						.id(id)
@@ -73,9 +78,24 @@ public class CorpServiceUpdateProcAction implements Action{
 						.name(name)
 						.text(text)
 						.build();
-				
-				
-				int result2 = corpServiceRepository.serviceUpdate2(corpServiceContent);
+				result2 = corpServiceRepository.serviceUpdate2(corpServiceContent);
+				} else {
+					id = Integer.parseInt(multi.getParameter("id"+i));
+					category = multi.getParameter("category"+i);
+					name = multi.getParameter("name"+i);
+					text = multi.getParameter("text"+i);
+//				String test = realPath+ "//" +fileName2;
+					CorpServiceContent corpServiceContent = CorpServiceContent.builder()
+							.id(id)
+							.category(category)
+							.name(name)
+							.text(text)
+							.build();
+					
+					
+					result2 = corpServiceRepository.serviceUpdate3(corpServiceContent);
+				}
+
 				
 				if (result2 != 1) {
 					Script.back("수정에 실패하였습니다.", response);

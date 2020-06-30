@@ -157,4 +157,26 @@ public class CorpServiceRepository {
 			}
 			return -1;
 		}
+	
+	public int serviceUpdate3(CorpServiceContent corpServiceContent) {
+		final String SQL = "UPDATE CORPSERVICECONTENT SET NAME = ?, TEXT = ?, CATEGORY = ? WHERE ID = ?";
+		try {
+			conn = DBConn.getConnection();
+			pstmt = conn.prepareStatement(SQL);
+	
+			//물음표 완성하기
+			pstmt.setString(1, corpServiceContent.getName());
+			pstmt.setString(2, corpServiceContent.getText());
+			pstmt.setString(3, corpServiceContent.getCategory());
+			pstmt.setInt(4, corpServiceContent.getId());
+	
+			return pstmt.executeUpdate();
+		} catch (Exception e) {
+			e.printStackTrace();
+			System.out.println(TAG + "serviceUpdate" + e.getMessage());
+		} finally {
+			DBConn.close(conn, pstmt);
+		}
+		return -1;
+	}
 }
