@@ -47,14 +47,19 @@ public class BoardRepository {
 			
 		}
 		
-		public List<VoiceOfCustBoard> vocFindAll() {
-			final String SQL = "SELECT * FROM VOCBOARD ORDER BY ID DESC";
+		public List<VoiceOfCustBoard> vocFindAll(int page) {
+			StringBuilder sb = new StringBuilder();
+			sb.append("SELECT /*+ INDEX_DESC(BOARD SYS_C008824)*/ID, ");
+			sb.append("USERID, TITLE, CONTENT, READCOUNT, CREATEDATE ");
+			sb.append("FROM VOCBOARD ");
+			sb.append("OFFSET ? ROWS FETCH NEXT 7 ROWS ONLY");
+			final String SQL = sb.toString();
 			List<VoiceOfCustBoard> vocBoards = new ArrayList<>();
-			
+
 			try {
 				conn = DBConn.getConnection();
 				pstmt = conn.prepareStatement(SQL);
-				
+				pstmt.setInt(1, page*7);
 				//while 돌려서 rs -> java오브젝트에 집어넣기
 				rs = pstmt.executeQuery();
 				while(rs.next()) {
@@ -69,17 +74,19 @@ public class BoardRepository {
 					vocBoards.add(vocBoard);
 				}
 				return vocBoards;
-				
+
 			} catch (SQLException e) {
 				e.printStackTrace();
 				System.out.println(TAG + "vocFindAll : " + e.getMessage());
 			} finally {
 				DBConn.close(conn, pstmt, rs);
 			}
-			
-			
+
+
 			return null;
 		}
+		
+		
 		
 		public int count() {
 			final String SQL = "SELECT COUNT(*) FROM VOCBOARD";

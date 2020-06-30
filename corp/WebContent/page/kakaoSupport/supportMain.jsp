@@ -45,6 +45,25 @@
 		   		</c:forEach>
 		   		</ul>
 		   		<br>
+		   		<ul class="pagination justify-content-center">
+				<c:choose>
+				  <c:when test="${param.page == 0}">	
+				  	<li class="page-item disabled"><a class="page-link" href="/blog/board?cmd=home&page=${param.page-1}">Previous</a></li>
+				  </c:when>
+				  <c:otherwise>
+				  	<li class="page-item"><a class="page-link" href="/blog/board?cmd=home&page=${param.page-1}">Previous</a></li>
+				  </c:otherwise>
+				</c:choose>
+				
+				<c:choose>
+				  <c:when test="${isLast}">
+				  	<li class="page-item disabled"><a class="page-link" href="/blog/board?cmd=home&page=${param.page+1}">Next</a></li>
+				  </c:when>
+				  <c:otherwise>
+				  	<li class="page-item"><a class="page-link" href="/blog/board?cmd=home&page=${param.page+1}">Next</a></li>
+				  </c:otherwise>
+				</c:choose>  
+				</ul>
 				<button type="button" value="글쓰기" onclick="location.href='page/kakaoSupport/voiceOfCustWrite.jsp'">글쓰기</button>
 				</div>
 			</div>

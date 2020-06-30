@@ -25,6 +25,9 @@
 		  	 <input type="file" id="infoImg" name="infoImg" id="img__preview"/>
 		  </div>
 		  <div>
+		  	 <input type="text" value="${corpintro.contentTitle}" id="contentTitle" name="contentTitle">
+		  </div>
+		  <div>
 		  	 <input type = "text" value = "${corpintro.content}" id = "content" name = "content">
 		  </div>
 		  <button type = "submit">수정하기</button>

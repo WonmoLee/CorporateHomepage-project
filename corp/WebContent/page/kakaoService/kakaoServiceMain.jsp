@@ -13,15 +13,15 @@
 <body>
 <%@ include file="/include/header.jsp" %>
 <section>
-	<div>
+	<div class="serviceMainImg">
 		<img class="img" src="${corpServiceTitles.img}" alt="${corpServiceTitles.title}">
 	</div>
-	<div>
-		<h4>${corpServiceTitles.title}</h4><br>
-		<p>${corpServiceTitles.content}</p>
-		<hr>
+	<div class="serviceMainTitle">
+		<p class="svcMT">${corpServiceTitles.title}</p>
+		<p class="svcMC">${corpServiceTitles.content}</p>
 	</div>
-	<div class = "category__select">
+	<div></div>
+	<div class="sv_category">
 		<select name="category" onchange= "category(this.value)">
 		    <option value="전체">전체</option>
 		    <option value="포털">포털</option>
@@ -33,18 +33,17 @@
 		    <option value="모빌리티_라이프">모빌리티&라이프</option>
 		    <option value="소셜임팩트">소셜임팩트</option>
 		</select>
-	</div>
-	<div>
+	<div class="service__list">
 	<ul class = "category__list">
 	<c:forEach var = "corpService" items="${corpServices}">
-		<br/>
-		<li><img src="${corpService.img}" width="30px" height="30px">
+		<li><img src="${corpService.img}" width="80px" height="80px">
 		<h4>${corpService.name}</h4>
 		<p>${corpService.text}</p>
 		<br/>
 		</li>
 	</c:forEach>
 	</ul>
+	</div>
 	</div>
 </section>
 <%@ include file="/include/footer.jsp" %>

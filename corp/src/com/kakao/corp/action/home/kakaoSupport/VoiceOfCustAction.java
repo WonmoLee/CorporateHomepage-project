@@ -16,10 +16,11 @@ import com.kakao.corp.util.HtmlParser;
 public class VoiceOfCustAction implements Action{
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		int page = Integer.parseInt(request.getParameter("page"));
 		
 		BoardRepository boardRepository = BoardRepository.getInstance();
 		
-		List<VoiceOfCustBoard> vocBoards = boardRepository.vocFindAll();
+		List<VoiceOfCustBoard> vocBoards = boardRepository.vocFindAll(page);
 
 		for (VoiceOfCustBoard vocBoard : vocBoards) {
 			String preview = HtmlParser.getContentPreview(vocBoard.getContent());
@@ -27,6 +28,11 @@ public class VoiceOfCustAction implements Action{
 		}
 		
 		request.setAttribute("vocBoards", vocBoards);
+		
+		boolean isLast = false;
+		int count = boardRepository.count();
+		if(count <= (page*3)+3) isLast = true;
+		request.setAttribute("isLast", isLast);
 		
 		RequestDispatcher dis = request.getRequestDispatcher("/page/kakaoSupport/supportMain.jsp");
 		dis.forward(request, response);

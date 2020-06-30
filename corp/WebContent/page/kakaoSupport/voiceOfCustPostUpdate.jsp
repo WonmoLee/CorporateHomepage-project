@@ -13,7 +13,7 @@
 	<section>
 	<div class="container">
    	
-		<form action="/corp/menu?cmd=vocPostUpdateProc" method="POST">
+		<form action="/corp/support?cmd=vocPostUpdateProc" method="POST">
 
 		<input type="hidden" value="${vocBoardDto.vocBoard.id}" name="id"/>
   		<div class="form-group">	

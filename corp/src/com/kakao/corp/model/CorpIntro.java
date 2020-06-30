@@ -13,6 +13,7 @@ public class CorpIntro {
 
  private String title;
  private String img;
+ private String contentTitle;
  private String content;
 
 }

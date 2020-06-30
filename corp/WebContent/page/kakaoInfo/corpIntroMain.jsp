@@ -19,6 +19,7 @@
 				<img class="img" src="${corpintro.img}" alt="${corpintro.title}" style="width:1160px;height:494px;">
 			</div>
 			<div class="introContent">
+				<p>${corpintro.contentTitle}</p>
 				<b>${corpintro.content}</b>
 			</div>
 	</section>	

@@ -22,6 +22,7 @@ public class CorpIntroUpdateProcAction implements Action {
 		String fileName = "";
 		String contextPath = request.getServletContext().getContextPath();
 		String infoImg = "";
+		String contentTitle = "";
 		String content = "";
 		
 		try {
@@ -35,6 +36,7 @@ public class CorpIntroUpdateProcAction implements Action {
 			
 			title = multi.getParameter("title");
 			fileName = multi.getFilesystemName("infoImg");
+			contentTitle = multi.getParameter("contentTitle");
 			content = multi.getParameter("content");
 			
 			infoImg = contextPath + "/static/img/" + fileName;
@@ -42,6 +44,7 @@ public class CorpIntroUpdateProcAction implements Action {
 			CorpIntro corpintro = CorpIntro.builder()
 					.title(title)
 					.img(infoImg)
+					.contentTitle(contentTitle)
 					.content(content)
 					.build();
 			
