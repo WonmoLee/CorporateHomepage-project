@@ -57,6 +57,8 @@ public class UsersRepository {
 					user = Users.builder()
 							.id(rs.getInt("id"))
 							.username(rs.getString("username"))
+							.carrier(rs.getString("carrier"))
+							.phoneNumber(rs.getString("phoneNumber"))
 							.email(rs.getString("email"))
 							.userBirth("userBirth")
 							.userProfile(rs.getString("userProfile"))
@@ -90,6 +92,8 @@ public class UsersRepository {
 					user = new Users();
 					user.setId(rs.getInt("id"));
 					user.setUsername(rs.getString("username"));
+					user.setCarrier(rs.getString("carrier"));
+					user.setPhoneNumber(rs.getString("phoneNumber"));
 					user.setEmail(rs.getString("email"));
 					user.setAddress(rs.getString("address"));
 					user.setUserProfile(rs.getString("userProfile"));
@@ -113,7 +117,8 @@ public class UsersRepository {
 	
 	//유저 업데이트 
 		public int update(Users user) {
-			final String SQL = "UPDATE users SET password = ?, email = ?, userBirth = ?, address = ? WHERE id = ? ";
+			final String SQL = "UPDATE users SET password = ?, carrier = ?, phonenumber = ? email = ?, userBirth = ?,"
+					+ " address = ? WHERE id = ? ";
 
 			try {
 				conn = DBConn.getConnection();
@@ -121,10 +126,12 @@ public class UsersRepository {
 				
 				//물음표
 				pstmt.setString(1, user.getPassword());
-				pstmt.setString(2, user.getEmail());
-				pstmt.setString(3, user.getUserBirth());
-				pstmt.setString(4, user.getAddress());
-				pstmt.setInt(5, user.getId());
+				pstmt.setString(2, user.getCarrier());
+				pstmt.setString(3, user.getPhoneNumber());
+				pstmt.setString(4, user.getEmail());
+				pstmt.setString(5, user.getUserBirth());
+				pstmt.setString(6, user.getAddress());
+				pstmt.setInt(7, user.getId());
 				
 				return pstmt.executeUpdate();
 			} catch (Exception e) {
@@ -139,7 +146,7 @@ public class UsersRepository {
 
 		//로그인 
 		public Users login(String username, String password) {
-			final String SQL = "SELECT id, username, email, address, userProfile, userRole, userBirth, createDate"
+			final String SQL = "SELECT id, username, email, address, userProfile, userRole, userBirth, createDate, phoneNumber, carrier "
 					+ " FROM USERS WHERE USERNAME = ? AND PASSWORD = ?";
 			Users user = null;
 			
@@ -156,6 +163,8 @@ public class UsersRepository {
 					user = new Users();
 					user.setId(rs.getInt("id"));
 					user.setUsername(rs.getString("username"));
+					user.setCarrier(rs.getString("carrier"));
+					user.setPhoneNumber(rs.getString("phoneNumber"));
 					user.setEmail(rs.getString("email"));
 					user.setAddress(rs.getString("address"));
 					user.setUserProfile(rs.getString("userProfile"));

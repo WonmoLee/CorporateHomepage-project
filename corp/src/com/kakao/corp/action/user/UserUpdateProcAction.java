@@ -51,11 +51,15 @@ public void execute(HttpServletRequest request, HttpServletResponse response) th
 		String email = request.getParameter("email");
 		String address = request.getParameter("address");
 		String userBirth = request.getParameter("userBirth");
+		String phoneNumber = request.getParameter("phoneNumber");
+		String carrier = request.getParameter("carrier");
 		
 		// user 오브젝트 변환
 		Users user = Users.builder()
 				.id(id)
 				.password(password)
+				.carrier(carrier)
+				.phoneNumber(phoneNumber)
 				.email(email)
 				.userBirth(userBirth)
 				.address(address)

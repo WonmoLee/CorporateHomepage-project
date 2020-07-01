@@ -40,13 +40,22 @@
   			<input class = "inFor" type="password" placeholder="비밀 번호 확인" ><br/>
 			<br>
 		
+		<!-- 전화번호 -->	
+			<h4>휴대전화</h4>
+			<select name="carrier">
+			<option value="SKT">SKT</option>
+			<option value="LG">LG</option>
+			<option value="KT">KT</option>
+			</select>
+			<input type="text" name="phoneNumber" id = "phoneNumber" value = "${sessionScope.principal.phoneNumber}" style="width: 255px;">
+		
 		<!-- 이메일 -->
 			<h4>Email</h4>
-			<input class = "inFor" type = "text"  placeholder="이메일을 입력해주세요" name = "email" id = "email"/><br>
+			<input class = "inFor" type = "text"  value = "${sessionScope.principal.email}" name = "email" id = "email"/><br>
 			
 		<!--생년월일 -->
 			<h4>생년월일</h4>    
-			<input type = "date" name = "userBirth" id = "userBirth"><br><br>
+			<input type = "date" name = "userBirth" id = "userBirth" value = "${sessionScope.principal.userBirth}"><br><br><br><br>
 		
 		<!-- 주소 -->
 			<h4>주소 <span style="float:right;"><input type = "button" style="border-radius:100px; background-color: transparent;" onClick="goPopup();" value="주소검색"/></span></h4> 
@@ -54,7 +63,8 @@
 			
 			<br><br><br><br>
 		
-			<button type = "submit" style="width: 300px; height: 40px; background-color: #F0D700; border : 0px" > 회원가입</button>
+			<button type = "submit" style="width: 300px; height: 40px; background-color: #F0D700; border : 0px" >수정하기</button>
+
 	
 		</div>
 	</form>
