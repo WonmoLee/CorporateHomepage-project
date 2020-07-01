@@ -173,6 +173,7 @@ public class UsersRepository {
 					user.setCarrier(rs.getString("carrier"));
 					
 				}
+				
 				return user;
 			} catch (Exception e) {
 				e.printStackTrace();

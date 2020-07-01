@@ -68,9 +68,11 @@ public class KakaoCallBackAction implements Action {
 			
 		} else { // 기존회원이 아니면 회원가입 후 로그인 진행
 			
+			
 			// email 값이 없으면 추가 회원정보 받으로 이동
 			if(kakaoProfile.getKakao_account().getEmail() == null ||
 					kakaoProfile.getKakao_account().getEmail().equals("")) {
+				
 				request.setAttribute("kakaoProfile", kakaoProfile);
 				RequestDispatcher dis = 
 						request.getRequestDispatcher("/user/kakaoOauthJoin.jsp");
