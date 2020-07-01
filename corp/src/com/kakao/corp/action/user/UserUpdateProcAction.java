@@ -46,6 +46,7 @@ public void execute(HttpServletRequest request, HttpServletResponse response) th
 		//파라메터 받기
 		int id = sessionUser.getId();
 		
+		String username = request.getParameter("username");
 		String rawpassword = request.getParameter("password");
 		String password = SHA256.encodeSha256(rawpassword);
 		String email = request.getParameter("email");
@@ -53,6 +54,7 @@ public void execute(HttpServletRequest request, HttpServletResponse response) th
 		String userBirth = request.getParameter("userBirth");
 		String phoneNumber = request.getParameter("phoneNumber");
 		String carrier = request.getParameter("carrier");
+		String userRole = request.getParameter("userRole");
 		
 		// user 오브젝트 변환
 		Users user = Users.builder()
@@ -62,17 +64,22 @@ public void execute(HttpServletRequest request, HttpServletResponse response) th
 				.phoneNumber(phoneNumber)
 				.email(email)
 				.userBirth(userBirth)
+				.userRole(userRole)
 				.address(address)
 				.build();
 		
 		//DB
-		UsersRepository usersRepository =
-				UsersRepository.getInstance();
+		UsersRepository usersRepository = UsersRepository.getInstance();
 		
 		int result = usersRepository.update(user);
 		
 		if (result == 1 ) {
-			Script.href("수정에 성공하였습니다.", "index.jsp", response);
+			
+			Users reuser = usersRepository.login(username, password);
+			
+			
+			session.setAttribute("principal", reuser);
+			Script.href("수정에 성공하였습니다.", "/corp/home?cmd=main", response);
 		}else {
 			Script.back("수정에 실패하였습니다.", response);
 		}

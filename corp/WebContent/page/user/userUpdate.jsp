@@ -62,7 +62,7 @@
 			<input class = "inFor" type="text" value = "${sessionScope.principal.address}" name ="address" id = "address" required readonly/>
 			
 			<br><br><br><br>
-		
+			<input name="userRole" type="hidden" value="${sessionScope.principal.userRole}">
 			<button type = "submit" style="width: 300px; height: 40px; background-color: #F0D700; border : 0px" >수정하기</button>
 
 	

@@ -1,8 +1,8 @@
 #id{width:100px;padding:50;}	
-.title{text-align: center; margin-top: 150px; font-size: 48px; color: #FFC107;}
+.title{text-align: center; margin-top:50px; font-size: 48px; color: #FFC107;}
 .namepw{width: 500px;}
 .loginbg{background-image: url("https://t1.daumcdn.net/liveboard/ppss/b89b2823cc69474287ef6901b0dabe0d.jpg"); background-repeat: no-repeat; background-size: cover;}
-.sw {margin-top:100px;}
+.sw {margin-top:30px;}
 .join{margin:0 auto;padding:20;height: 700px; width: 450px;padding:20;border:1px solid #A6A6A6;}
 .inFor{BORDER-LEFT:medium none;BORDER-RIGHT:medium none;BORDER-TOP:medium none;width:320px;height:30px;color:#A6A6A6;font-size: 15px;		}
 .checkId{width:80px;width:80px;border-radius:100px;background-color:transparent;margin-left:220px;}

@@ -97,9 +97,9 @@ public class CorpServiceRepository {
 
 			while (rs.next()) {
 				CorpServiceContent service = CorpServiceContent.builder()
-						.name(rs.getString(1))
-						.text(rs.getString(2))
-						.img(rs.getString(4))
+						.name(rs.getString(2))
+						.text(rs.getString(3))
+						.img(rs.getString(5))
 						.build();
 				corpServices.add(service);
 			}

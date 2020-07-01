@@ -3,6 +3,7 @@ package com.kakao.corp.repository;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.text.SimpleDateFormat;
 
 import com.kakao.corp.db.DBConn;
 import com.kakao.corp.model.Users;
@@ -89,11 +90,17 @@ public class UsersRepository {
 				// if 돌려서 rs -> java오브젝트에 집어넣기
 				rs = pstmt.executeQuery();
 				if(rs.next()) {
+					
+					SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+					String date = sdf.format(rs.getTimestamp("userBirth"));
+					
+					
 					user = new Users();
 					user.setId(rs.getInt("id"));
 					user.setUsername(rs.getString("username"));
 					user.setCarrier(rs.getString("carrier"));
 					user.setPhoneNumber(rs.getString("phoneNumber"));
+					user.setUserBirth(date);
 					user.setEmail(rs.getString("email"));
 					user.setAddress(rs.getString("address"));
 					user.setUserProfile(rs.getString("userProfile"));
@@ -117,8 +124,8 @@ public class UsersRepository {
 	
 	//유저 업데이트 
 		public int update(Users user) {
-			final String SQL = "UPDATE users SET password = ?, carrier = ?, phonenumber = ? email = ?, userBirth = ?,"
-					+ " address = ? WHERE id = ? ";
+			final String SQL = "UPDATE USERS SET PASSWORD = ?, CARRIER = ?, PHONENUMBER = ?, EMAIL = ?, USERBIRTH = ?, "
+					+ "ADDRESS = ? WHERE ID = ?";
 
 			try {
 				conn = DBConn.getConnection();
@@ -146,8 +153,8 @@ public class UsersRepository {
 
 		//로그인 
 		public Users login(String username, String password) {
-			final String SQL = "SELECT id, username, email, address, userProfile, userRole, userBirth, createDate, phoneNumber, carrier "
-					+ " FROM USERS WHERE USERNAME = ? AND PASSWORD = ?";
+			final String SQL = "SELECT ID, USERNAME, EMAIL, ADDRESS, USERPROFILE, USERROLE, USERBIRTH, CREATEDATE, PHONENUMBER, CARRIER "
+					+ "FROM USERS WHERE USERNAME = ? AND PASSWORD = ?";
 			Users user = null;
 			
 			try {
@@ -160,6 +167,10 @@ public class UsersRepository {
 				rs = pstmt.executeQuery();
 				
 				if (rs.next()) {
+					
+					SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+					String date = sdf.format(rs.getTimestamp("userBirth"));
+					
 					user = new Users();
 					user.setId(rs.getInt("id"));
 					user.setUsername(rs.getString("username"));
@@ -169,7 +180,7 @@ public class UsersRepository {
 					user.setAddress(rs.getString("address"));
 					user.setUserProfile(rs.getString("userProfile"));
 					user.setUserRole(rs.getString("userRole"));
-					user.setUserBirth(rs.getString("userBirth"));
+					user.setUserBirth(date);
 					user.setCreateDate(rs.getTimestamp("createDate"));
 				}
 				return user;

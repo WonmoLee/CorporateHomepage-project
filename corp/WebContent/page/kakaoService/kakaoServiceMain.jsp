@@ -36,7 +36,7 @@
 	<div class="service__list">
 	<ul class = "category__list">
 	<c:forEach var = "corpService" items="${corpServices}">
-		<li><img src="${corpService.img}" width="80px" height="80px">
+		<li style="width:25%;"><img src="${corpService.img}" width="80px" height="80px">
 		<h4>${corpService.name}</h4>
 		<p>${corpService.text}</p>
 		<br/>
