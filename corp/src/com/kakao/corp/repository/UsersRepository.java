@@ -74,6 +74,41 @@ public class UsersRepository {
 
 			return null;
 		}
+		
+		public Users findByUsername(String username) {
+			final String SQL = "SELECT * FROM USERS WHERE USERNAME = ?";
+			Users user = null;
+
+			try {
+				conn = DBConn.getConnection();
+				pstmt = conn.prepareStatement(SQL);
+				// 물음표 완성하기
+				pstmt.setString(1, username);
+				// if 돌려서 rs -> java오브젝트에 집어넣기
+				rs = pstmt.executeQuery();
+				if(rs.next()) {
+					user = new Users();
+					user.setId(rs.getInt("id"));
+					user.setUsername(rs.getString("username"));
+					user.setEmail(rs.getString("email"));
+					user.setAddress(rs.getString("address"));
+					user.setUserProfile(rs.getString("userProfile"));
+					user.setUserRole(rs.getString("userRole"));
+					user.setCreateDate(rs.getTimestamp("createDate"));
+
+					return user;
+				}
+
+			} catch (Exception e) {
+				e.printStackTrace();
+				System.out.println(TAG+"findByUsername : "+e.getMessage());
+			} finally {
+				DBConn.close(conn, pstmt, rs);
+			}
+
+			return null;
+		}
+
 	
 	
 	//유저 업데이트 
