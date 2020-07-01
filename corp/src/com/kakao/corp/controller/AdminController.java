@@ -1,6 +1,7 @@
 package com.kakao.corp.controller;
 
 import java.io.IOException;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -12,9 +13,9 @@ import com.kakao.corp.action.admin.AdminPageAction;
 import com.kakao.corp.action.admin.corpIntro.CorpIntroUpdateAction;
 import com.kakao.corp.action.admin.corpIntro.CorpIntroUpdateProcAction;
 import com.kakao.corp.action.admin.corpService.CorpServiceUpdateAction;
-import com.kakao.corp.action.admin.corpSocialImpact.CorpSocialImpactUdateProcAction;
 import com.kakao.corp.action.admin.corpSocialImpact.CorpSocialImpactUpdateAction;
 import com.kakao.corp.action.admin.corpSupport.CorpSupportUpdateAction;
+import com.kakao.corp.action.home.kakaoSocial.CorpSocialImpactUdateProcAction;
 
 @WebServlet("/admin")
 public class AdminController extends HttpServlet {
