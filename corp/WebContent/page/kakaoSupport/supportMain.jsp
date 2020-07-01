@@ -36,35 +36,16 @@
 			</div>
 			<div class="vocBoard_list">
 				<div>
-				<h2>고객의 소리</h2>
+				<h2>고객의 소리<button class="vocWritebtn" type="button" value="글쓰기" onclick="location.href='page/kakaoSupport/voiceOfCustWrite.jsp'">글쓰기</button></h2>
 				</div>
 				<div>
 				<ul>
-				<c:forEach var="vocBoard" items="${vocBoards}">
-		   		<li><a href="/corp/support?cmd=vocDetail&id=${vocBoard.id}">${vocBoard.title}</a></li>
+				<c:forEach var="vocBoard" items="${vocBoards}" varStatus="num">
+		   		<li><a href="/corp/support?cmd=vocDetail&id=${vocBoard.id}">${num.count}&nbsp;.&nbsp;${vocBoard.title}</a></li>
 		   		</c:forEach>
 		   		</ul>
 		   		<br>
-		   		<ul class="pagination justify-content-center">
-				<c:choose>
-				  <c:when test="${param.page == 0}">	
-				  	<li class="page-item disabled"><a class="page-link" href="/blog/board?cmd=home&page=${param.page-1}">Previous</a></li>
-				  </c:when>
-				  <c:otherwise>
-				  	<li class="page-item"><a class="page-link" href="/blog/board?cmd=home&page=${param.page-1}">Previous</a></li>
-				  </c:otherwise>
-				</c:choose>
-				
-				<c:choose>
-				  <c:when test="${isLast}">
-				  	<li class="page-item disabled"><a class="page-link" href="/blog/board?cmd=home&page=${param.page+1}">Next</a></li>
-				  </c:when>
-				  <c:otherwise>
-				  	<li class="page-item"><a class="page-link" href="/blog/board?cmd=home&page=${param.page+1}">Next</a></li>
-				  </c:otherwise>
-				</c:choose>  
-				</ul>
-				<button type="button" value="글쓰기" onclick="location.href='page/kakaoSupport/voiceOfCustWrite.jsp'">글쓰기</button>
+		   		<%@ include file="/include/paging.jsp" %>
 				</div>
 			</div>
 		</div>

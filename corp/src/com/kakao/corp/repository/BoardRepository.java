@@ -52,6 +52,7 @@ public class BoardRepository {
 			sb.append("SELECT /*+ INDEX_DESC(BOARD SYS_C008824)*/ID, ");
 			sb.append("USERID, TITLE, CONTENT, READCOUNT, CREATEDATE ");
 			sb.append("FROM VOCBOARD ");
+			sb.append("ORDER BY CREATEDATE DESC ");
 			sb.append("OFFSET ? ROWS FETCH NEXT 7 ROWS ONLY");
 			final String SQL = sb.toString();
 			List<VoiceOfCustBoard> vocBoards = new ArrayList<>();

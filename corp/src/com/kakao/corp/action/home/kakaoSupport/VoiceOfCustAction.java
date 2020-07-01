@@ -31,7 +31,7 @@ public class VoiceOfCustAction implements Action{
 		
 		boolean isLast = false;
 		int count = boardRepository.count();
-		if(count <= (page*3)+3) isLast = true;
+		if(count <= (page*7)+7) isLast = true;
 		request.setAttribute("isLast", isLast);
 		
 		RequestDispatcher dis = request.getRequestDispatcher("/page/kakaoSupport/supportMain.jsp");
