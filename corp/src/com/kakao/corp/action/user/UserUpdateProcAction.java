@@ -51,6 +51,8 @@ public void execute(HttpServletRequest request, HttpServletResponse response) th
 		String email = request.getParameter("email");
 		String address = request.getParameter("address");
 		String userBirth = request.getParameter("userBirth");
+		String phoneNumber = request.getParameter("phoneNumber");
+		String carrier = request.getParameter("carrier");
 		
 		// user 오브젝트 변환
 		Users user = Users.builder()
@@ -59,9 +61,11 @@ public void execute(HttpServletRequest request, HttpServletResponse response) th
 				.email(email)
 				.userBirth(userBirth)
 				.address(address)
+				.phoneNumber(phoneNumber)
+				.carrier(carrier)
 				.build();
 		
-		//DB
+		//DB 연결
 		UsersRepository usersRepository =
 				UsersRepository.getInstance();
 		

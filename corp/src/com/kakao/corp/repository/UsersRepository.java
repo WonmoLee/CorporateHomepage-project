@@ -40,7 +40,8 @@ public class UsersRepository {
 				user.setUserProfile(rs.getString("userProfile"));
 				user.setUserRole(rs.getString("userRole"));
 				user.setCreateDate(rs.getTimestamp("createDate"));
-				
+				user.setPhoneNumber(rs.getString("phoneNumber"));
+				user.setCarrier(rs.getString("carrier"));
 				return user;
 			}
 
@@ -74,6 +75,7 @@ public class UsersRepository {
 			}
 			return -1;
 		}
+		
 		//아이디값
 		public Users findById(int id) {
 			final String SQL = "SELECT * FROM USERS WHERE ID = ?";
@@ -96,6 +98,9 @@ public class UsersRepository {
 							.userProfile(rs.getString("userProfile"))
 							.userRole(rs.getString("userRole"))
 							.createDate(rs.getTimestamp("createDate"))
+							.phoneNumber(rs.getString("phoneNumber"))
+							.carrier(rs.getString("carrier"))
+							
 							.build();
 				}
 				return user;
@@ -112,7 +117,8 @@ public class UsersRepository {
 	
 	//유저 업데이트 
 		public int update(Users user) {
-			final String SQL = "UPDATE users SET password = ?, email = ?, userBirth = ?, address = ? WHERE id = ? ";
+			final String SQL = "UPDATE users SET password = ?, email = ?, userBirth = ?,"
+					+ " address = ?, phonenumber = ?, carrier = ? WHERE id = ? ";
 
 			try {
 				conn = DBConn.getConnection();
@@ -124,6 +130,8 @@ public class UsersRepository {
 				pstmt.setString(3, user.getUserBirth());
 				pstmt.setString(4, user.getAddress());
 				pstmt.setInt(5, user.getId());
+				pstmt.setString(6, user.getPhoneNumber());
+				pstmt.setString(7, user.getCarrier());
 				
 				return pstmt.executeUpdate();
 			} catch (Exception e) {
@@ -138,7 +146,7 @@ public class UsersRepository {
 
 		//로그인 
 		public Users login(String username, String password) {
-			final String SQL = "SELECT id, username, email, address, userProfile, userRole, userBirth, createDate"
+			final String SQL = "SELECT id, username, email, address, userProfile, userRole, userBirth, createDate, phoneNumber, carrier "
 					+ " FROM USERS WHERE USERNAME = ? AND PASSWORD = ?";
 			Users user = null;
 			
@@ -161,6 +169,9 @@ public class UsersRepository {
 					user.setUserRole(rs.getString("userRole"));
 					user.setUserBirth(rs.getString("userBirth"));
 					user.setCreateDate(rs.getTimestamp("createDate"));
+					user.setPhoneNumber(rs.getString("phoneNumber"));
+					user.setCarrier(rs.getString("carrier"));
+					
 				}
 				return user;
 			} catch (Exception e) {
