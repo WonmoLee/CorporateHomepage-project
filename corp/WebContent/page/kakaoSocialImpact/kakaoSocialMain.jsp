@@ -11,7 +11,7 @@
 <body>
 <%@ include file="/include/header.jsp" %>
 
-<div> <a href = " ">홈</a> > 소셜임팩트 </div>
+<div class="social_root"> <a href="/corp/home?cmd=main">홈</a> > 소셜임팩트 </div>
 
 
 <div style ="padding-bottom : 30px">
@@ -23,16 +23,16 @@
 							 margin : 0 auto; justify-content : center;
 							 margin-bottom: 50px " >
 	<div style = "margin-right: 50px">
-	<h4>${social1.title}</h4>
-	<p>${social1.content}</p>
+	<h4 style="font-size:18px;font-weight:bold;padding-bottom: 20px;">${social1.title}</h4>
+	<p style="width:500px;font-size:15px;padding-bottom:10px;">${social1.content}</p>
 	<img src = "${social1.img}"	width="500" height="280"></img>
 	</div>
 	
 	
 	
 	<div>
-	<h4>${social2.title}</h4>
-	<p>${social2.content}</p>
+	<h4 style="font-size: 18px;font-weight:bold;padding-bottom: 20px;">${social2.title}</h4>
+	<p style="width:500px;font-size:15px;padding-bottom:10px;">${social2.content}</p>
 	<img src = "${social2.img}" width ="500" height = "280"></img>
 	</div>
 </div>

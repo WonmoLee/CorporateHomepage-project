@@ -28,8 +28,9 @@ public class VoiceOfCustDeleteProcAction implements Action{
 		) {
 			return;
 		}
-		
+		System.out.println(request.getParameter("id"));
 		int id = Integer.parseInt(request.getParameter("id"));
+		
 		
 		BoardRepository boardRepository = BoardRepository.getInstance();
 		int result = boardRepository.vocDeleteById(id);
