@@ -93,14 +93,14 @@
 				var next = "";
 				
 				if(page == 0){
-					prev = "<li class=\"page-item disabled\" style=\"border-bottom:0px;\"><a class=\"page-link\" href=\"/corp/support?cmd=voiceOfCust&page="+(page-1)+"\">Previous</a></li>\r\n";
-					next = "<li class=\"page-item\" style=\"border-bottom:0px;\"><a class=\"page-link\" href=\"/corp/support?cmd=voiceOfCust&page="+(page+1)+"\">Next</a></li>\r\n";
+					prev = "<li class=\"page-item disabled\" style=\"border-bottom:0px;\"><a class=\"page-link\" href=\"javascript:void(0);\" onclick=\"pageMove('voc', "+(page-1)+")\">Previous</a></li>\r\n";
+					next = "<li class=\"page-item\" style=\"border-bottom:0px;\"><a class=\"page-link\" href=\"javascript:void(0);\" onclick=\"pageMove('voc', "+(page+1)+")\">Next</a></li>\r\n";
 				} else if (page == lastPage) {
-					prev = "<li class=\"page-item\" style=\"border-bottom:0px;\"><a class=\"page-link\" href=\"/corp/support?cmd=voiceOfCust&page="+(page-1)+"\">Previous</a></li>\r\n";
-					next = "<li class=\"page-item disabled\" style=\"border-bottom:0px;\"><a class=\"page-link\" href=\"/corp/support?cmd=voiceOfCust&page="+(page+1)+"\">Next</a></li>\r\n";
+					prev = "<li class=\"page-item\" style=\"border-bottom:0px;\"><a class=\"page-link\" href=\"javascript:void(0);\" onclick=\"pageMove('voc', "+(page-1)+")\">Previous</a></li>\r\n";
+					next = "<li class=\"page-item disabled\" style=\"border-bottom:0px;\"><a class=\"page-link\" href=\"javascript:void(0);\" onclick=\"pageMove('voc', "+(page+1)+")\">Next</a></li>\r\n";
 				} else{
-					prev = "<li class=\"page-item\" style=\"border-bottom:0px;\"><a class=\"page-link\" href=\"/corp/support?cmd=voiceOfCust&page="+(page-1)+"\">Previous</a></li>\r\n";
-					next = "<li class=\"page-item\" style=\"border-bottom:0px;\"><a class=\"page-link\" href=\"/corp/support?cmd=voiceOfCust&page="+(page+1)+"\">Next</a></li>\r\n";
+					prev = "<li class=\"page-item\" style=\"border-bottom:0px;\"><a class=\"page-link\" href=\"javascript:void(0);\" onclick=\"pageMove('voc', "+(page-1)+")\">Previous</a></li>\r\n";
+					next = "<li class=\"page-item\" style=\"border-bottom:0px;\"><a class=\"page-link\" href=\"javascript:void(0);\" onclick=\"pageMove('voc', "+(page+1)+")\">Next</a></li>\r\n";
 				}
 				
 				var pageString =
@@ -130,14 +130,14 @@
 				var next = "";
 				
 				if(page == 0){
-					prev = "<li class=\"page-item disabled\" style=\"border-bottom:0px;\"><a class=\"page-link\" href=\"/corp/support?cmd=faq&page="+(page-1)+"\">Previous</a></li>\r\n";
-					next = "<li class=\"page-item\" style=\"border-bottom:0px;\"><a class=\"page-link\" href=\"/corp/support?cmd=faq&page="+(page+1)+"\">Next</a></li>\r\n";
+					prev = "<li class=\"page-item disabled\" style=\"border-bottom:0px;\"><a class=\"page-link\" href=\"javascript:void(0);\" onclick=\"pageMove('faq', "+(page-1)+")\">Previous</a></li>\r\n";
+					next = "<li class=\"page-item\" style=\"border-bottom:0px;\"><a class=\"page-link\" href=\"javascript:void(0);\" onclick=\"pageMove('faq', "+(page+1)+")\">Next</a></li>\r\n";
 				} else if (page == lastPage) {
-					prev = "<li class=\"page-item\" style=\"border-bottom:0px;\"><a class=\"page-link\" href=\"/corp/support?cmd=faq&page="+(page-1)+"\">Previous</a></li>\r\n";
-					next = "<li class=\"page-item disabled\" style=\"border-bottom:0px;\"><a class=\"page-link\" href=\"/corp/support?cmd=faq&page="+(page+1)+"\">Next</a></li>\r\n";
+					prev = "<li class=\"page-item\" style=\"border-bottom:0px;\"><a class=\"page-link\" href=\"javascript:void(0);\" onclick=\"pageMove('faq', "+(page-1)+")\">Previous</a></li>\r\n";
+					next = "<li class=\"page-item disabled\" style=\"border-bottom:0px;\"><a class=\"page-link\" href=\"javascript:void(0);\" onclick=\"pageMove('faq', "+(page+1)+")\">Next</a></li>\r\n";
 				} else{
-					prev = "<li class=\"page-item\" style=\"border-bottom:0px;\"><a class=\"page-link\" href=\"/corp/support?cmd=faq&page="+(page-1)+"\">Previous</a></li>\r\n";
-					next = "<li class=\"page-item\" style=\"border-bottom:0px;\"><a class=\"page-link\" href=\"/corp/support?cmd=faq&page="+(page+1)+"\">Next</a></li>\r\n";
+					prev = "<li class=\"page-item\" style=\"border-bottom:0px;\"><a class=\"page-link\" href=\"javascript:void(0);\" onclick=\"pageMove('faq', "+(page-1)+")\">Previous</a></li>\r\n";
+					next = "<li class=\"page-item\" style=\"border-bottom:0px;\"><a class=\"page-link\" href=\"javascript:void(0);\" onclick=\"pageMove('faq', "+(page+1)+")\">Next</a></li>\r\n";
 				}
 				
 				var pageString =
@@ -155,7 +155,115 @@
 			
 			alert(result);
 			
-		})
+		});
+	}
+	
+	function pageMove(part, page) {
+		
+		var url = "";
+		
+		if(part == "voc"){
+			url = "/corp/support?cmd=voiceOfCustPagingProc&page=";
+		} else if (part == "faq"){
+			url = "/corp/support?cmd=faqPagingProc&page=";
+		}
+		
+		$.ajax({
+			
+			type: "get",
+			url: url+page,
+			dataType: "json"
+			
+		}).done(function(result) {
+			
+			if(part == "voc"){
+				
+				$("#supportTitle").text("고객의 소리");
+				
+				$(".board_list").empty();
+				
+				for(var support of result.vocBoards){
+					
+					var id = support.id;
+					var title = support.title;
+					
+					var String =
+						"<li><a href=\"/corp/support?cmd=vocDetail&id="+id+"\">"+title+"</a></li>";
+		
+					$(".board_list").append(String);
+				}
+				
+				$("#paging").empty();
+				
+				var prev = "";
+				var next = "";
+				
+				if(result.page == 0){
+					prev = "<li class=\"page-item disabled\" style=\"border-bottom:0px;\"><a class=\"page-link\" href=\"javascript:void(0);\" onclick=\"pageMove('voc', "+(page-1)+")\">Previous</a></li>\r\n";
+					next = "<li class=\"page-item\" style=\"border-bottom:0px;\"><a class=\"page-link\" href=\"javascript:void(0);\" onclick=\"pageMove('voc', "+(page+1)+")\">Next</a></li>\r\n";
+				} else if (result.page == result.vocLastPage) {
+					prev = "<li class=\"page-item\" style=\"border-bottom:0px;\"><a class=\"page-link\" href=\"javascript:void(0);\" onclick=\"pageMove('voc', "+(page-1)+")\">Previous</a></li>\r\n";
+					next = "<li class=\"page-item disabled\" style=\"border-bottom:0px;\"><a class=\"page-link\" href=\"javascript:void(0);\" onclick=\"pageMove('voc', "+(page+1)+")\">Next</a></li>\r\n";
+				} else{
+					prev = "<li class=\"page-item\" style=\"border-bottom:0px;\"><a class=\"page-link\" href=\"javascript:void(0);\" onclick=\"pageMove('voc', "+(page-1)+")\">Previous</a></li>\r\n";
+					next = "<li class=\"page-item\" style=\"border-bottom:0px;\"><a class=\"page-link\" href=\"javascript:void(0);\" onclick=\"pageMove('voc', "+(page+1)+")\">Next</a></li>\r\n";
+				}
+				
+				var pageString =
+				"<ul class=\"pagination justify-content-center\">\r\n" + 
+				prev+
+				next+
+				"</ul>";
+				
+				$("#paging").append(pageString);
+				
+			} else if(part == "faq"){
+				
+				$("#supportTitle").text("FAQ");
+				
+				$(".board_list").empty();
+				
+				for(var support of result.faqBoards){
+					
+					var String =
+						"li 만들기";
+					
+					$(".board_list").append(String);
+				}
+				
+				
+				$("#paging").empty();
+				
+				var prev = "";
+				var next = "";
+				
+				if(result.page == 0){
+					prev = "<li class=\"page-item disabled\" style=\"border-bottom:0px;\"><a class=\"page-link\" href=\"javascript:void(0);\" onclick=\"pageMove('faq', "+(page-1)+")\">Previous</a></li>\r\n";
+					next = "<li class=\"page-item\" style=\"border-bottom:0px;\"><a class=\"page-link\" href=\"javascript:void(0);\" onclick=\"pageMove('faq', "+(page+1)+")\">Next</a></li>\r\n";
+				} else if (result.page == result.vocLastPage) {
+					prev = "<li class=\"page-item\" style=\"border-bottom:0px;\"><a class=\"page-link\" href=\"javascript:void(0);\" onclick=\"pageMove('faq', "+(page-1)+")\">Previous</a></li>\r\n";
+					next = "<li class=\"page-item disabled\" style=\"border-bottom:0px;\"><a class=\"page-link\" href=\"javascript:void(0);\" onclick=\"pageMove('faq', "+(page+1)+")\">Next</a></li>\r\n";
+				} else{
+					prev = "<li class=\"page-item\" style=\"border-bottom:0px;\"><a class=\"page-link\" href=\"javascript:void(0);\" onclick=\"pageMove('faq', "+(page-1)+")\">Previous</a></li>\r\n";
+					next = "<li class=\"page-item\" style=\"border-bottom:0px;\"><a class=\"page-link\" href=\"javascript:void(0);\" onclick=\"pageMove('faq', "+(page+1)+")\">Next</a></li>\r\n";
+				}
+				
+				var pageString =
+				"<ul class=\"pagination justify-content-center\">\r\n" + 
+					prev+
+					next+
+				"</ul>";
+				
+				$("#paging").append(pageString);
+			}
+			
+		}).fail(function(error) {
+			
+			alert("페이지를 불러오지 못하였습니다.");
+			
+		});
+		
+		
 	}
 	
 	

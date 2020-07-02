@@ -11,9 +11,11 @@ import javax.servlet.http.HttpServletResponse;
 import com.kakao.corp.action.Action;
 import com.kakao.corp.action.home.kakaoSupport.CorpSupportMainBoardList;
 import com.kakao.corp.action.home.kakaoSupport.FAQAction;
+import com.kakao.corp.action.home.kakaoSupport.FaqPagingProcAction;
 import com.kakao.corp.action.home.kakaoSupport.VoiceOfCustAction;
 import com.kakao.corp.action.home.kakaoSupport.VoiceOfCustDeleteProcAction;
 import com.kakao.corp.action.home.kakaoSupport.VoiceOfCustDetailAction;
+import com.kakao.corp.action.home.kakaoSupport.VoiceOfCustPagingProcAction;
 import com.kakao.corp.action.home.kakaoSupport.VoiceOfCustPostUserUpdateAction;
 import com.kakao.corp.action.home.kakaoSupport.VoiceOfCustPostUserUpdateProcAction;
 import com.kakao.corp.action.home.kakaoSupport.VoiceOfCustUserWriteAction;
@@ -68,6 +70,10 @@ public class KakaoSupportController extends HttpServlet {
 			return new VoiceOfCustDeleteProcAction();
 		}else if (cmd.equals("vocReplyDeleteProc")) {
 			return new VoiceOfCustDeleteProcAction();
+		}else if (cmd.equals("voiceOfCustPagingProc")) {
+			return new VoiceOfCustPagingProcAction();
+		}else if (cmd.equals("faqPagingProc")) {
+			return new FaqPagingProcAction();
 		}
 		return null;
 	}
