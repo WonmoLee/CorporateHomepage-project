@@ -6,6 +6,7 @@
 <title>Kakao</title>
 <meta charset="UTF-8">
 <link rel="shortcut icon" href="static/img/titleIcon.png" type="image/x-icon" />
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
 <link rel="stylesheet" type="text/css" href="/corp/css/kakao.css">
 </head>
 <body>
@@ -13,12 +14,12 @@
 	<section>
 		<div class="adminPage">
 			<h1>관리자 페이지</h1>
-			<div class="introUpdate">
-			<a href="/corp/admin?cmd=homeUpdate">메인홈 수정</a><br/>
-			<a href="/corp/admin?cmd=introUpdate">nav : 카카오 수정</a><br/>
-			<a href="/corp/admin?cmd=serviceUpdate">nav : 서비스 수정</a><br/>
-			<a href="/corp/admin?cmd=socialImpactUpdate">nav : 소셜임팩트 수정</a><br/>
-			<a href="/corp/admin?cmd=supportUpdate">nav : 고객지원 수정</a><br/>
+			<div class="adminMain">
+			<a class="page-link" href="/corp/admin?cmd=homeUpdate">홈메인 수정</a><br/>
+			<a class="page-link" href="/corp/admin?cmd=introUpdate">카카오 수정</a><br/>
+			<a class="page-link" href="/corp/admin?cmd=serviceUpdate">서비스 수정</a><br/>
+			<a class="page-link" href="/corp/admin?cmd=socialImpactUpdate">소셜임팩트 수정</a><br/>
+			<a class="page-link" href="/corp/admin?cmd=supportUpdate">고객지원 수정</a><br/>
 			</div>
 		</div>
 	</section>

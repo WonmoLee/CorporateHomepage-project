@@ -6,6 +6,7 @@
 <title>KAKAO</title>
 <meta charset="UTF-8">
 <link rel="shortcut icon" href="/corp/static/img/titleIcon.png" type="image/x-icon" />
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
 <link rel="stylesheet" type="text/css" href="/corp/css/kakao.css">
 </head>
 <body>
