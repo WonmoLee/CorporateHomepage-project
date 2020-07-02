@@ -21,7 +21,7 @@
 	</c:choose>
 		
 	<c:choose>
-		<c:when test="${lastPage == param.page}">
+		<c:when test="${vocLastPage == param.page}">
 			<li class="page-item disabled" style="border-bottom:0px;"><a class="page-link" href="${pageScope.pageNext}">Next</a></li>
 		</c:when>
 		<c:otherwise>

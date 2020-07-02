@@ -9,6 +9,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.kakao.corp.action.Action;
+import com.kakao.corp.action.home.kakaoSupport.CorpSupportMainBoardList;
+import com.kakao.corp.action.home.kakaoSupport.FAQAction;
 import com.kakao.corp.action.home.kakaoSupport.VoiceOfCustAction;
 import com.kakao.corp.action.home.kakaoSupport.VoiceOfCustDeleteProcAction;
 import com.kakao.corp.action.home.kakaoSupport.VoiceOfCustDetailAction;
@@ -46,7 +48,11 @@ public class KakaoSupportController extends HttpServlet {
 	
 	private Action router(String cmd) {
 		System.out.println("분기테스트" + cmd);
-		if (cmd.equals("voiceOfCust")) {
+		if(cmd.equals("supportMainBoardList")) {
+			return new CorpSupportMainBoardList();
+		}else if(cmd.equals("faq")) {
+			return new FAQAction();
+		}else if (cmd.equals("voiceOfCust")) {
 			return new VoiceOfCustAction();
 		}else if (cmd.equals("voiceOfCustWrite")) {
 			return new VoiceOfCustUserWriteAction();

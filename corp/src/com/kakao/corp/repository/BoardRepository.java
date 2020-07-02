@@ -9,6 +9,7 @@ import java.util.List;
 
 import com.kakao.corp.db.DBConn;
 import com.kakao.corp.dto.VocBoardResponseDto;
+import com.kakao.corp.model.FAQBoard;
 import com.kakao.corp.model.VoiceOfCustBoard;
 
 public class BoardRepository {
@@ -23,6 +24,42 @@ public class BoardRepository {
 		private Connection conn = null;
 		private PreparedStatement pstmt = null;
 		private ResultSet rs = null;
+		
+		public List<FAQBoard> faqFindAll(int page) {
+			StringBuilder sb = new StringBuilder();
+			sb.append("SELECT /*+ INDEX_DESC(BOARD SYS_C008824)*/ID, TITLE, CONTENT ");
+			sb.append("FROM FAQBOARD ");
+			sb.append("ORDER BY ID DESC ");
+			sb.append("OFFSET ? ROWS FETCH NEXT 5 ROWS ONLY");
+			final String SQL = sb.toString();
+			List<FAQBoard> faqBoards = new ArrayList<>();
+
+			try {
+				conn = DBConn.getConnection();
+				pstmt = conn.prepareStatement(SQL);
+				pstmt.setInt(1, page*5);
+				//while 돌려서 rs -> java오브젝트에 집어넣기
+				rs = pstmt.executeQuery();
+				while(rs.next()) {
+					FAQBoard faqBoard = new FAQBoard(
+							rs.getInt("id"),
+							rs.getString("title"),
+							rs.getString("content")
+					);
+					faqBoards.add(faqBoard);
+				}
+				return faqBoards;
+
+			} catch (SQLException e) {
+				e.printStackTrace();
+				System.out.println(TAG + "faqFindAll : " + e.getMessage());
+			} finally {
+				DBConn.close(conn, pstmt, rs);
+			}
+
+			return null;
+		}
+		
 		
 		public int vocSave(VoiceOfCustBoard vocBoard) {
 			final String SQL = "INSERT INTO VOCBOARD(ID, USERID, TITLE, CONTENT, READCOUNT, CREATEDATE) VALUES(VOCBOARD_SEQ.NEXTVAL, ?, ?, ?, ?, SYSDATE)";
@@ -87,9 +124,29 @@ public class BoardRepository {
 			return null;
 		}
 		
+		public int faqCount() {
+			final String SQL = "SELECT COUNT(*) FROM FAQBOARD";
+			
+			try {
+				conn = DBConn.getConnection();
+				pstmt = conn.prepareStatement(SQL);
+				rs = pstmt.executeQuery();
+				if(rs.next()) {
+					return rs.getInt(1);
+				}
+				
+			} catch (Exception e) {
+				e.printStackTrace();
+				System.out.println(TAG+"faqCount : "+e.getMessage());
+			} finally {
+				DBConn.close(conn, pstmt, rs);
+			}
+
+			return -1;
+		}
 		
 		
-		public int count() {
+		public int vocCount() {
 			final String SQL = "SELECT COUNT(*) FROM VOCBOARD";
 			
 			try {
@@ -102,7 +159,7 @@ public class BoardRepository {
 				
 			} catch (Exception e) {
 				e.printStackTrace();
-				System.out.println(TAG+"count : "+e.getMessage());
+				System.out.println(TAG+"vocCount : "+e.getMessage());
 			} finally {
 				DBConn.close(conn, pstmt, rs);
 			}
