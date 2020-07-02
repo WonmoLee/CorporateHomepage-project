@@ -11,7 +11,7 @@
 <body>
 <%@ include file="/include/header.jsp" %>
 
-<div> <a href = " ">홈</a> > 소셜임팩트 </div>
+<div class="social_root"> <a href="/corp/home?cmd=main">홈</a> > 소셜임팩트 </div>
 
 
 <div style ="padding-bottom : 30px">

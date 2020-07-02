@@ -1,6 +1,7 @@
 package com.kakao.corp.controller;
 
 import java.io.IOException;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -9,12 +10,14 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.kakao.corp.action.Action;
 import com.kakao.corp.action.admin.AdminPageAction;
+import com.kakao.corp.action.admin.corpHome.HomeUpdateAction;
+import com.kakao.corp.action.admin.corpHome.HomeUpdateProcAction;
 import com.kakao.corp.action.admin.corpIntro.CorpIntroUpdateAction;
 import com.kakao.corp.action.admin.corpIntro.CorpIntroUpdateProcAction;
 import com.kakao.corp.action.admin.corpService.CorpServiceUpdateAction;
 import com.kakao.corp.action.admin.corpService.CorpServiceUpdateProcAction;
-import com.kakao.corp.action.admin.corpSocialImpact.CorpSocialImpactUpdateProcAction;
 import com.kakao.corp.action.admin.corpSocialImpact.CorpSocialImpactUpdateAction;
+import com.kakao.corp.action.admin.corpSocialImpact.CorpSocialImpactUpdateProcAction;
 
 @WebServlet("/admin")
 public class AdminController extends HttpServlet {
@@ -57,7 +60,11 @@ public class AdminController extends HttpServlet {
 			return new CorpSocialImpactUpdateAction();
 		} else if (cmd.equals("socialImpactUpdateProc")){
 			return new CorpSocialImpactUpdateProcAction();
-		} 
+		} else if (cmd.equals("homeUpdate")){
+			return new HomeUpdateAction();
+		} else if (cmd.equals("homeUpdateProc")){
+			return new HomeUpdateProcAction();
+		}
 		return null;
 	}
 }
