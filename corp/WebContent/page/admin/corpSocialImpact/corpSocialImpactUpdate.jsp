@@ -13,14 +13,14 @@
 <section>
 <form action = "/corp/admin?cmd=socialImpactUpdateProc" method = "post" enctype = "multipart/form-data">
 <div class="aa2">
-<label class="aa2" style="margin-left: -30px;">서브 이미지1의 제목
+<label class="aa2" style="margin-left: -19px;">서브 이미지1의 제목
 	<input type ="text" value ="${social1.title}" id = "title1" name ="title1"/>
 </label>
-<label class="aa2" style="margin-left: -30px;">서브 이미지1의 내용
+<label class="aa2" style="margin-left: -19px;">서브 이미지1의 내용
 	<input type ="text" value ="${social1.content} " id = "content1" name ="content1"/>
 </label>
 </div>
-<label class="aa2" style="margin:30%">서브 이미지1</label>
+<label class="aa2" style="margin:30.5%">서브 이미지1</label>
 <div class="form-group">
          <img id = "img__wrap" onerror="this.src='/corp/static/img/emptyImg.png'" 
          	src="${social1.img}" width="700px" height="300px" />
@@ -30,13 +30,13 @@
 <br>
 
 <div class="aa2">
-<label class="aa2" style="margin-left: -30px;">서브 이미지2의 제목
+<label class="aa2" style="margin-left: -19px;">서브 이미지2의 제목
 	<input type ="text" value ="${social2.title}" id = "title2" name ="title2"/>
 </label>
-<label class="aa2" style="margin-left: -30px;">서브 이미지2의 내용
+<label class="aa2" style="margin-left: -19px;">서브 이미지2의 내용
 	<input type ="text" value ="${social2.content}" id = "content2" name ="content2"/>
 </label>
-<label class="aa2" style="margin:-20%;">서브 이미지1</label>
+<label class="aa2" style="margin:-3%;">서브 이미지1</label>
 <div class="form-group" style="margin-left:-3%;">
          <img id = "img__wrap" onerror="this.src='/corp/static/img/emptyImg.png'" 
          	src="${social2.img}" width="700px" height="300px" />
