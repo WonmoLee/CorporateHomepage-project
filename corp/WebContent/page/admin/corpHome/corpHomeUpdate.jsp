@@ -3,10 +3,14 @@
 <!DOCTYPE html>
 <html>
 <head>
+<title>KAKAO</title>
 <meta charset="UTF-8">
-<title>메인페이지 수정</title>
+<link rel="shortcut icon" href="/corp/static/img/titleIcon.png" type="image/x-icon" />
+<link rel="stylesheet" type="text/css" href="/corp/css/kakao.css">
 </head>
 <body>
+<%@ include file="/include/header.jsp" %>
+<section>
 <form action = "/corp/admin?cmd=homeUpdateProc" method = "post" enctype="multipart/form-data">
 	<!-- 슬라이드 이미지 수정 -->
 	<div style = "display : flex; max-width : 1080px;
@@ -91,7 +95,9 @@
 		</div>
 
 		</div>
-		<button type = "submit"> 수정하기 </button>
-</form>		
+		<button class="gg5" type = "submit"> 수정하기 </button>
+</form>
+</section>
+<%@ include file="/include/footer.jsp" %>
 </body>
 </html> 

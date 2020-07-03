@@ -23,13 +23,7 @@
 		<div class="supportMainAjax">
 			<div class="ks_list">
 				<h2>고객지원</h2>
-<!-- 				<ul onclick="support_list(this.value)"> -->
-<!-- 				<li value="voiceOfCust"><a href="">고객의 소리</a></li> -->
-<!-- 				<li value="FAQ"><a href="">FAQ</a></li> -->
-<!-- 				<li value="consulting"><a href="">1:1 상담</a></li> -->
-<!-- 				</ul> -->
-
-				<ul >
+				<ul>
 				<li><a href="javascript:void(0);" onclick="support_list('voc', ${vocLastPage})">고객의 소리</a></li>
 				<li><a href="javascript:void(0);" onclick="support_list('faq', ${vocLastPage})">FAQ</a></li>
 				<li><a href="javascript:void(0);" onclick="support_list('one', ${vocLastPage})">1:1 상담</a></li>
@@ -90,6 +84,7 @@
 				$("#paging").empty();
 				
 				var prev = "";
+				
 				var next = "";
 				
 				if(page == 0){

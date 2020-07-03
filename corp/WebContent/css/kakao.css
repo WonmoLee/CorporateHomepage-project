@@ -139,7 +139,21 @@ footer .btm{float:left;background: #ffffff;text-align:center;left:10%;margin-lef
 .selectBx{-moz-appearance:none;-webkit-appearance:none;appearance:none;background:url('/corp/static/img/arrowIcon.png') no-repeat;background-position:right;}
 
 
-/* 관리자 페이지 */
-.adminPage{text-align:center;font-size:35px;}
-.adminPage h1{margin-top: 100px;}
+/* 관리자 페이지-메인 */
+.adminPage{margin:220px 0 220px 0;text-align:center;font-size:35px;}
 .adminMain{display:flex;text-align:center;padding:100px 0 100px 0;}
+
+/* 관리자 페이지-카카오소개 */
+.introUpdate_title{padding:20px;text-align: center;width: 700px;margin: auto;font-size: 30px;}
+.gg1{font-size: 30px;margin-left: 47.7%;}
+.gg2{width: 1255px;text-align: center;}
+.gg3{text-align: center;width: 700px;margin: auto;padding:30px;font-size: 25px;}
+.gg4{text-align: center;width: 700px;margin: auto;padding:30px;font-size: 25px;}
+.gg5{width: 700px;margin-left: 31.8%;margin: 30px 0 40px 31.8%;height:40px;background-color: #FCCE00;}
+.form-group{padding: 20px;text-align: center;}   
+
+/* 관리자 페이지-카카오서비스 */
+.aa1{margin:30px 0 20px 46%;font-size:30px;}
+.aa2{width:700px;margin:auto;font-size:25px;padding:30px;}
+.aa3{width:20%;font-size:25px;padding:30px;}
+.adminSv_list{max-width: 1200px;display:flex;justify-content:center;flex-wrap:wrap;margin: 0 auto;}

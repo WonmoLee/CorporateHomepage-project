@@ -15,11 +15,10 @@
 		<div class="adminPage">
 			<h1>관리자 페이지</h1>
 			<div class="adminMain">
-			<a class="page-link" style="margin:10px 30px 10px 30px;width:350px;border: 4px solid;border-color: #808080;color:#000000;" href="/corp/admin?cmd=homeUpdate">홈메인 수정</a><br/>
-			<a class="page-link" style="margin:10px 30px 10px 30px;width:350px;border: 4px solid;border-color: #808080;color:#000000;" href="/corp/admin?cmd=introUpdate">카카오 수정</a><br/>
-			<a class="page-link" style="margin:10px 30px 10px 30px;width:350px;border: 4px solid;border-color: #808080;color:#000000;" href="/corp/admin?cmd=serviceUpdate">서비스 수정</a><br/>
-			<a class="page-link" style="margin:10px 30px 10px 30px;width:350px;border: 4px solid;border-color: #808080;color:#000000;" href="/corp/admin?cmd=socialImpactUpdate">소셜임팩트 수정</a><br/>
-			<a class="page-link" style="margin:10px 30px 10px 30px;width:350px;border: 4px solid;border-color: #808080;color:#000000;" href="/corp/admin?cmd=supportUpdate">고객지원 수정</a><br/>
+			<a class="page-link" style="margin:10px 70px 10px 70px;width:350px;border: 4px solid;border-color: #808080;color:#000000;" href="/corp/admin?cmd=homeUpdate">홈메인 수정</a><br/>
+			<a class="page-link" style="margin:10px 70px 10px 70px;width:350px;border: 4px solid;border-color: #808080;color:#000000;" href="/corp/admin?cmd=introUpdate">카카오 수정</a><br/>
+			<a class="page-link" style="margin:10px 70px 10px 70px;width:350px;border: 4px solid;border-color: #808080;color:#000000;" href="/corp/admin?cmd=serviceUpdate">서비스 수정</a><br/>
+			<a class="page-link" style="margin:10px 70px 10px 70px;width:350px;border: 4px solid;border-color: #808080;color:#000000;" href="/corp/admin?cmd=socialImpactUpdate">소셜임팩트 수정</a><br/>
 			</div>
 		</div>
 	</section>
