@@ -23,7 +23,7 @@ public class HomeUpdateProcAction implements Action {
 			MultipartRequest multi = new MultipartRequest(
 					request,
 					realPath,
-					1024*1024*4,
+					1024*1024*10,
 					"UTF-8",
 					new DefaultFileRenamePolicy()
 					);
