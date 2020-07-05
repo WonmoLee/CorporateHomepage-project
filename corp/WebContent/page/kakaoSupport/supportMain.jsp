@@ -26,13 +26,12 @@
 				<ul>
 				<li><a href="javascript:void(0);" onclick="support_list('voc', ${vocLastPage})">고객의 소리</a></li>
 				<li><a href="javascript:void(0);" onclick="support_list('faq', ${vocLastPage})">FAQ</a></li>
-				<li><a href="javascript:void(0);" onclick="support_list('one', ${vocLastPage})">1:1 상담</a></li>
 				</ul>
 			</div>
 			<div class="vocBoard_list">
 				<div>
 				<h2 id="supportTitle">고객의 소리</h2>
-				<button class="vocWritebtn" type="button" value="글쓰기" onclick="location.href='page/kakaoSupport/voiceOfCustWrite.jsp'">글쓰기</button>
+				
 				</div>
 				<div>
 				<ul class="board_list">
@@ -40,6 +39,8 @@
 		   		<li><a href="/corp/support?cmd=vocDetail&id=${vocBoard.id}">${vocBoard.title}</a></li>
 		   		</c:forEach>
 		   		</ul>
+		   		<br>
+		   		<button class="vocWritebtn" type="button" value="글쓰기" onclick="location.href='page/kakaoSupport/voiceOfCustWrite.jsp'">글쓰기</button>
 		   		<br>
 		   		<div id="paging">
 			   		<%@ include file="/include/paging.jsp" %>
