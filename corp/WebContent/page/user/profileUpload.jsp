@@ -22,7 +22,7 @@
         <input type="hidden" name="id" value="${sessionScope.principal.id}" />
 
       <div class="form-group">
-      	<button class="btn btn-primary w-100">사진전송</button>
+      	<button class="btn btn-primary w-100">프로필 사진 변경</button>
       </div>
    </form>
    </div>
